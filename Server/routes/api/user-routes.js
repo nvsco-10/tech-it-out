@@ -2,6 +2,7 @@ const router = require('express').Router();
 const {
   createUser,
   getSingleUser,
+  deleteUser,
   deletePost,
   login,
 } = require('../../controllers/user-controller');
@@ -14,8 +15,17 @@ router.route('/').post(createUser).put(authMiddleware);
 
 router.route('/login').post(login);
 
-router.route('/me').get(authMiddleware, getSingleUser);
+// router.route('/:username').get(authMiddleware, getSingleUser);
+
+router.route('/:id').delete(deleteUser);
 
 router.route('/posts/:postId').delete(authMiddleware, deletePost);
+
+
+
+// FOR TESTING - DELETE BEFORE DEPLOYMENT //
+router.route('/:username').get(getSingleUser);
+
+
 
 module.exports = router;

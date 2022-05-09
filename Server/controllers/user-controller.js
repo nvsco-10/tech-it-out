@@ -4,32 +4,60 @@ const { User } = require('../models');
 const { signToken } = require('../utils/auth');
 
 module.exports = {
-  // get a single user by either their id or their username
+  // get a single user by their username
   async getSingleUser({ user = null, params }, res) {
-    const foundUser = await User.findOne({
-      $or: [{ _id: user ? user._id : params.id }, { username: params.username }],
-    });
+    try {
+      const foundUser = await User.findOne({
+        $or: [{ username: params.username }],
+      });
+  
+      if (!foundUser) {
+        return res.status(400).json({ message: 'Cannot find a user with this id!' });
+      }
+  
+      res.json(foundUser);
 
-    if (!foundUser) {
-      return res.status(400).json({ message: 'Cannot find a user with this id!' });
+    } catch(err) {
+      return res.status(500).json(err)
     }
 
-    res.json(foundUser);
   },
   // create a user, sign a token, and send it back (to client/src/components/SignUpForm.js)
   async createUser({ body }, res) {
-    const user = await User.create(body);
+    try {
+      const user = await User.create(body);
 
-    if (!user) {
-      return res.status(400).json({ message: 'Something is wrong!' });
+      if (!user) {
+        return res.status(400).json({ message: 'Something is wrong!' });
+      }
+      const token = signToken(user);
+      res.json({ token, user });
+
+    } catch(err) {
+      return res.status(500).json(err)
     }
-    const token = signToken(user);
-    res.json({ token, user });
+    
+  },
+  // delete a user
+  async deleteUser({ params }, res) {
+    try {
+      const deletedUser = await User.findOneAndDelete({ _id: params.id })
+
+      if (!deletedUser) {
+        return res.status(400).json({ message: "Can't find this user" });
+      }
+
+      res.json({ message: 'User successfully deleted!' })
+
+    } catch(err) {
+        return res.status(500).json(err)
+    }
+    
   },
   // login a user, sign a token, and send it back (to client/src/components/LoginForm.js)
   // {body} is destructured req.body
   async login({ body }, res) {
-    const user = await User.findOne({ $or: [{ username: body.username }, { email: body.email }] });
+    const user = await User.findOne({ username: body.username });
     if (!user) {
       return res.status(400).json({ message: "Can't find this user" });
     }
@@ -37,7 +65,7 @@ module.exports = {
     const correctPw = await user.isCorrectPassword(body.password);
 
     if (!correctPw) {
-      return res.status(400).json({ message: 'Wrong password!' });
+      return res.status(400).json({ message: 'Incorrect username or password!' });
     }
     const token = signToken(user);
     res.json({ token, user });
