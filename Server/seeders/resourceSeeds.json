@@ -1,0 +1,10 @@
+// Resources seed data
+
+// format below:
+[
+  {
+    "name": "github",
+    "description": "A website for blah blah blah.",
+    "link": "www.github.com"
+  }
+]
