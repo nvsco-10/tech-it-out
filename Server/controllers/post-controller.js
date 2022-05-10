@@ -71,8 +71,80 @@ module.exports = {
     },
 
     // delete post by ID
+    async deletePost({ params }, res) {
+        try {
+          const deletedPost = await Post.findOneAndDelete({ _id: params.postId })
+    
+          if (!deletedPost) {
+            return res.status(400).json({ message: "Can't find post with that ID!" });
+          }
+    
+          res.json({ message: 'Post successfully deleted!' })
+    
+        } catch(err) {
+            return res.status(500).json(err)
+        }
+        
+    },
 
     // edit post by ID
+    async updatePost({body, params}, res) {
+        try {
+            const updatedPost = await Post.findOneAndUpdate(
+                { _id: params.postId },
+                { $set: body },
+                { runValidators: true, new: true }
+            )
 
+            if (!updatedPost) {
+                return res.status(400).json({ message: "Can't find post with that ID!" });
+            }
+
+            res.json(updatedPost)
+    
+        } catch(err) {
+            res.status(500).json(err);
+        }
+    },
+
+    // add comment to post
+    async addComment({ body, params }, res) {
+        try {
+            const updatedPost = await Post.findOneAndUpdate(
+                { _id: params.postId },
+                { $addToSet: { comments: body } },
+                { runValidators: true, new: true }
+            )
+
+            if (!updatedPost) {
+                return res.status(400).json({ message: "Can't find post with that ID!" });
+            }
+
+            res.json(updatedPost)
+    
+        } catch(err) {
+            res.status(500).json(err);
+        }
+    },
+
+    // delete single comment
+    async deleteComment({ params }, res) {
+        try {
+            const updatedPost = await Post.findOneAndUpdate(
+                { _id: params.postId },
+                { $pull: { comments: { commentId: params.commentId } } },
+                { new: true }
+            )
+
+            if (!updatedPost) {
+                return res.status(400).json({ message: "Can't find post with that ID!" });
+            }
+
+            res.json({ message: 'Comment successfully deleted!' })
+    
+        } catch(err) {
+            res.status(500).json(err);
+        }
+    },
     
 }
