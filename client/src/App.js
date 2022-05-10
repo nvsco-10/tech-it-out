@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Main from './components/Main';
+import Contact from './components/Contact';
 import './css/app.css'
 
 import {
@@ -13,8 +14,7 @@ import {
 
 
 export default function App() {
-  const [errorMessages, setErrorMessages] = useState({});
-  const [isSubmitted, setIsSubmitted] = useState(false);
+
 
   return (
     <div>
@@ -23,6 +23,7 @@ export default function App() {
       <Route path="/" element={<Main />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
+      <Route path="/contact" element={<Contact />} />
 
     </Routes>
       </Router>
