@@ -2,57 +2,66 @@ import React, {useState} from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-import Header from './Header';
+import { Button, Notification } from 'react-bulma-components';
+// import Header from './Header';
 
-import {loginUser} from '../utils/API'
+import { loginUser } from '../utils/API'
 import Auth from '../utils/auth';
 
 export default function Login() {
   const eye = <FontAwesomeIcon icon={faEye} />;
+
+  const [userFormData, setUserFormData] = useState({ username: '', password: '' });
   const [passwordShown, setPasswordShown] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
+
   const togglePasswordVisiblity = () => {
     setPasswordShown(passwordShown ? false : true);
-    
   };
-  const [userFormData, setUserFormData] = useState({ username: '', password: '' });
-  // const [validated] = useState(false);
-  // const [showAlert, setShowAlert] = useState(false);
-
+  
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setUserFormData({ ...userFormData, [name]: value });
   }
   
-    const handleFormSubmit = async (event) => {
-      console.log(userFormData);
-      event.preventDefault();
-      
-      try {
-        const response = await loginUser(userFormData);
-  
-        if (!response.ok) {
-          throw new Error('something went wrong!');
-        }
-  
-        const { token, user } = await response.json();
-        console.log(user);
-        Auth.login(token);
-      } catch (err) {
-        console.error(err);
-        // setShowAlert(true);
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    
+    try {
+      const response = await loginUser(userFormData);
+
+      if (!response.ok) {
+        throw new Error('something went wrong!');
       }
-  
-      setUserFormData({
-        username: '',
-        password: '',
-      });
+
+      const { token, user } = await response.json();
+      
+      Auth.login(token);
+
+    } catch (err) {
+      console.error(err);
+      setShowAlert(true)
+    }
+
+    setUserFormData({
+      username: '',
+      password: '',
+    });
+
   };
 
   return (
     
     <div className="login_form">
-      <div><Header></Header></div>
-      <form  onSubmit={handleFormSubmit}>
+      <form onSubmit={handleFormSubmit}>
+
+        {showAlert && (
+        // Bulma component
+        <Notification color="danger" >
+          Login failed!
+          <Button remove onClick={() => setShowAlert(false)}>x</Button>
+        </Notification>
+        )}
 
         <input
           name="username"
@@ -62,6 +71,7 @@ export default function Login() {
           value={userFormData.username}
           required
           />
+
         <div className="pass-wrapper">
           <input
             placeholder="Password"
@@ -73,16 +83,20 @@ export default function Login() {
             />
           <i onClick={togglePasswordVisiblity}>{eye}</i>
         </div>
-          <button 
+
+        <button 
           type="submit"
           disabled={!(userFormData.username && userFormData.password)}
-          >
-            Submit
-          </button>
+        >
+          Submit
+        </button>
+
       </form>
+
       <div className='span-border'>
         <span className='span-link'><Link to="/signup">Sign Up</Link></span>
       </div>
+      
     </div>
   );
   
