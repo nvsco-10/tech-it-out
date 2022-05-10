@@ -1,0 +1,9 @@
+// Create user seed data for Gus, Jalen, Emily, Neema - all admins
+[
+  {
+    "username": "Brian Kernighan",
+    "email": "bkernighan@techfriends.dev",
+    "password": "password01",
+    "isAdmin": true
+  }
+]
