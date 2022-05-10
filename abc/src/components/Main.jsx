@@ -12,7 +12,7 @@ export default function Main() {
 
       <div>
         <section class="has-text-centered mt-5">
-          <h1 class="title is-center">I want to learn 🙂. . .</h1>
+          <h1 class="title is-center">I want to learn . . .</h1>
           <p>search bar goes here</p>
         </section>
 
