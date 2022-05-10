@@ -2,22 +2,20 @@ import React, {useState} from 'react'
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
-
+import { Button, Notification } from 'react-bulma-components';
 import { createUser } from '../utils/API';
 import Auth from '../utils/auth';
 
-
 export default function SignUp() {
   const eye = <FontAwesomeIcon icon={faEye} />;
+
+  const [userFormData, setUserFormData] = useState({ username: '', email: '', password: '' });
   const [passwordShown, setPasswordShown] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
+
   const togglePasswordVisiblity = () => {
     setPasswordShown(passwordShown ? false : true);
   };
-    // set initial form state
-  const [userFormData, setUserFormData] = useState({ username: '', email: '', password: '' });
-  // set state for form validation
-  // const [validated] = useState(false);
-
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -37,8 +35,10 @@ export default function SignUp() {
       const { token, user } = await response.json();
       console.log(user);
       Auth.login(token);
+
     } catch (err) {
       console.error(err);
+      setShowAlert(true)
     }
 
     setUserFormData({
@@ -46,52 +46,66 @@ export default function SignUp() {
       email: '',
       password: '',
     });
+    
   };
+
   return (
     <div className='login_form'>
 
      <h1>Sign Up For Free!</h1>
 
-  <form onSubmit={handleFormSubmit}>
+    <form onSubmit={handleFormSubmit}>
 
-    <input
-      name="email"
-      type="text"
-      placeholder="Email"
-      onChange={handleInputChange}
-      value={userFormData.email}
-      required
-      />
-      <br/>
-    <input
-      name="username"
-      type="text"
-      placeholder="Username"
-      onChange={handleInputChange}
-      value={userFormData.username}
-      required
-      />
-    
-    <div className="pass-wrapper">
+        {showAlert && (
+          // Bulma component
+          <Notification color="danger" >
+            Sign Up failed!
+            <Button remove onClick={() => setShowAlert(false)}>x</Button>
+          </Notification>
+        )}
+
       <input
-        placeholder="Password"
-        name="password"
-        type={passwordShown ? "text" : "password"}
+        name="username"
+        type="text"
+        placeholder="Username"
         onChange={handleInputChange}
-        value={userFormData.password}
+        value={userFormData.username}
         required
         />
-      <i onClick={togglePasswordVisiblity}>{eye}</i>
+
+      <input
+        name="email"
+        type="text"
+        placeholder="Email"
+        onChange={handleInputChange}
+        value={userFormData.email}
+        required
+        />
+      
+      <div className="pass-wrapper">
+        <input
+          placeholder="Password"
+          name="password"
+          type={passwordShown ? "text" : "password"}
+          onChange={handleInputChange}
+          value={userFormData.password}
+          required
+          />
+        <i onClick={togglePasswordVisiblity}>{eye}</i>
       </div>
+
       <button 
-      type="submit"
-      disabled={!(userFormData.username && userFormData.email && userFormData.password)}>
-        Submit
+          type="submit"
+          disabled={!(userFormData.username && userFormData.email && userFormData.password)}>
+          Submit
       </button>
-  </form>
-<div className='span-border'>
+
+    </form>
+
+    <div className='span-border'>
       <span className='span-link'><Link to="/">Back To Login</Link></span>
     </div>
+
   </div>
   )
 }
