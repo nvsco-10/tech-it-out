@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import Login from './components/Login';
-import SignUp from './components/SignUp';
+import Signup from './components/Signup';
+import Main from './components/Main';
 import './css/app.css'
 
 import {
@@ -19,8 +20,9 @@ export default function App() {
     <div>
       <Router>
       <Routes>
-      <Route path="/" element={<Login />} />
-      <Route path="/signup" element={<SignUp />} />
+      <Route path="/" element={<Main />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
 
     </Routes>
       </Router>
