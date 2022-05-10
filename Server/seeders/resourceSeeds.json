@@ -1,13 +1,223 @@
-// Resources seed data
-
-// sample format below:
 
 [
+  
   {
-    "name": "github",
+    "name": "box shadow examples - css scan",
     "type": "tools",
     "level": "all",
-    "description": "A website for blah blah blah.",
-    "link": "www.github.com"
+    "description": "get css for the most common box shadow styling",
+    "link": "https://getcssscan.com/css-box-shadow-examples"
+  },
+  {
+    "name": "css-tricks",
+    "type": "misc",
+    "level": "all",
+    "description": "everything you need to know about css - tips & tricks",
+    "link": "https://css-tricks.com/almanac/"
+  },
+  {
+    "name": "collect ui",
+    "type": "misc",
+    "level": "all",
+    "description": "design inspiration",
+    "link": "https://collectui.com/"
+  },
+  {
+    "name": "color hunt",
+    "type": "tools",
+    "level": "all",
+    "description": "color palletes for designers and artists",
+    "link": "https://colorhunt.co/"
+  },
+  {
+    "name": "font awesome",
+    "type": "tools",
+    "level": "all",
+    "description": "free and paid icons",
+    "link": "https://fontawesome.com/"
+  },
+  {
+    "name": "condepen",
+    "type": "tools",
+    "level": "all",
+    "description": "online code editor ",
+    "link": "https://codepen.io/"
+  },
+  {
+    "name": "favicon generator",
+    "type": "tools",
+    "level": "all",
+    "description": "create your own favicon",
+    "link": "https://www.favicon.cc/"
+  },
+  {
+    "name": "css font stack",
+    "type": "tools",
+    "level": "all",
+    "description": "A complete collection of web safe CSS font stacks.",
+    "link": "https://www.cssfontstack.com/"
+  },
+  {
+    "name": "lorem ipsum - generator",
+    "type": "tools",
+    "level": "all",
+    "description": "lorem ipsum generator - customizable",
+    "link": "https://loremipsum.io/"
+  },
+  {
+    "name": "css button generator",
+    "type": "tools",
+    "level": "all",
+    "description": "css button generator",
+    "link": "https://css3buttongenerator.com/"
+  },
+  {
+    "name": "flaticon - vector icons and stickers",
+    "type": "tools",
+    "level": "all",
+    "description": "free icons",
+    "link": "https://www.flaticon.com/"
+  },
+  {
+    "name": "ui-patterns",
+    "type": "misc",
+    "level": "all",
+    "description": "User Interface Design patterns are recurring solutions that solve common design problems. Design patterns are standard reference points for the experienced user interface designer.",
+    "link": "https://ui-patterns.com/"
+  },
+  {
+    "name": "daily ui design challenge",
+    "type": "projects",
+    "level": "all",
+    "description": "sign-up for daily ui design challenges",
+    "link": "https://www.dailyui.co/"
+  },
+  {
+    "name": "canva",
+    "type": "tools",
+    "level": "all",
+    "description": "free graphic design platform to create mock ups, logos, images, etc.",
+    "link": "https://www.canva.com/"
+  },
+  {
+    "name": "adobe color",
+    "type": "tools",
+    "level": "all",
+    "description": "find beautiful color combinations for your designing ",
+    "link": "https://color.adobe.com/create/color-wheel"
+  },
+  {
+    "name": "karel ide",
+    "type": "games",
+    "level": "beginner",
+    "description": "simple game or playground to practice writing simple javascript commands",
+    "link": "http://stanford.edu/~cpiech/karel/ide.html"
+  },
+  {
+    "name": "flex froggy",
+    "type": "games",
+    "level": "intermediate",
+    "description": "a game where you help Froggy and friends by writing CSS code",
+    "link": "https://flexboxfroggy.com/"
+  },
+  {
+    "name": "practice javascript",
+    "type": "games",
+    "level": "beginner",
+    "description": "practice javascript with this fun game",
+    "link": "https://practicejavascript.com/"
+  },
+  {
+    "name": "coding game",
+    "type": "games",
+    "level": "all",
+    "description": "coding games and programming challenges to code better",
+    "link": "https://www.codingame.com/start"
+  },
+  {
+    "name": "css diner ",
+    "type": "games",
+    "level": "beginner",
+    "description": "test your css selectors skills",
+    "link": "https://flukeout.github.io/"
+  },
+  {
+    "name": "flex defense",
+    "type": "games",
+    "level": "intermediate",
+    "description": "Your job is to stop the incoming enemies from getting past your defenses. Unlike other tower defense games, you must position your towers using CSS!",
+    "link": "http://www.flexboxdefense.com/"
+  },
+  {
+    "name": "css grid garden",
+    "type": "games",
+    "level": "intermediate",
+    "description": "learn and practice css grid properties",
+    "link": "https://cssgridgarden.com/"
+  },
+  {
+    "name": "SQL murder myster",
+    "type": "games",
+    "level": "intermediate",
+    "description": "The SQL Murder Mystery is designed to be both a self-directed lesson to learn SQL concepts and commands and a fun game for experienced SQL users to solve an intriguing crime.",
+    "link": "https://mystery.knightlab.com/"
+  },
+  {
+    "name": "Untrusted",
+    "type": "games",
+    "level": "intermediate",
+    "description": "Test your javascript and problem solving skills",
+    "link": "https://alexnisnevich.github.io/untrusted/"
+  },
+  {
+    "name": "Elevator Saga",
+    "type": "games",
+    "level": "all",
+    "description": "the elevator programming game",
+    "link": "http://play.elevatorsaga.com/"
+  },
+  {
+    "name": "Hipster Ipsum",
+    "type": "tools",
+    "level": "all",
+    "description": "dummy text generator",
+    "link": "https://hipsum.co/"
+  },
+  {
+    "name": "readme",
+    "type": "tools",
+    "level": "all",
+    "description": "readme generator",
+    "link": "https://readme.so/"
+  },
+  {
+    "name": "React Icons",
+    "type": "tools",
+    "level": "all",
+    "description": "free react icons",
+    "link": "https://react-icons.github.io/react-icons/"
+  },
+  {
+    "name": "Mr. Codes Wild Ride",
+    "type": "projects",
+    "level": "all",
+    "description": "Javascript curriculum with projects",
+    "link": "https://www.mrcodeswildride.com/curriculum"
+  },
+  {
+    "name": "Vanilla Javascript Projects",
+    "type": "projects",
+    "level": "beginner",
+    "description": "Beginner to intermediate Javascript projects to solidify your knowledge",
+    "link": "https://www.vanillajavascriptprojects.com/"
+  },
+  {
+    "name": "Javascript30",
+    "type": "projects",
+    "level": "beginner",
+    "description": "30 day vanilla JS coding challenge",
+    "link": "https://javascript30.com/"
   }
+
 ]
+
