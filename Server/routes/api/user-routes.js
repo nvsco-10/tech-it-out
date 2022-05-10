@@ -19,7 +19,7 @@ router.route('/login').post(login);
 
 router.route('/:id').delete(deleteUser);
 
-router.route('/posts/:postId').delete(authMiddleware, deletePost);
+// router.route('/posts/:postId').delete(authMiddleware, deletePost);
 
 
 

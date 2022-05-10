@@ -21,7 +21,13 @@ const userSchema = new Schema(
     isAdmin: {
         type: Boolean,
         default: false
-    }
+    },
+    posts: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Post'
+      }
+    ],
   },
   // set this to use virtual below
   {
@@ -47,10 +53,10 @@ userSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
 
-  // when we query a user, we'll also get another field called `postCount` with the number of posts we have
-//   userSchema.virtual('postCount').get(function () {
-//     return this.posts.length;
-//   });
+
+userSchema.virtual('postCount').get(function () {
+  return this.posts.length;
+});
   
 const User = model('User', userSchema);
 

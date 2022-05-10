@@ -1,9 +1,12 @@
 // Resources seed data
 
-// format below:
+// sample format below:
+
 [
   {
     "name": "github",
+    "type": "tools",
+    "level": "all",
     "description": "A website for blah blah blah.",
     "link": "www.github.com"
   }
