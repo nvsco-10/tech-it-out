@@ -1,40 +1,54 @@
 import React, {useState} from 'react'
-// import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
+
+
 const eye = <FontAwesomeIcon icon={faEye} />;
 
-export default function Login() {
+export default function SignUp() {
+
   const [passwordShown, setPasswordShown] = useState(false);
   const togglePasswordVisiblity = () => {
     setPasswordShown(passwordShown ? false : true);
   };
-  // const { register, handleSubmit } = useForm();
-  // const onSubmit = data => {
-  //   console.log(data);
   return (
-    
-    <div className="App">
-      <input
-        name="username"
-        type="text"
-        placeholder="Username"
+    <div className='login_form'>
+
+     <h1>Sign Up For Free!</h1>
+
+  <form action="">
+
+    <input
+      name="email"
+      type="text"
+      placeholder="Email"
+      required
       />
-      <div className="pass-wrapper">
-        <input
-          placeholder="Password"
-          name="password"
-          type={passwordShown ? "text" : "password"}
-          />
-        <span onClick={togglePasswordVisiblity}>{eye}</span>
+      <br/>
+    <input
+      name="newUsername"
+      type="text"
+      placeholder="Username"
+      required
+      />
+    
+    <div className="pass-wrapper">
+      <input
+        placeholder="Password"
+        name="password"
+        type={passwordShown ? "text" : "password"}
+        required
+        />
+      <i onClick={togglePasswordVisiblity}>{eye}</i>
       </div>
       <button type="submit">
         Submit
       </button>
-      <div>
-          <button>Sign Up!</button>
-     </div>
+  </form>
+<div className='span-border'>
+      <span className='span-link'><Link to="/">Back To Login</Link></span>
     </div>
-  );
-  
-};
+  </div>
+  )
+}
