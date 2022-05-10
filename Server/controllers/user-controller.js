@@ -9,7 +9,9 @@ module.exports = {
     try {
       const foundUser = await User.findOne({
         $or: [{ username: params.username }],
-      });
+      })
+        .populate('posts')
+        .select('-__v')
   
       if (!foundUser) {
         return res.status(400).json({ message: 'Cannot find a user with this id!' });
@@ -71,16 +73,5 @@ module.exports = {
     res.json({ token, user });
   },
 
-  // delete a user's post
-  async deletePost({ user, params }, res) {
-    const updatedUser = await User.findOneAndUpdate(
-      { _id: user._id },
-      { $pull: { posts: { postId: params.postId } } },
-      { new: true }
-    );
-    if (!updatedUser) {
-      return res.status(404).json({ message: "Couldn't find user with this id!" });
-    }
-    return res.json(updatedUser);
-  },
+  
 };

@@ -1,15 +1,14 @@
 const router = require('express').Router();
-const { createPost } = require('../../controllers/post-controller');
+const { getPosts, createPost, getSinglePost } = require('../../controllers/post-controller');
 
-// /api/thoughts
+// /api/posts
 router.route('/')
+    .get(getPosts)
     .post(createPost);
 
-// /api/thoughts/:thoughtId
-// router.route('/:thoughtId')
-//     .get(getSingleThought)
-//     .put(updateThought)
-//     .delete(deleteThought);
+// /api/posts/:postId
+router.route('/:postId')
+    .get(getSinglePost)
 
 
 

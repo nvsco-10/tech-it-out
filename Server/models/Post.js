@@ -40,6 +40,10 @@ const postSchema = new Schema(
             minLength: 1,
             maxLength: 280,
         },
+        category: {
+            type: String,
+            required: true,
+        },
         content: {
             type: String,
             required: true,
