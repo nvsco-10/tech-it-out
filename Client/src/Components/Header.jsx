@@ -5,7 +5,7 @@ export default function Header() {
     <div>
       <header>
           {/* <marquee behavior="" direction=""> */}
-              <h1>Welcome To Tech-About It !!</h1>
+              <h1>Welcome, To Tech-About It !!</h1>
               
               {/* </marquee> */}
         </header>

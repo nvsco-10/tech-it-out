@@ -3,6 +3,7 @@ import React, {useState} from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import Header from './Header';
 
 const eye = <FontAwesomeIcon icon={faEye} />;
 
@@ -14,27 +15,32 @@ export default function Login() {
 
   return (
     
-    <div className="App">
+    <div className="login_form">
+      <div><Header></Header></div>
       <form action="">
 
         <input
           name="username"
           type="text"
-          placeholder="Username"
+          placeholder="Username/Email"
+          required
           />
         <div className="pass-wrapper">
           <input
             placeholder="Password"
             name="password"
             type={passwordShown ? "text" : "password"}
+            required
             />
-          <span onClick={togglePasswordVisiblity}>{eye}</span>
+          <i onClick={togglePasswordVisiblity}>{eye}</i>
         </div>
           <button type="submit">
             Submit
           </button>
       </form>
-      <span><Link to="/signup">Sign Up</Link></span>
+      <div className='span-border'>
+        <span className='span-link'><Link to="/signup">Sign Up</Link></span>
+      </div>
     </div>
   );
   
