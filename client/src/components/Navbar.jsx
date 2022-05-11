@@ -1,5 +1,4 @@
 import React from 'react'
-// import Resources from './Resources' 
 import { Link } from "react-router-dom";
 
 

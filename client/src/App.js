@@ -6,6 +6,7 @@ import Contact from './components/Contact';
 import Resources from './components/Resources';
 import Community from './components/Community';
 import About from './pages/About';
+import Profile from './pages/Profile';
 import './css/app.css'
 
 import {
@@ -30,6 +31,7 @@ export default function App() {
       <Route path="/resources" element={<Resources />} />
       <Route path="/community" element={<Community />} />
       <Route path="/about" element={<About />} />
+      <Route path="/profile" element={<Profile />} />
 
     </Routes>
       </Router>
