@@ -57,6 +57,16 @@ export const createComment = (data,id) => {
   });
 };
 
+// get all posts
+export const getPosts = () => {
+  return fetch('/api/posts', {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+};
+
 export const createPost = (data) => {
   return fetch('/api/posts/', {
     method: 'POST',
