@@ -1,9 +1,13 @@
-import React from 'react'
+import React, {useState,useref} from 'react'
 import Navbar from '../components/Navbar'
 import "bulma/css/bulma.min.css";
 import "../css/app.css";
 
+
 export default function Profile() {
+    const [name, setName] = useState('')
+    // const inputRef = useref()
+
   return (
     <>
     <div><Navbar/></div>
@@ -16,7 +20,15 @@ export default function Profile() {
                     </figure>
 
                     <div className='has-text-black is-size-4            has-text-centered m-3'>
-                        <p>Gary Almonds</p> 
+                        <p>{name}</p>
+                     
+
+                        <input type="text"
+                        placeholder='Name'
+                         /> 
+                         <br />
+                        <button>Submit</button>
+                         
                     </div>
                 </header>
 
