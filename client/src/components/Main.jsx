@@ -17,13 +17,13 @@ export default function Main() {
         </section>
 
         <section class="has-text-centered mt-5">
-          <h1 class="title">Join the Community</h1>
-          <button class="button is-info">Become a Member</button>
+          <h1 class="title">JOIN THE COMMUNITY</h1>
+          <button class="button is-info">BECOME A MEMBER</button>
           <br />
           <div class="mt-5">
-            <img src="#" alt="placeholder" />
-            <img src="#" alt="placeholder" />
-            <img src="#" alt="placeholder" />
+            <img class="pr-6 pb-4"src="http://placehold.jp/250x250.png" alt="placeholder" />
+            <img class="pr-6 pb-4"src="http://placehold.jp/250x250.png" alt="placeholder" />
+            <img class="pr-6 pb-4"src="http://placehold.jp/250x250.png" alt="placeholder" />
           </div>
         </section>
       </div>

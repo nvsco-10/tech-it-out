@@ -1,4 +1,5 @@
 import React from "react";
+import logo from '../images/tech-it-out-black.png'
 
 export default function Header() {
   return (
@@ -12,16 +13,16 @@ export default function Header() {
         <nav class="navbar" role="navigation">
           <div class="navbar-brand">
             <a class="navbar-item" href="#">
-              <img src="../../../public/images/logo-tech-it-black.png" />
+              <img src={logo} alt="tech it out" />
             </a>
           </div>
 
           <div class="navbar-start">
             <nav class="navbar-menu">
-              <a class="navbar-item">Resources</a>
-              <a class="navbar-item">Community</a>
+              <a class="navbar-item">RESOURCES</a>
+              <a class="navbar-item">COMMUNITY</a>
             </nav>
-            <button class="button is-info">Become a Member</button>
+            <button class="button is-info">LOGIN</button>
           </div>
         </nav>
       </header>
