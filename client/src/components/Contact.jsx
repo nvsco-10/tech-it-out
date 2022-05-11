@@ -1,92 +1,98 @@
 import React, {useState} from 'react'
+import { Link } from "react-router-dom";
+import validator from 'validator'
+
+
 
 export default function Contact() {
 
-    const defForm = {
-        name: '',
-        email: '',
-        message: ''
-    }
-
-    const [ formData, setFormData ] = useState(defForm);
-    const [ nameError, setNameError ] = useState('');
-    const [ emailError, setEmailError] = useState('');
-    const [ messageError, setMessageError ] = useState('');
-
-    const handleInputChange = (e) => {
+    const [userFormData, setUserFormData] = useState({   name: '',
+    email: '',
+    message: ''});
+    const [emailError, setEmailError] = useState('')
+   
+    
+    const handleInputChange = (event) => {
+        const { name, value } = event.target;
+        setUserFormData({ ...userFormData, [name]: value });
         
-        if (e.target.name === "name") {
-            !e.target.value ? setNameError(`${e.target.name} is required.`) : setNameError('');
-        }
+    };
 
-        if (e.target.name === "message") {
-            !e.target.value ? setMessageError(`${e.target.name} is required.`) : setMessageError('');
-        }
+    const validateEmail = (e) => {
+        let email = e.target.value
         
-        setFormData({...formData, [e.target.name]: e.target.value})
-    }
-
-    const handleEmailInput = (e) => {
-        const emailRegex = /\S+@\S+\.\S+/;
-
-        if (emailRegex.test(e.target.value)) {
-            setFormData({...formData, [e.target.name]: e.target.value})
-            setEmailError('');
+        if (validator.isEmail(email)) {
+            setEmailError('Valid Email :)')
         } else {
-            setEmailError('please enter a valid email');
+            setEmailError('Enter valid Email!')
         }
-            
     }
+    
+    const handleFormSubmit = async (event) => {
+      event.preventDefault();
+  
+      setUserFormData({
+        email: '',
+        name: '',
+        message:''
+        
+      });
+      
+    };
+  
+    return (
+    <div className='login_form'>
+  
+        <h1>Ask us a question!</h1>
+    
+        <form onSubmit={handleFormSubmit}>
+       
+            <div className="form-row">
+                  
+                    <input
+                    placeholder='Name'
+                    type="text"
+                    name="name"
+                    required
+                    onChange={handleInputChange}
+                    />
+            </div>
+  
+                <div>
 
-    const submitForm = (e) => {
-        e.preventDefault();
-
-        console.log(formData)
-    }
-  return (
-    <section className="contact">
-
-    <h2 className="section-heading">contact</h2>
-
-    <form className="contact-form" onSubmit={submitForm}>
-        <div className="form-row">
-            <label>Name</label>
-            <input
-                type="text"
-                name="name"
-                required
-                onChange={handleInputChange}
-            />
-            {nameError.length > 0 && (
-                <p className="error">{nameError}</p>
-            )}
-        </div>
-        <div className="form-row">
-            <label>Email Address</label>
-            <input
-                type="email"
-                name="email"
-                required
-                onChange={handleEmailInput}
-            />
-            {emailError.length > 0 && (
-                <p className="error">{emailError}</p>
-            )}
-        </div>
-        <div className="form-row">
-            <label>Message</label>
-            <textarea name="message" required rows="4" cols="79" onChange={handleInputChange} /> 
-        </div>
-        {messageError.length > 0 && (
-        <div>
-            <p className="error">{messageError}</p>
-        </div>
-        )}
-        <div>
-            <button className="contact-btn">Send</button>
-        </div>
-    </form> 
-</section>
-
+                    <input
+                    name="email"
+                    type="text"
+                    placeholder="Email"
+                    onChange={(e) => { handleInputChange(e); validateEmail(e)}}
+                    value={userFormData.email}
+                    required
+                    />
+                    <span style={{
+          fontWeight: 'bold',
+          color: 'aqua',
+        }}>{emailError}</span>
+                    </div>
+                
+                     <textarea 
+                     placeholder='Message..'
+                     name="message" required rows="4" cols="79" onChange={handleInputChange}
+                     /> 
+           
+        
+                <button 
+                    type="submit"
+                    disabled={!(userFormData.name && userFormData.email && userFormData.message)}>
+                    
+                    Submit
+                </button>
+                    
+        </form>
+            <div className='span-border'>
+                <span className='span-link'><Link to="/">Back To Home</Link></span>
+            </div>
+    </div>
+    
   )
 }
+
