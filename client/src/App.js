@@ -5,6 +5,9 @@ import Main from './components/Main';
 import Resources from './components/Resources';
 import Community from './components/Community';
 import Contact from './components/Contact';
+import Resources from './components/Resources';
+import Community from './components/Community';
+import About from './pages/About';
 import './css/app.css'
 
 import {
@@ -28,6 +31,9 @@ export default function App() {
       <Route path="/resources" element={<Resources />} />
       <Route path="/community" element={<Community />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/resources" element={<Resources />} />
+      <Route path="/community" element={<Community />} />
+      <Route path="/about" element={<About />} />
 
     </Routes>
       </Router>

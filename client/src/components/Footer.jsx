@@ -9,7 +9,7 @@ export default function Header() {
           <p>Suggest a resource - suggestions@learnwebdev.com</p>
           <div class="navbar-menu has-text-centered">
             <a class="navbar-item"><Link to="/contact">Contact</Link></a>
-            <a class="navbar-item">About Us</a>
+            <a class="navbar-item"><Link to="/about">About Us</Link></a>
             <a class="navbar-item">Privacy Policy</a>
           </div>
           <p>copyright 2022</p>
