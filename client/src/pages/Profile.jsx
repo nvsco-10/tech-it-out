@@ -13,7 +13,7 @@ export default function Profile() {
   const getUserPosts = async (id) => {
     const data = await getUserById(id);
     const result = await data.json();
-    console.log(result)
+
     setPosts(result.posts)
   }
 
