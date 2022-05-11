@@ -1,7 +1,7 @@
 import React from "react";
 import "bulma/css/bulma.min.css";
-import Header from "./Header";
-import Footer from "./Footer";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 
 export default function Main() {
