@@ -1,95 +1,66 @@
-import React, {useState,useref} from 'react'
+import { useState, useEffect } from 'react'
 import Navbar from '../components/Navbar'
+import Auth from '../utils/auth';
 import "bulma/css/bulma.min.css";
-import "../css/app.css";
+import { getUserById } from '../utils/API'
+import "../css/style.css";
+import PostList from '../components/PostList'
 
 
 export default function Profile() {
-    const [name, setName] = useState('')
-    // const inputRef = useref()
+  const [userData, setUserData] = useState({});
+  const [posts, setPosts] = useState([])
+
+  const getUserPosts = async (id) => {
+    const data = await getUserById(id);
+    const result = await data.json();
+    console.log(result)
+    setPosts(result.posts)
+  }
+
+  useEffect(() => {
+    const getUserData = async () => {
+      try {
+        const isLoggedIn = Auth.loggedIn() 
+
+        if (!isLoggedIn) {
+          return false;
+        }
+
+        const response = await Auth.getProfile();
+
+        if (!response) {
+          throw new Error('something went wrong!');
+        }
+
+        setUserData(response.data);
+        getUserPosts(response.data._id)
+
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
+    getUserData();
+
+  }, []);
 
   return (
     <>
-    <div><Navbar/></div>
-        <h2 className="title has-text-centered">My Profile</h2>
-             <div className="card mb-6">
-                <header className="card-header card-header-title    has-background-grey-lighter">
+      <div><Navbar/></div>
 
-                    <figure className="image is-128x128">
-                         <img className="is-rounded" src="https://media.istockphoto.com/photos/koala-on-eucalyptus-tree-picture-id992046278?"/>
-                    </figure>
+      {/* USER DETAILS HERE */}
+      <div>
+        <h2>User Profile</h2>
+        <img src='https://via.placeholder.com/250' alt='placeholder' />
+        <p>{userData._id}</p>
+        <p>username: {userData.username}</p>
+        <p>email: {userData.email}</p>
+      </div>
+        
+      <h2>POSTS</h2>
+      {/* {<PostList posts={posts} />} */}
 
-                    <div className='has-text-black is-size-4            has-text-centered m-3'>
-                        <p>{name}</p>
-                     
-
-                        <input type="text"
-                        placeholder='Name'
-                         /> 
-                         <br />
-                        <button>Submit</button>
-                         
-                    </div>
-                </header>
-
-    <div className="card-content">
-              <div className="content has-text-justified">
-                  <h3>How To Reach Me</h3>
-
-                    <div className='list-item'>
-                       <a href="mailto:gary@gmail.com"> <img src="https://img.icons8.com/ios-filled/48/apple-mail.png" alt="mail-logo"/></a> 
-                    </div>
-                    <div>
-                        <a href="https://github.com/garytalmes" target="_blank" rel="noopener noreferrer"><img src="https://img.icons8.com/material-outlined/48/github.png" alt="github-logo"/></a>
-                       
-                    </div>
-                    <div>
-                        <a href="http://www.linkedin.com/" target="_blank" rel="noopener noreferrer"><img src="https://img.icons8.com/ios-glyphs/48/linkedin-circled--v1.png" alt="linkedin-logo"/> </a>
-                    </div>
-     
-              </div>
-           
-            </div>
-            </div>
-
-      
-    <div className="card mb-6">
-    <h2 className="title has-text-centered">My Post</h2>
-            <header className="card-header card-header-title has-background-grey-lighter">
-              <div className="column">
-                <p className=" has-text-primary-light">
-                  <a
-                    href="/post/1" // would actually be /post/id
-                    className="has-text-black is-capitalized is-pulled-left"
-                  >
-                    I need a study buddy. I just started javascript.
-                  </a>
-                </p>
-              </div>
-
-              <div className="column">
-                <span className=""> </span>
-              </div>
-            </header>
-
-    <div className="card-content">
-              <div className="content has-text-justified">
-                I just started Codecademy. Prefer someone in the same timezone -
-                GMT. Email me at gus123@gmail.com.
-              </div>
-              <div className="is-pulled-right">
-                <b>user.username</b>
-                <a href="https://twitter.com/{{user.twitter}}">
-                  <i className="fab fa-twitter"></i>
-                </a>
-                <a href="https://github.com/{{user.github}}">
-                  <i className="fab fa-github"></i>
-                </a>
-                April 22, 2022
-                <a href="#">24 comments</a>
-              </div>
-            </div>
-            </div>
     </>
   )
 }
