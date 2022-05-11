@@ -1,16 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function Header() {
+export default function Footer() {
   return (
     <div>
-      <footer class="footer">
-        <div class="content has-text-centered">
+      <footer className="footer">
+        <div className="content has-text-centered">
           <p>Suggest a resource - suggestions@learnwebdev.com</p>
-          <div class="navbar-menu has-text-centered">
-            <a class="navbar-item"><Link to="/contact">Contact</Link></a>
-            <a class="navbar-item"><Link to="/about">About Us</Link></a>
-            <a class="navbar-item">Privacy Policy</a>
+          <div className="navbar-menu has-text-centered">
+            <a className="navbar-item"><Link to="/contact">Contact</Link></a>
+            <a className="navbar-item"><Link to="/about">About Us</Link></a>
+            <a className="navbar-item">Privacy Policy</a>
           </div>
           <p>copyright 2022</p>
         </div>

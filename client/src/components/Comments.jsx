@@ -1,15 +1,15 @@
 import React from "react";
 
-export default function Header() {
+export default function Comment() {
   return (
     <div>
-      <div class="comments">
+      <div className="comments">
         {/* {{#each this}} */}
-        <section class="comment">
-          <div class="meta">
+        <section className="comment">
+          <div className="meta">
             {/* {{user.username}} on {{format_date created_at}} */}
           </div>
-          <div class="text">{/* {{comment_text}} */}</div>
+          <div className="text">{/* {{comment_text}} */}</div>
         </section>
         {/* {{/each}} */}
       </div>

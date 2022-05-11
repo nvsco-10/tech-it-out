@@ -12,43 +12,43 @@ export default function Main() {
       </div>
 
       <div className="resource-body">
-        <h1 class="title has-text-centered">RESOURCES</h1>
-        <div class="has-text-centered">
+        <h1 className="title has-text-centered">RESOURCES</h1>
+        <div className="has-text-centered">
           <p>FILTER:</p>
-          <button class="button m-4 is-info">PROJECTS</button>
-          <button class="button m-4 is-warning">GAMES</button>
-          <button class="button m-4 is-danger">TOOLS</button>
-          <button class="button m-4 is-success">ALL</button>
+          <button className="button m-4 is-info">PROJECTS</button>
+          <button className="button m-4 is-warning">GAMES</button>
+          <button className="button m-4 is-danger">TOOLS</button>
+          <button className="button m-4 is-success">ALL</button>
         </div>
 
         {/* hardcoded article cards */}
-        <div class="columns mt-5 is-8 is-variable">
-          <div class="container has-text-centered">
-            <div class="columns is-mobile is-centered">
+        <div className="columns mt-5 is-8 is-variable">
+          <div className="container has-text-centered">
+            <div className="columns is-mobile is-centered">
               {/* CARD 1 */}
-              <div class="column is-4-tablet is-3-desktop">
-                <div class="card">
-                  <div class="card-image has-text-centered">
-                    <figure class="image is-2by1">
+              <div className="column is-4-tablet is-3-desktop">
+                <div className="card">
+                  <div className="card-image has-text-centered">
+                    <figure className="image is-2by1">
                       <img
                         src="http://placehold.jp/ff3860/ffffff/546x273.png"
                         alt="Placeholder image"
                       />
                     </figure>
                   </div>
-                  <div class="card-content">
-                    <div class="media">
-                      <div class="media-content">
-                        <p class="title is-5">README GENERATOR</p>
+                  <div className="card-content">
+                    <div className="media">
+                      <div className="media-content">
+                        <p className="title is-5">README GENERATOR</p>
                         <div>
-                          <a class="button is-danger mr-2">TOOLS</a>
-                          <a class="button is-warning mr-2">ALL SKILLS</a>
+                          <a className="button is-danger mr-2">TOOLS</a>
+                          <a className="button is-warning mr-2">ALL SKILLS</a>
                         </div>
                       </div>
                     </div>
-                    <div class="content">
-                      <div class="media-content">
-                        <p class="is-success">
+                    <div className="content">
+                      <div className="media-content">
+                        <p className="is-success">
                           A simple editor allows you to quickly add and
                           customize all the sections you need for your project's
                           readme.
@@ -61,28 +61,28 @@ export default function Main() {
 
               {/* CARD 2 */}
               <div className="column is-4-tablet is-3-desktop">
-                <div class="card">
-                  <div class="card-image">
-                    <figure class="image is-2by1">
+                <div className="card">
+                  <div className="card-image">
+                    <figure className="image is-2by1">
                       <img
                         src="http://placehold.jp/ff3860/ffffff/546x273.png"
                         alt="Placeholder image"
                       />
                     </figure>
                   </div>
-                  <div class="card-content">
-                    <div class="media">
-                      <div class="media-content">
-                        <p class="title is-5">HIPSTER IPSUM</p>
+                  <div className="card-content">
+                    <div className="media">
+                      <div className="media-content">
+                        <p className="title is-5">HIPSTER IPSUM</p>
                         <div>
-                          <a class="button is-danger mr-2">TOOLS</a>
-                          <a class="button is-warning mr-2">ALL SKILLS</a>
+                          <a className="button is-danger mr-2">TOOLS</a>
+                          <a className="button is-warning mr-2">ALL SKILLS</a>
                         </div>
                       </div>
                     </div>
-                    <div class="content">
-                      <div class="media-content">
-                        <p class="is-success">
+                    <div className="content">
+                      <div className="media-content">
+                        <p className="is-success">
                           Dummy text? More like dummy thicc text, amirite?
                         </p>
                       </div>
@@ -93,28 +93,28 @@ export default function Main() {
 
               {/* CARD 3 */}
               <div className="column is-4-tablet is-3-desktop">
-                <div class="card">
-                  <div class="card-image">
-                    <figure class="image is-2by1">
+                <div className="card">
+                  <div className="card-image">
+                    <figure className="image is-2by1">
                       <img
                         src="http://placehold.jp/ff3860/ffffff/546x273.png"
                         alt="Placeholder image"
                       />
                     </figure>
                   </div>
-                  <div class="card-content">
-                    <div class="media">
-                      <div class="media-content">
-                        <p class="title is-5">FEDERICO DOSSENA</p>
+                  <div className="card-content">
+                    <div className="media">
+                      <div className="media-content">
+                        <p className="title is-5">FEDERICO DOSSENA</p>
                         <div>
-                          <a class="button is-danger mr-2">TOOLS</a>
-                          <a class="button is-primary mr-2">BEGINNER</a>
+                          <a className="button is-danger mr-2">TOOLS</a>
+                          <a className="button is-primary mr-2">BEGINNER</a>
                         </div>
                       </div>
                     </div>
-                    <div class="content">
-                      <div class="media-content">
-                        <p class="is-success">
+                    <div className="content">
+                      <div className="media-content">
+                        <p className="is-success">
                           Some really cool looking responsive buttons using only
                           a few lines of CSS.
                         </p>
