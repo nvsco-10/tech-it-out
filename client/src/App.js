@@ -4,6 +4,7 @@ import Signup from './components/Signup';
 import Main from './pages/Main';
 import Contact from './components/Contact';
 import Resources from './pages/Resources';
+import SingleResource from './pages/SingleResource';
 import Community from './pages/Community';
 import About from './pages/About';
 import './css/app.css'
@@ -27,6 +28,7 @@ export default function App() {
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/resources" element={<Resources />} />
+      <Route path="/resources/:id" element={<SingleResource />} />
       <Route path="/community" element={<Community />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/about" element={<About />} />
