@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { Button, Notification } from 'react-bulma-components';
-// import Header from './Header';
+
 
 import { loginUser } from '../utils/API'
 import Auth from '../utils/auth';
@@ -34,7 +34,8 @@ export default function Login() {
         throw new Error('something went wrong!');
       }
 
-      const { token, user } = await response.json();
+      const { token } = await response.json();
+      // user
       
       Auth.login(token);
 

@@ -20,7 +20,7 @@ body {
     margin-top: 200px;
   }
   
-  input {
+  input, textarea {
     margin: 0 auto;
     background-color: black;
     opacity: 50%;
@@ -34,6 +34,10 @@ body {
     padding: 0 10%;
   }
   
+  textarea {
+    height: 100px;
+    resize: none;
+  }
   .pass-wrapper {
     position: relative;
     display: flex;
@@ -72,10 +76,10 @@ body {
      
   }
   
-  .span-link a {
+  /* span-link a {
       color: whitesmoke;
-  }
-  .span-link:hover, a:hover {
+  }. */
+  .span-link:hover {
       background-color: #018c65;
       color:#00000080 ;
   }

@@ -12,8 +12,8 @@ export default function Header() {
 
         <nav class="navbar" role="navigation">
           <div class="navbar-brand">
-            <a class="navbar-item" href="#">
-              <img src={logo} alt="tech it out" />
+            <a class="navbar-item" >
+              <img src="../../../public/images/logo-tech-it-black.png" />
             </a>
           </div>
 
