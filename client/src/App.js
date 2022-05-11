@@ -1,12 +1,10 @@
 import React  from 'react'
 import Login from './components/Login';
 import Signup from './components/Signup';
-import Main from './components/Main';
-import Resources from './components/Resources';
-import Community from './components/Community';
+import Main from './pages/Main';
+import Resources from './pages/Resources';
+import Community from './pages/Community';
 import Contact from './components/Contact';
-import Resources from './components/Resources';
-import Community from './components/Community';
 import About from './pages/About';
 import Profile from './pages/Profile';
 import './css/app.css'
@@ -32,8 +30,6 @@ export default function App() {
       <Route path="/resources" element={<Resources />} />
       <Route path="/community" element={<Community />} />
       <Route path="/contact" element={<Contact />} />
-      <Route path="/resources" element={<Resources />} />
-      <Route path="/community" element={<Community />} />
       <Route path="/about" element={<About />} />
       <Route path="/profile" element={<Profile />} />
 
