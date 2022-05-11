@@ -1,8 +1,11 @@
 import { useState, useEffect } from 'react'
 import Auth from '../utils/auth';
+import { useNavigate } from "react-router-dom";
 import { createPost } from '../utils/API';
 
 const CreatePost = () => {
+    const navigate = useNavigate();
+
     const defPost = {
         title: '',
         category: '',
@@ -28,7 +31,7 @@ const CreatePost = () => {
             throw new Error('something went wrong!');
             }
 
-            setPostData({ ...postData, ['username']: response.data.username });
+            setPostData({ ...postData, 'username': response.data.username });
 
         } catch (err) {
             console.error(err);
@@ -60,7 +63,8 @@ const CreatePost = () => {
 
         setPostData({...defPost});
 
-        //after post created, redirect user to single post page
+        //after submit form redirect user
+        navigate('/community');
 
     }
 

@@ -17,6 +17,15 @@ export const createUser = (userData) => {
     body: JSON.stringify(userData),
   });
 };
+
+export const getUserById = (id) => {
+  return fetch(`/api/users/${id}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+}
   
 export const loginUser = (userData) => {
   return fetch('/api/users/login', {
@@ -67,6 +76,15 @@ export const getPosts = () => {
   });
 };
 
+export const getPostById = (id) => {
+  return fetch(`/api/posts/${id}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+}
+
 export const createPost = (data) => {
   return fetch('/api/posts/', {
     method: 'POST',
@@ -76,3 +94,13 @@ export const createPost = (data) => {
     body: JSON.stringify(data),
   });
 };
+
+export const createPostComment = (data,id) => {
+  return fetch(`/api/posts/${id}`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  })
+}

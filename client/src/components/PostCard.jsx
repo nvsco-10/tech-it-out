@@ -1,18 +1,20 @@
-import React from 'react'
+import { Link } from "react-router-dom";
 
 const PostCard = ({id, title, content, username, category, createdAt, commentCount}) => {
   return (
     <div className="card mb-6">
         <header className="card-header card-header-title has-background-grey-lighter">
             <div className="column">
-                <p className=" has-text-primary-light">
-                    <a
-                    href="/post/1" // would actually be /post/id
-                    className="has-text-black is-capitalized is-pulled-left"
-                    >
-                    {title}
-                    </a>
-                </p>
+                <Link to={`/community/posts/${id}`}>
+                    <p className=" has-text-primary-light">
+                        <a
+                        href=""
+                        className="has-text-black is-capitalized is-pulled-left"
+                        >
+                        {title}
+                        </a>
+                    </p>
+                </Link>
             </div>
 
             <div className="column">
