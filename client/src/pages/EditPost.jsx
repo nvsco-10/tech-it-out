@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
-import Auth from '../utils/auth';
-import { useNavigate } from "react-router-dom";
-import { createPost } from '../utils/API';
+import { useNavigate, useParams } from "react-router-dom";
+import { getPostById, UpdatePostById } from '../utils/API';
 
-const CreatePost = () => {
+const EditPost = () => {
     const navigate = useNavigate();
+    const { id } = useParams();
 
     const defPost = {
         title: '',
@@ -14,31 +14,21 @@ const CreatePost = () => {
     }
 
     const [ postData, setPostData ] = useState(defPost)
-    // const [ userData, setUserData ] = useState({});
+
+    const getPostData = async (id) => {
+        const data = await getPostById(id);
+        const result = await data.json();
+
+        setPostData({
+            title: result.title,
+            category: result.category,
+            content: result.content,
+            username: result.username
+        })
+    }
 
     useEffect(() => {
-        const getUserData = async () => {
-        try {
-            const isLoggedIn = Auth.loggedIn() 
-
-            if (!isLoggedIn) {
-            return false;
-            }
-
-            const response = await Auth.getProfile();
-
-            if (!response) {
-            throw new Error('something went wrong!');
-            }
-
-            setPostData({ ...postData, 'username': response.data.username });
-
-        } catch (err) {
-            console.error(err);
-        }
-        };
-
-        getUserData();
+        getPostData(id)
     }, []);
     
 
@@ -46,16 +36,16 @@ const CreatePost = () => {
         const { name, value } = e.target;
         setPostData({ ...postData, [name]: value });
     
-      }
+    }
     
     const handleSubmit = async e => {
         e.preventDefault();
 
         console.log(postData)
 
-        const newPost = await createPost(postData)
+        const updatedPost = await UpdatePostById(postData,id)
 
-        if (!newPost) {
+        if (!updatedPost) {
         throw new Error('something went wrong!');
         }
 
@@ -64,12 +54,13 @@ const CreatePost = () => {
         setPostData({...defPost});
 
         //after submit form redirect user
-        navigate(`/community/`);
+        navigate(`/community/posts/${id}`);
 
     }
 
   return (
     <div>
+        <h2>Edit Post</h2>
         <div>
             <label>Category</label>
             <select
@@ -96,7 +87,7 @@ const CreatePost = () => {
         </div>  
         <div>
             <label>Content</label>
-            <input
+            <textarea
                 type="text"
                 name="content"
                 value={postData.content}
@@ -109,4 +100,4 @@ const CreatePost = () => {
   )
 }
 
-export default CreatePost
+export default EditPost

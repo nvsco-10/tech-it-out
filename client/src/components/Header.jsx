@@ -2,8 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../css/Header.scss";
 import logo from "../images/tech-it-out-black.png";
+import Auth from '../utils/auth';
 
 export default function Header() {
+  const isLoggedIn = Auth.loggedIn();
+
   return (
     <div>
       <header>
@@ -16,18 +19,12 @@ export default function Header() {
 
           <div className="navbar-start has-text-centered">
             <nav className="navbar-menu">
-              <a className="navbar-item">
-                <Link to="/resources">Resources</Link>
-              </a>
-              <a className="navbar-item">
-                <Link to="/community">Community</Link>
-              </a>
-              <a className="navbar-item">
-                <Link to="/">Home</Link>
-              </a>
-              <a className="navbar-item">
-                <Link to="/profile">Profile</Link>
-              </a>
+              <a className="navbar-item"><Link to="/resources">Resources</Link></a>
+              <a className="navbar-item"><Link to="/community">Community</Link></a>
+              <a className="navbar-item"><Link to="/">Home</Link></a>
+              {isLoggedIn && 
+              <a className="navbar-item"><Link to="/profile">Profile</Link></a>
+              }
             </nav>
             <button className="button is-info">
               <Link to="/login">Login</Link>
