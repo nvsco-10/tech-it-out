@@ -1,13 +1,50 @@
-import React from 'react'
+import { useState, useEffect } from 'react'
 import Navbar from '../components/Navbar'
+import Auth from '../utils/auth';
 import "bulma/css/bulma.min.css";
 import "../css/style.css";
 
 export default function Profile() {
+  const [userData, setUserData] = useState({});
+
+  useEffect(() => {
+    const getUserData = async () => {
+      try {
+        const isLoggedIn = Auth.loggedIn() 
+
+        if (!isLoggedIn) {
+          return false;
+        }
+
+        const response = await Auth.getProfile();
+
+        if (!response) {
+          throw new Error('something went wrong!');
+        }
+
+        setUserData(response.data);
+
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
+    getUserData();
+  }, []);
+
   return (
     <>
     <div><Navbar/></div>
+
+    {/* USER DETAILS HERE */}
+    <div>
+      <h2>User Profile</h2>
+      <img src='https://via.placeholder.com/250' alt='placeholder' />
+      <p>username: {userData.username}</p>
+      <p>email: {userData.email}</p>
+    </div>
       
+    <h2>POSTS</h2>
     <div class="card mb-6">
             <header class="card-header card-header-title has-background-grey-lighter">
               <div class="column">
