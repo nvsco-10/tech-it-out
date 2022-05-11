@@ -5,6 +5,7 @@ import Main from './pages/Main';
 import Resources from './pages/Resources';
 import SingleResource from './pages/SingleResource';
 import Community from './pages/Community';
+import CreatePost from './pages/CreatePost';
 import Contact from './components/Contact';
 import About from './pages/About';
 import Profile from './pages/Profile';
@@ -31,6 +32,7 @@ export default function App() {
       <Route path="/resources" element={<Resources />} />
       <Route path="/resources/:id" element={<SingleResource />} />
       <Route path="/community" element={<Community />} />
+      <Route path="/community/newpost" element={<CreatePost />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/about" element={<About />} />
       <Route path="/profile" element={<Profile />} />

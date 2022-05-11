@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "bulma/css/bulma.min.css";
 import "../css/style.css";
 import Header from "../components/Header";
@@ -18,7 +19,9 @@ export default function Main() {
         </div>
 
         <div className="section2 has-text-centered">
-          <button className="button is-warning">CREATE A POST</button>
+          <Link to={'/community/newpost'}>
+            <button className="button is-warning">CREATE A POST</button>
+          </Link>
           <div className="">
             <button className="button m-4 is-info">SHOW OFF</button>
             <button className="button m-4 is-danger">HELP ME</button>

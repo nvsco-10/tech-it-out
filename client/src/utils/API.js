@@ -56,3 +56,13 @@ export const createComment = (data,id) => {
     body: JSON.stringify(data),
   });
 };
+
+export const createPost = (data) => {
+  return fetch('/api/posts/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  });
+};
