@@ -4,8 +4,6 @@ import { useParams } from 'react-router-dom';
 import { getResourceById, createComment } from '../utils/API';
 import Auth from '../utils/auth';
 
-import React from 'react'
-
 const SingleResource = () => {
     const { id } = useParams();
     const [ resourceData, setResourceData ] = useState({})

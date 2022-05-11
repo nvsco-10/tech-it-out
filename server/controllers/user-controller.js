@@ -8,7 +8,7 @@ module.exports = {
   async getSingleUser({ user = null, params }, res) {
     try {
       const foundUser = await User.findOne({
-        $or: [{ username: params.username }],
+        $or: [{ _id: user ? user._id : params.id }, { username: params.username }],
       })
         .populate('posts')
         .select('-__v')
