@@ -23,6 +23,7 @@ export default function Header() {
               <a className="navbar-item"><Link to="/resources">Resources</Link></a>
               <a className="navbar-item"><Link to="/community">Community</Link></a>
               <a className="navbar-item"><Link to="/">Home</Link></a>
+              <a className="navbar-item"><Link to="/profile">Profile</Link></a>
             </nav>
             <button className="button is-info"><Link to="/login">Login</Link></button>
           </div>
