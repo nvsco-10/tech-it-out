@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom';
 import { getPostById, createPostComment } from '../utils/API';
 import Auth from '../utils/auth';
+import ReactMarkdown from 'react-markdown'
 
 const SinglePost = () => {
   const { id } = useParams();
@@ -80,7 +81,10 @@ const SinglePost = () => {
             <p>{postData.title}</p>
             <p>category: {postData.category}</p>
             <p>posted by: {postData.username}</p>
-            <p>{postData.content}</p>
+            {/* Wrap in markdown component to render text markdown */}
+            <ReactMarkdown>
+              {postData.content}
+            </ReactMarkdown>
             <a target='_blank' rel="noopener noreferrer">{postData.link}</a>
         </div>
 

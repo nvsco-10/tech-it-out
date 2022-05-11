@@ -95,6 +95,25 @@ export const createPost = (data) => {
   });
 };
 
+export const UpdatePostById = (data,id) => {
+  return fetch(`/api/posts/${id}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  });
+}
+
+export const deletePost = (id) => {
+  return fetch(`/api/posts/${id}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+}
+
 export const createPostComment = (data,id) => {
   return fetch(`/api/posts/${id}`, {
     method: 'POST',
