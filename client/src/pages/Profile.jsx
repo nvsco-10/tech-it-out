@@ -50,17 +50,51 @@ export default function Profile() {
       <div><Navbar/></div>
 
       {/* USER DETAILS HERE */}
-      <div>
-        <h2>User Profile</h2>
-        <img src='https://via.placeholder.com/250' alt='placeholder' />
-        <p>{userData._id}</p>
-        <p>username: {userData.username}</p>
-        <p>email: {userData.email}</p>
-      </div>
-        
-      <h2>POSTS</h2>
-      {/* {<PostList posts={posts} />} */}
+      <h2 className="title has-text-centered">My Profile</h2>
+        <div className="card mb-6">
+          <header className="card-header card-header-title    has-background-grey-lighter">
 
+              <figure className="image is-128x128">
+                    <img className="is-rounded" src="https://media.istockphoto.com/photos/koala-on-eucalyptus-tree-picture-id992046278?"/>
+              </figure>
+
+              <div className='has-text-black is-size-4            has-text-centered m-3'>
+                  <p>{userData.username}</p> 
+              </div>
+
+          </header>
+
+          <div className="card-content">
+              <div className="content has-text-justified">
+                  <h3>How To Reach Me</h3>
+
+                  <div className='list-item'>
+                      <a href="mailto:gary@gmail.com"> 
+                        <img src="https://img.icons8.com/ios-filled/48/apple-mail.png" alt="mail-logo"/>
+                      </a> 
+                  </div>
+
+                  <div>
+                      <a href="https://github.com/garytalmes" target="_blank" rel="noopener noreferrer"><img src="https://img.icons8.com/material-outlined/48/github.png" alt="github-logo"/>
+                      </a>
+                  </div>
+
+                  <div>
+                      <a href="http://www.linkedin.com/" target="_blank" rel="noopener noreferrer"><img src="https://img.icons8.com/ios-glyphs/48/linkedin-circled--v1.png" alt="linkedin-logo"/> </a>
+                  </div>
+
+              </div>
+
+          </div>
+
+        </div>
+
+        
+      <h2 className="title has-text-centered">My Posts</h2>
+
+      {/* post lists here */}
+      {<PostList posts={posts} modify='true' />}
+      
     </>
   )
 }

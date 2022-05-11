@@ -36,7 +36,7 @@ module.exports = {
         const updatedUser = await User.findOneAndUpdate(
             // change to user.id when login functionality connected to front-end
             // { _id: user._id },
-            { _id: "6279ad281dfd742007c63ecc" },
+            { username : body.username },
             { $addToSet: { posts: newPost._id } },
             { new: true }
         )
