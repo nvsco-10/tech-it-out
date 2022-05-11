@@ -1,10 +1,59 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import "bulma/css/bulma.min.css";
 import "../css/style.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import ResourceList from "../components/ResourceList";
+import { getResources } from '../utils/API'
+import { sort } from '../utils/helper'
 
-export default function Main() {
+export default function Resources() {
+  const [ searchInput, setSearchInput ] = useState('');
+  const [ resourceList, setResourceList ] = useState([]);
+  const [ filteredResources, setFilteredResources ] = useState([]);
+
+  const getAllResources = async() => {
+    const query = await getResources();
+    const result = await query.json();
+
+    const sortedResults = sort(result)
+
+    console.log(result)
+    setResourceList(sortedResults)
+    setFilteredResources(sortedResults)
+
+  }
+
+  useEffect(() => {
+    getAllResources()
+  }, [])
+
+  const handleInputChange = async(e) => {
+    console.log(e.target.value)
+    setSearchInput(e.target.value)
+
+    searchInput.length === 0 && setFilteredResources(...resourceList)
+
+    const filtered = resourceList.filter(resource => {
+      return resource.name.toLowerCase().includes(searchInput.toLowerCase())
+    })
+
+    setFilteredResources(filtered)
+  }
+
+  const filterByType = e => {
+    const type = e.target.textContent
+    console.log(type)
+
+
+    const filtered = resourceList.filter(resource => {
+      return resource.type.toLowerCase().includes(type.toLowerCase())
+    })
+
+    setFilteredResources(filtered)
+  }
+
+
   return (
     <div className="Main">
       <div>
@@ -12,117 +61,30 @@ export default function Main() {
       </div>
 
       <div className="resource-body">
-        <h1 className="title has-text-centered">RESOURCES</h1>
-        <div className="has-text-centered">
+        <h1 class="title has-text-centered">RESOURCES</h1>
+        <input
+          type="text"
+          value={searchInput}
+          placeholder="search"
+          onChange={handleInputChange} 
+        />
+        <div class="has-text-centered">
           <p>FILTER:</p>
-          <button className="button m-4 is-info">PROJECTS</button>
-          <button className="button m-4 is-warning">GAMES</button>
-          <button className="button m-4 is-danger">TOOLS</button>
-          <button className="button m-4 is-success">ALL</button>
+          <button onClick={filterByType} class="button m-4 is-info">PROJECTS</button>
+          <button onClick={filterByType} class="button m-4 is-warning">GAMES</button>
+          <button onClick={filterByType} class="button m-4 is-danger">TOOLS</button>
+          <button onClick={filterByType} class="button m-4 is-success">MISC</button>
         </div>
 
         {/* hardcoded article cards */}
-        <div className="columns mt-5 is-8 is-variable">
-          <div className="container has-text-centered">
-            <div className="columns is-mobile is-centered">
-              {/* CARD 1 */}
-              <div className="column is-4-tablet is-3-desktop">
-                <div className="card">
-                  <div className="card-image has-text-centered">
-                    <figure className="image is-2by1">
-                      <img
-                        src="http://placehold.jp/ff3860/ffffff/546x273.png"
-                        alt="Placeholder image"
-                      />
-                    </figure>
-                  </div>
-                  <div className="card-content">
-                    <div className="media">
-                      <div className="media-content">
-                        <p className="title is-5">README GENERATOR</p>
-                        <div>
-                          <a className="button is-danger mr-2">TOOLS</a>
-                          <a className="button is-warning mr-2">ALL SKILLS</a>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="content">
-                      <div className="media-content">
-                        <p className="is-success">
-                          A simple editor allows you to quickly add and
-                          customize all the sections you need for your project's
-                          readme.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* CARD 2 */}
-              <div className="column is-4-tablet is-3-desktop">
-                <div className="card">
-                  <div className="card-image">
-                    <figure className="image is-2by1">
-                      <img
-                        src="http://placehold.jp/ff3860/ffffff/546x273.png"
-                        alt="Placeholder image"
-                      />
-                    </figure>
-                  </div>
-                  <div className="card-content">
-                    <div className="media">
-                      <div className="media-content">
-                        <p className="title is-5">HIPSTER IPSUM</p>
-                        <div>
-                          <a className="button is-danger mr-2">TOOLS</a>
-                          <a className="button is-warning mr-2">ALL SKILLS</a>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="content">
-                      <div className="media-content">
-                        <p className="is-success">
-                          Dummy text? More like dummy thicc text, amirite?
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* CARD 3 */}
-              <div className="column is-4-tablet is-3-desktop">
-                <div className="card">
-                  <div className="card-image">
-                    <figure className="image is-2by1">
-                      <img
-                        src="http://placehold.jp/ff3860/ffffff/546x273.png"
-                        alt="Placeholder image"
-                      />
-                    </figure>
-                  </div>
-                  <div className="card-content">
-                    <div className="media">
-                      <div className="media-content">
-                        <p className="title is-5">FEDERICO DOSSENA</p>
-                        <div>
-                          <a className="button is-danger mr-2">TOOLS</a>
-                          <a className="button is-primary mr-2">BEGINNER</a>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="content">
-                      <div className="media-content">
-                        <p className="is-success">
-                          Some really cool looking responsive buttons using only
-                          a few lines of CSS.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+        <div class="columns mt-5 is-8 is-variable">
+          <div class="container has-text-centered">
+            <div class="columns is-mobile is-centered">
+              {/* CARDS GO HERE */}
+              {!filteredResources.length ? 
+                <p>No results found..</p> : 
+                <ResourceList resources={filteredResources} />
+              }
             </div>
           </div>
         </div>
