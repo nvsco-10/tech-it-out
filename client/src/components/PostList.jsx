@@ -1,6 +1,6 @@
 import PostCard from './PostCard'
 
-const PostList = ({posts}) => {
+const PostList = ({posts,modify}) => {
   return (
     <>
         {posts.map(post => {
@@ -13,6 +13,7 @@ const PostList = ({posts}) => {
                         username={post.username}
                         createdAt={post.createdAt} 
                         commentCount={post.commentCount}
+                        modify={modify}
                     />
             }) 
         }   

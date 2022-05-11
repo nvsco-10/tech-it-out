@@ -15,9 +15,9 @@ router.route('/').post(createUser).put(authMiddleware);
 
 router.route('/login').post(login);
 
-// router.route('/:username').get(authMiddleware, getSingleUser);
-
-router.route('/:id').delete(deleteUser);
+router.route('/:id')
+  .get(getSingleUser)
+  .delete(deleteUser);
 
 // router.route('/posts/:postId').delete(authMiddleware, deletePost);
 
