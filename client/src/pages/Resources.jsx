@@ -85,7 +85,6 @@ export default function Resources() {
                 <p>No results found..</p> : 
                 <ResourceList resources={filteredResources} />
               }
-
             </div>
           </div>
         </div>

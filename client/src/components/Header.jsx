@@ -11,20 +11,21 @@ export default function Header() {
         <h1>Welcome! Let's Tech It Out!!</h1>
         </marquee> */}
 
-        <nav class="navbar" role="navigation">
-          <div class="navbar-brand">
-            <a class="navbar-item" href="#">
+        <nav className="navbar" role="navigation">
+          <div className="navbar-brand">
+            <a className="navbar-item" href="/about">
               <img src={logo} alt="tech it out" />
             </a>
           </div>
 
-          <div class="navbar-start">
-            <nav class="navbar-menu">
-              <a class="navbar-item"><Link to="/resources">Resources</Link></a>
-              <a class="navbar-item"><Link to="/community">Community</Link></a>
-              <a class="navbar-item"><Link to="/">Home</Link></a>
+          <div className="navbar-start">
+            <nav className="navbar-menu">
+              <a className="navbar-item"><Link to="/resources">Resources</Link></a>
+              <a className="navbar-item"><Link to="/community">Community</Link></a>
+              <a className="navbar-item"><Link to="/">Home</Link></a>
+              <a className="navbar-item"><Link to="/profile">Profile</Link></a>
             </nav>
-            <button class="button is-info"><Link to="/login">Login</Link></button>
+            <button className="button is-info"><Link to="/login">Login</Link></button>
           </div>
         </nav>
       </header>
