@@ -12,6 +12,8 @@ const SingleResource = () => {
         comment: '',
         username: ''
     })
+
+    const isLoggedIn = Auth.loggedIn();
   
     const getResource = async () => {
       const data = await getResourceById(id);
@@ -26,7 +28,6 @@ const SingleResource = () => {
     useEffect(() => {
       const getUserData = async () => {
         try {
-          const isLoggedIn = Auth.loggedIn() 
   
           if (!isLoggedIn) {
             return false;
@@ -87,13 +88,22 @@ const SingleResource = () => {
   
           <div>
               <h1>Comments</h1>
-              <input 
-                  name="comment"
-                  type="text"
-                  placeholder='add a comment' 
-                  value={commentData.comment}
-                  onChange={handleInputChange }/>
-              <button onClick={handleSubmit}>Submit</button>
+
+              {/* Only logged in users can comment */}
+              {isLoggedIn ? (
+                <>
+                  <input 
+                      name="comment"
+                      type="text"
+                      placeholder='add a comment' 
+                      value={commentData.comment}
+                      onChange={handleInputChange }/>
+                  <button onClick={handleSubmit}>Submit</button>
+                </>
+              ) : (
+                <p><a href='/login'>Login</a> to post a comment</p>
+              )}
+
               <div>
                   {resourceData.comments?.map(item => {
                       return (

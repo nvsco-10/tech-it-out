@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../css/header.scss";
 import logo from "../images/tech-it-out-black.png";
@@ -7,7 +7,32 @@ import "@fontsource/roboto";
 import Signout from "./Signout";
 
 export default function Header() {
+  const [ username, setUsername ] = useState('')
   const isLoggedIn = Auth.loggedIn();
+
+  useEffect(() => {
+    const getUserData = async () => {
+      try {
+
+        if (!isLoggedIn) {
+          return false;
+        }
+
+        const response = await Auth.getProfile();
+
+        if (!response) {
+          throw new Error('something went wrong!');
+        }
+
+        setUsername(response.data.username);
+
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
+    getUserData();
+  }, []);
 
   return (
     <div>
@@ -35,6 +60,10 @@ export default function Header() {
                   <Link to="/profile" className="has-text-black has-text-weight-semibold">PROFILE</Link>
                 </a>
               )}
+
+              {/* Make this look better pls, change the wording */}
+              {isLoggedIn && <p>Logged in as {username}</p>}
+
               {isLoggedIn ? 
                  ( < Signout />) :  
                   (<div className="end">
