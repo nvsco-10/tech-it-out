@@ -22,31 +22,54 @@ export default function Header() {
           <div className="navbar-start">
             <nav className="navbar-menu">
               <a href="/resources" className="navbar-item resources">
-                <Link to="/resources" className="has-text-black has-text-weight-semibold">RESOURCES</Link>
+                <Link
+                  to="/resources"
+                  className="has-text-black has-text-weight-semibold"
+                >
+                  RESOURCES
+                </Link>
               </a>
               <a href="/community" className="navbar-item community">
-                <Link to="/community" className="has-text-black has-text-weight-semibold">COMMUNITY</Link>
+                <Link
+                  to="/community"
+                  className="has-text-black has-text-weight-semibold"
+                >
+                  COMMUNITY
+                </Link>
               </a>
               <a href="/" className="navbar-item home">
-                <Link to="/" className="has-text-black has-text-weight-semibold">HOME</Link>
+                <Link
+                  to="/"
+                  className="has-text-black has-text-weight-semibold"
+                >
+                  HOME
+                </Link>
               </a>
               {isLoggedIn && (
-                <a href="/profile" className="navbar-item">
-                  <Link to="/profile" className="has-text-black has-text-weight-semibold">PROFILE</Link>
-                </a>
+                <div>
+                  <a href="/profile" className="navbar-item profile">
+                    <Link
+                      to="/profile"
+                      className="has-text-black has-text-weight-semibold"
+                    >
+                      PROFILE
+                    </Link>
+                  </a>
+                </div>
               )}
-              {isLoggedIn ? 
-                 ( < Signout />) :  
-                  (<div className="end">
-                  <button className="button is-info">
-                    <Link to="/login" className="has-text-white">LOGIN</Link>
+              {isLoggedIn ? (
+                <Signout />
+              ) : (
+                <div className="end">
+                  <button className="button">
+                    <Link to="/login" className="has-text-white">
+                      LOGIN
+                    </Link>
                   </button>
-                </div>)
-              }
-              
+                </div>
+              )}
             </nav>
           </div>
-         
         </nav>
       </header>
     </div>

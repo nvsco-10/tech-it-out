@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "bulma/css/bulma.min.css";
-import "../css/style.css";
+import "../css/main.scss"
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ResourceList from "../components/ResourceList";
