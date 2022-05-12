@@ -2,8 +2,6 @@ import React, {useState} from 'react'
 import { Link } from "react-router-dom";
 import validator from 'validator'
 
-
-
 export default function Contact() {
 
     const [userFormData, setUserFormData] = useState({   name: '',

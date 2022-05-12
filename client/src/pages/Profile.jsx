@@ -13,15 +13,13 @@ export default function Profile() {
 
   const [disabled, setDisabled] = useState(true);
 
-
   const getUserPosts = async (id) => {
     const data = await getUserById(id);
     const result = await data.json();
-    console.log(result)
+    // console.log(result)
     setPosts(result.posts)
   }
    
-
   useEffect(() => {
     const getUserData = async () => {
       try {

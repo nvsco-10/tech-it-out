@@ -27,7 +27,6 @@ export default function Main() {
   }, [])
 
   const handleInputChange = async(e) => {
-    console.log(e.target.value)
     setSearchInput(e.target.value)
 
     searchInput.length === 0 && setFilteredPosts(...postList)
