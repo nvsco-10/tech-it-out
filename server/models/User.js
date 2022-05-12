@@ -20,8 +20,14 @@ const userSchema = new Schema(
       minlength: 6,
     },
     isAdmin: {
-        type: Boolean,
-        default: false
+      type: Boolean,
+      default: false
+    },
+    linkedin: {
+      type: String,
+    },
+    github: {
+      type: String,
     },
     posts: [
       {

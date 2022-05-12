@@ -40,6 +40,28 @@ module.exports = {
     }
     
   },
+
+  // update a user
+  async updateUser({ params, body }, res) {
+    try {
+      const updatedUser = await User.findOneAndUpdate(
+        { _id: params.id },
+        { $set: body },
+        { runValidators: true, new: true }
+      )
+
+      if (!updatedUser) {
+        return res.status(400).json({ message: "Can't find this user" });
+      }
+
+      res.json(updatedUser)
+
+    } catch(err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+  },
+
   // delete a user
   async deleteUser({ params }, res) {
     try {
