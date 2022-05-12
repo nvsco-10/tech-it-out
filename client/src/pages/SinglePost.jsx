@@ -8,7 +8,6 @@ import ReactMarkdown from 'react-markdown'
 const SinglePost = () => {
   const { id } = useParams();
   const [ postData, setPostData ] = useState({})
-  // const [ userData, setUserData ] = useState({});
   const [ commentData, setCommentData ] = useState({
       comment: '',
       username: ''
@@ -40,7 +39,6 @@ const SinglePost = () => {
           throw new Error('something went wrong!');
         }
 
-        // setUserData(response.data);
         setCommentData({ ...commentData, 'username': response.data.username });
 
       } catch (err) {
