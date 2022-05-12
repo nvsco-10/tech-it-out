@@ -55,7 +55,7 @@ const PostCard = ({id, title, content, username, category, createdAt, commentCou
                 <b>{username}</b>
                 <p>date posted: {createdAt}</p>
                     
-                <a href="#">comments: {commentCount}</a>
+                <Link to={`/community/posts/${id}`}>comments: {commentCount}</Link>
             </div>
         </div>
     </div>
