@@ -1,21 +1,26 @@
-import { useState, useEffect } from 'react'
-import Navbar from '../components/Navbar'
+import { useState, useEffect, useRef } from 'react'
 import Auth from '../utils/auth';
 import "bulma/css/bulma.min.css";
 import { getUserById } from '../utils/API'
 import "../css/style.css";
 import PostList from '../components/PostList'
+import Header from '../components/Header';
+
 
 export default function Profile() {
   const [userData, setUserData] = useState({});
   const [posts, setPosts] = useState([])
 
+  const [disabled, setDisabled] = useState(true);
+
+
   const getUserPosts = async (id) => {
     const data = await getUserById(id);
     const result = await data.json();
-
+    console.log(result)
     setPosts(result.posts)
   }
+   
 
   useEffect(() => {
     const getUserData = async () => {
@@ -44,9 +49,13 @@ export default function Profile() {
 
   }, []);
 
+  
+  function handleGameClick() {
+    setDisabled(!disabled);
+  }
   return (
     <>
-      <div><Navbar/></div>
+      <div><Header/></div>
 
       {/* USER DETAILS HERE */}
       <h2 className="title has-text-centered">My Profile</h2>
@@ -59,13 +68,24 @@ export default function Profile() {
 
               <div className='has-text-black is-size-4            has-text-centered m-3'>
                   <p>{userData.username}</p> 
-              </div>
+              </div> 
+
+
 
           </header>
 
           <div className="card-content">
               <div className="content has-text-justified">
                   <h3>How To Reach Me</h3>
+
+          <div></div>
+               <input  
+      type="text" value={userData} onChange={e => setUserData(e.target.value)} 
+      hidden={disabled}/>
+      <button hidden={disabled} onClick={handleGameClick}>Submit</button>
+      <br />
+
+      <button hidden={!disabled} onClick={handleGameClick}>Add Contact Info</button>
 
                   <div className='list-item'>
                       <a href="mailto:gary@gmail.com"> 

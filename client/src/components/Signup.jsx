@@ -103,7 +103,7 @@ export default function SignUp() {
     </form>
 
     <div className='span-border'>
-      <span className='span-link'><Link to="/">Back To Login</Link></span>
+      <span className='span-link'><Link to="/login">Back To Login</Link></span>
     </div>
 
   </div>

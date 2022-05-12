@@ -1,11 +1,11 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
+import Header from '../components/Header'
 
 
 export default function About() {
   return (
     <>
-        <Navbar/>
+        <Header/>
     <section>
         <div>
             <sec>
