@@ -14,6 +14,7 @@ const CreatePost = () => {
     }
 
     const [ postData, setPostData ] = useState(defPost)
+    const [ showAlert, setShowAlert ] = useState(false)
     // const [ userData, setUserData ] = useState({});
 
     useEffect(() => {
@@ -51,7 +52,10 @@ const CreatePost = () => {
     const handleSubmit = async e => {
         e.preventDefault();
 
-        console.log(postData)
+        if(postData.category === '') {
+            setShowAlert(true)
+            return false
+        }
 
         const newPost = await createPost(postData)
 
@@ -83,6 +87,7 @@ const CreatePost = () => {
                 <option value="mentorship">Mentorship</option>
                 <option value="buddy">Buddy</option>
             </select>
+            {showAlert && <p>Please select a category!</p>}
         </div>  
         <div>
             <label>Title</label>

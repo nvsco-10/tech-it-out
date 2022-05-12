@@ -7,7 +7,7 @@ import Auth from '../utils/auth';
 const SingleResource = () => {
     const { id } = useParams();
     const [ resourceData, setResourceData ] = useState({})
-    const [userData, setUserData] = useState({});
+    // const [userData, setUserData] = useState({});
     const [ commentData, setCommentData ] = useState({
         comment: '',
         username: ''
@@ -39,7 +39,7 @@ const SingleResource = () => {
             throw new Error('something went wrong!');
           }
   
-          setUserData(response.data);
+          // setUserData(response.data);
           setCommentData({ ...commentData, 'username': response.data.username });
   
         } catch (err) {

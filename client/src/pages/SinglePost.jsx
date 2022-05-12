@@ -60,7 +60,7 @@ const SinglePost = () => {
   const handleSubmit = async e => {
       e.preventDefault();
 
-      console.log(commentData)
+      // console.log(commentData)
 
       const newComment = await createPostComment(commentData, id)
 
