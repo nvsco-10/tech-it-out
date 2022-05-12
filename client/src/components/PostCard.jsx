@@ -47,13 +47,15 @@ const PostCard = ({id, title, content, username, category, createdAt, commentCou
 
         <div className="card-content">
             <div className="content has-text-justified">
-                {content}
+                {/* limit post overview to 400 characters */}
+                {content.substring(0,400)}
+                ...
             </div>
             <div className="is-pulled-right">
                 <b>{username}</b>
                 <p>date posted: {createdAt}</p>
                     
-                <a href="#">comments: {commentCount}</a>
+                <Link to={`/community/posts/${id}`}>comments: {commentCount}</Link>
             </div>
         </div>
     </div>

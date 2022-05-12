@@ -82,7 +82,7 @@ const SingleResource = () => {
               <p>{resourceData.type}</p>
               <p>{resourceData.level}</p>
               <p>{resourceData.description}</p>
-              <a target='_blank' rel="noopener noreferrer">{resourceData.link}</a>
+              <a href={resourceData.link} target='_blank' rel="noopener noreferrer">{resourceData.link}</a>
           </div>
   
           <div>
