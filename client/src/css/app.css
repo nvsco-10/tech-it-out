@@ -23,7 +23,7 @@ body {
   input, textarea {
     margin: 0 auto;
     background-color: black;
-    opacity: 50%;
+    /* opacity: 50%; */
     color:aqua;
     margin-top: 10px;
     width: 300px;
@@ -31,7 +31,7 @@ body {
     font-size: 22px;
     margin-bottom: 14px;
     max-width: 527px;
-    padding: 0 10%;
+    /* padding: 0 10%; */
   }
   
   textarea {

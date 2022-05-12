@@ -8,7 +8,7 @@ export default function Signout() {
     }
   return (
     <div>
-    <a  href="#" onClick={logout} className="navbar-item has-text-right">Sign Out</a>
+    <button  onClick={logout} className="navbar-item has-text-black has-text-weight-semibold" >Sign Out</button>
    </div>
   )
 }
