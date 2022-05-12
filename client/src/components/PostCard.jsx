@@ -21,7 +21,7 @@ const PostCard = ({id, title, content, username, category, createdAt, commentCou
     <div className="card mb-6">
         <header className="card-header card-header-title has-background-grey-lighter">
             <div className="column">
-                <Link to={`/community/posts/${id}`}>
+                <a to={`/community/posts/${id}`}>
                     <p className=" has-text-primary-light">
                         <a
                         href=""
@@ -30,7 +30,7 @@ const PostCard = ({id, title, content, username, category, createdAt, commentCou
                         {title}
                         </a>
                     </p>
-                </Link>
+                </a>
             </div>
 
             <div className="column">

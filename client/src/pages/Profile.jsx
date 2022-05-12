@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import Auth from '../utils/auth';
 import "bulma/css/bulma.min.css";
 import { getUserById } from '../utils/API'
-import "../css/style.css";
+// import "../css/style.css";
 import PostList from '../components/PostList'
 import Header from '../components/Header';
 
