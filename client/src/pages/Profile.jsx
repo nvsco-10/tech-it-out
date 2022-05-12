@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import Auth from '../utils/auth';
 import "bulma/css/bulma.min.css";
 import { getUserById } from '../utils/API'
-import "../css/style.css";
+// import "../css/style.css";
 import PostList from '../components/PostList'
 import Header from '../components/Header';
 
@@ -13,15 +13,13 @@ export default function Profile() {
 
   const [disabled, setDisabled] = useState(true);
 
-
   const getUserPosts = async (id) => {
     const data = await getUserById(id);
     const result = await data.json();
-    console.log(result)
+    // console.log(result)
     setPosts(result.posts)
   }
    
-
   useEffect(() => {
     const getUserData = async () => {
       try {

@@ -1,7 +1,6 @@
 import React from "react";
 import "../css/footer.scss";
 import "@fontsource/roboto";
-import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -18,15 +17,11 @@ export default function Footer() {
             </a>
           </p>
           <div className="navbar-menu has-text-centered">
-            <a className="navbar-item">
-              <Link className="has-text-white" to="/contact">
-                CONTACT
-              </Link>
+            <a href="/contact" className="navbar-item has-text-white">
+              CONTACT
             </a>
-            <a className="navbar-item">
-              <Link className="has-text-white" to="/about">
-                ABOUT US
-              </Link>
+            <a href="/about" className="navbar-item has-text-white">
+              ABOUT US
             </a>
             <a className="navbar-item">PRIVACY POLICY</a>
           </div>

@@ -8,11 +8,12 @@ import ReactMarkdown from 'react-markdown'
 const SinglePost = () => {
   const { id } = useParams();
   const [ postData, setPostData ] = useState({})
-  const [ userData, setUserData ] = useState({});
   const [ commentData, setCommentData ] = useState({
       comment: '',
       username: ''
   })
+
+  const isLoggedIn = Auth.loggedIn() 
 
   const getPost = async () => {
     const data = await getPostById(id);
@@ -27,7 +28,6 @@ const SinglePost = () => {
   useEffect(() => {
     const getUserData = async () => {
       try {
-        const isLoggedIn = Auth.loggedIn() 
 
         if (!isLoggedIn) {
           return false;
@@ -39,7 +39,6 @@ const SinglePost = () => {
           throw new Error('something went wrong!');
         }
 
-        setUserData(response.data);
         setCommentData({ ...commentData, 'username': response.data.username });
 
       } catch (err) {
@@ -58,8 +57,6 @@ const SinglePost = () => {
 
   const handleSubmit = async e => {
       e.preventDefault();
-
-      console.log(commentData)
 
       const newComment = await createPostComment(commentData, id)
 
@@ -90,13 +87,22 @@ const SinglePost = () => {
 
         <div>
             <h1>Comments</h1>
-            <input 
-                name="comment"
-                type="text"
-                placeholder='add a comment' 
-                value={commentData.comment}
-                onChange={handleInputChange }/>
-            <button onClick={handleSubmit}>Submit</button>
+
+            {/* Only logged in users can comment */}
+            {isLoggedIn ? (
+                <>
+                  <input 
+                      name="comment"
+                      type="text"
+                      placeholder='add a comment' 
+                      value={commentData.comment}
+                      onChange={handleInputChange }/>
+                  <button onClick={handleSubmit}>Submit</button>
+                </>
+              ) : (
+                <p><a href='/login'>Login</a> to post a comment</p>
+              )}
+              
             <div>
                 {postData.comments?.map(item => {
                     return (

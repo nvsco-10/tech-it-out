@@ -1,8 +1,12 @@
 import React, {useState, useRef} from 'react'
 import { Link } from "react-router-dom";
+<<<<<<< HEAD
 import { Button, Notification } from 'react-bulma-components';
 import emailjs from '@emailjs/browser'
 // import validator from 'validator'
+=======
+import validator from 'validator'
+>>>>>>> 07a9cc2b5a530e671856ae348f7247ebd3a530a7
 
 export default function Contact() {
     const form = useRef()

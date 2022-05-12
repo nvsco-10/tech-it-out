@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "bulma/css/bulma.min.css";
-import "../css/style.css";
+// import "../css/style.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { getPosts } from '../utils/API'
@@ -27,7 +27,6 @@ export default function Main() {
   }, [])
 
   const handleInputChange = async(e) => {
-    console.log(e.target.value)
     setSearchInput(e.target.value)
 
     searchInput.length === 0 && setFilteredPosts(...postList)

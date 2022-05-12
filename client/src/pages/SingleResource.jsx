@@ -7,11 +7,13 @@ import Auth from '../utils/auth';
 const SingleResource = () => {
     const { id } = useParams();
     const [ resourceData, setResourceData ] = useState({})
-    const [userData, setUserData] = useState({});
+    // const [userData, setUserData] = useState({});
     const [ commentData, setCommentData ] = useState({
         comment: '',
         username: ''
     })
+
+    const isLoggedIn = Auth.loggedIn();
   
     const getResource = async () => {
       const data = await getResourceById(id);
@@ -26,7 +28,6 @@ const SingleResource = () => {
     useEffect(() => {
       const getUserData = async () => {
         try {
-          const isLoggedIn = Auth.loggedIn() 
   
           if (!isLoggedIn) {
             return false;
@@ -38,7 +39,7 @@ const SingleResource = () => {
             throw new Error('something went wrong!');
           }
   
-          setUserData(response.data);
+          // setUserData(response.data);
           setCommentData({ ...commentData, 'username': response.data.username });
   
         } catch (err) {
@@ -87,13 +88,22 @@ const SingleResource = () => {
   
           <div>
               <h1>Comments</h1>
-              <input 
-                  name="comment"
-                  type="text"
-                  placeholder='add a comment' 
-                  value={commentData.comment}
-                  onChange={handleInputChange }/>
-              <button onClick={handleSubmit}>Submit</button>
+
+              {/* Only logged in users can comment */}
+              {isLoggedIn ? (
+                <>
+                  <input 
+                      name="comment"
+                      type="text"
+                      placeholder='add a comment' 
+                      value={commentData.comment}
+                      onChange={handleInputChange }/>
+                  <button onClick={handleSubmit}>Submit</button>
+                </>
+              ) : (
+                <p><a href='/login'>Login</a> to post a comment</p>
+              )}
+
               <div>
                   {resourceData.comments?.map(item => {
                       return (
