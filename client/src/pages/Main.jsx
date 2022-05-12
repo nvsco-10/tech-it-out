@@ -39,8 +39,16 @@ export default function Main() {
           <h1 className="title is-center has-text-white has-text-weight-bold">
             I WANT TO LEARN . . .
           </h1>
+          <button className="button">
+            <Link
+              className="has-text-black has-text-weight-semibold"
+              to="/signup"
+            >
+              BECOME A MEMBER!
+            </Link>
+          </button>
           {/* SEARCH BAR */}
-          <p className="control has-icons-right">
+          {/* <p className="control has-icons-right">
             <input
               className="searchbar input has-text-centered"
               type="text"
@@ -51,20 +59,17 @@ export default function Main() {
             <span className="icon is-small is-right">
               <i className="fa-solid fa-magnifying-glass"></i>
             </span>
-          </p>
+          </p> */}
         </section>
 
         <section className="main-half has-text-centered">
           <h1 className="title">JOIN THE COMMUNITY</h1>
-          <button className="button">
-            <Link
-              className="has-text-white has-text-weight-semibold"
-              to="/signup"
-            >
-              BECOME A MEMBER!
-            </Link>
-          </button>
           <br />
+          <div className="hold">
+            <a href="/about" className="about-us has-text-weight-semibold">
+              LEARN MORE ABOUT US!
+            </a>
+          </div>
           <div className="mt-5 columns is-inline-block">
             <img className="pr-6 pb-4" src={image1} alt="avatar images" />
             {/* <p>Meet other developers blah blah blah blah blah blah</p> */}
