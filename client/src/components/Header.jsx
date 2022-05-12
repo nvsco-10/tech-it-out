@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logo from '../images/tech-it-out-black.png'
 import Auth from '../utils/auth';
+import Signout from '../components/Signout'
 
 export default function Header() {
   const isLoggedIn = Auth.loggedIn();
@@ -32,6 +33,9 @@ export default function Header() {
             </nav>
             <button className="button is-info"><Link to="/login">Login</Link></button>
           </div>
+          <div>
+          <Signout/>
+        </div>
         </nav>
       </header>
     </div>
