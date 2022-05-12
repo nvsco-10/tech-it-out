@@ -43,7 +43,17 @@
     padding: 1rem;
     border-radius: 0.75rem;
   }
-  img {
+  .item {
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;
     width: 25rem;
+    margin: 1rem 2rem;
+    // img {
+    //   width: 25rem;
+    // }
+    .caption {
+      display: block;
+    }
   }
 }
