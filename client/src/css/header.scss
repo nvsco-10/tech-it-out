@@ -8,7 +8,7 @@
 // }
 
 header {
-  margin-top: 1rem;
+  // margin-top: 1rem;
 
     div {
       // background-color: rgb(255, 102, 102);
@@ -19,27 +19,28 @@ header {
     // background-color: bisque;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 10rem;
+  grid-template-rows: 8rem;
   gap: 0px 0px;
+  align-items: center;
   grid-template-areas: "logo nav-links end";
 
-  .navbar-brand {
-    grid-area: logo;
-    // background-color: rgb(238, 116, 116);
-    .navbar-item {
-      margin-left: 3rem;
-      padding: 0%;
-      width: 100%;
-      background-color: red;
+  // .navbar-brand {
+  //   grid-area: logo;
+  //   background-color: rgb(238, 116, 116);
+  //   .navbar-item {
+  //     margin-left: 3rem;
+  //     padding: 0%;
+  //     width: 100%;
+  //     background-color: red;
       img {
-        background-color: #004aad;
-        margin: 0%;
-        margin-right: 5rem;
-        width: 1080px;
-        height: 173px;
+        // background-color: #004aad;
+        margin: 2rem;
+        padding-bottom: 1.5rem;
+        width: 70%;
+        // height: 173px;
       }
-    }
-  }
+    // }
+  // }
 
   .navbar-start {
     // background-color: rgb(252, 191, 79);
