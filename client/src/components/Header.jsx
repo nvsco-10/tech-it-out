@@ -35,11 +35,11 @@ export default function Header() {
     <div>
       <header>
         <nav className="navbar" role="navigation">
-          <div className="navbar-brand">
-            <a className="navbar-item" href="/about">
+          {/* <div className="navbar-brand">
+            <a className="navbar-item" href="/about"> */}
               <img className="logo" src={logo} alt="tech it out" />
-            </a>
-          </div>
+            {/* </a>
+          </div> */}
 
           <div className="navbar-start">
             <nav className="navbar-menu">
