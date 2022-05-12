@@ -215,6 +215,101 @@
     "level": "beginner",
     "description": "30 day vanilla JS coding challenge",
     "link": "https://javascript30.com/"
+  },
+  {
+    "name": "npm",
+    "type": "tools",
+    "level": "intermediate",
+    "description": "Bulma is a CSS library to help you style your HTML code",
+    "link": "https://bulma.io/"
+  },
+  {
+    "name": "placeholder image",
+    "type": "tools",
+    "level": "all",
+    "description": "placeholder image site where you can edit size, color and text",
+    "link": "http://placehold.jp/en.html"
+  },
+  {
+    "name": "bumla",
+    "type": "tools",
+    "level": "intermediate",
+    "description": "Bulma is a CSS library to help you style your HTML code",
+    "link": "https://bulma.io/"
+  },
+  {
+    "name": "ELI5 code language",
+    "type": "misc",
+    "level": "beginner",
+    "description": "article that makes coding language looks easy ",
+    "link": "https://damirkotoric.medium.com/the-web-developers-lexicon-1d9e0d7468b5"
+  },
+  {
+    "name": "html colors",
+    "type": "misc",
+    "level": "beginner",
+    "description": "article that makes coding language easy",
+    "link": "https://damirkotoric.medium.com/the-web-developers-lexicon-1d9e0d7468b5"
+  },
+  {
+    "name": "amime.js",
+    "type": "tools",
+    "level": "intermidiate",
+    "description": "a cool animantion api",
+    "link": "https://animejs.com/"
+  },
+  {
+    "name": "regex101",
+    "type": "tools",
+    "level": "all",
+    "description": "an interactive regular expression console that lets you debug in real-time",
+    "link": "https://regex101.com/"
+  },
+  {
+    "name": "Data and Apis",
+    "type": "project",
+    "level": "intermediate",
+    "description": "working with data and apis in Javascript",
+    "link": "https://www.youtube.com/playlist?list=PLRqwX-V7Uu6YxDKpFzf_2D84p0cyk4T7X"
+  },
+  {
+    "name": "programming in text",
+    "type": "tools",
+    "level": "intermediate",
+    "description": "multiple video training about coding in javascript",
+    "link": "https://thecodingtrain.com/learning/programming-with-text/"
+  },
+  {
+    "name": "data and apis",
+    "type": "tools",
+    "level": "intermediate",
+    "description": "working with data and apis in Javascript",
+    "link": "https://www.youtube.com/playlist?list=PLRqwX-V7Uu6YxDKpFzf_2D84p0cyk4T7X"
+
+  },
+  {
+    "name": "programming in text",
+    "type": "tools",
+    "level": "intermediate",
+    "description": "mulitple video trainings about coding in javascript",
+    "link": "https://thecodingtrain.com/learning/programming-with-text/" 
+  },
+  {
+    "name": "vscode",
+    "type": "tools",
+    "level": "beginner",
+    "description": "video that will walk you through visual code basic tools",
+    "link": "https://www.youtube.com/watch?v=DKxS3IkduWQ"
+  },
+  {
+    "name": "Javascript promises",
+    "type": "tools",
+    "level": "beginner",
+    "description": "detailed video of how to implement javascript promises",
+    "link": "https://www.youtube.com/watch?v=DHvZLI7Db8E"
   }
+ 
+
 ]
+
 
