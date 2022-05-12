@@ -14,6 +14,8 @@ const SinglePost = () => {
       username: ''
   })
 
+  const isLoggedIn = Auth.loggedIn() 
+
   const getPost = async () => {
     const data = await getPostById(id);
     const result = await data.json();
@@ -27,7 +29,6 @@ const SinglePost = () => {
   useEffect(() => {
     const getUserData = async () => {
       try {
-        const isLoggedIn = Auth.loggedIn() 
 
         if (!isLoggedIn) {
           return false;
@@ -90,13 +91,22 @@ const SinglePost = () => {
 
         <div>
             <h1>Comments</h1>
-            <input 
-                name="comment"
-                type="text"
-                placeholder='add a comment' 
-                value={commentData.comment}
-                onChange={handleInputChange }/>
-            <button onClick={handleSubmit}>Submit</button>
+
+            {/* Only logged in users can comment */}
+            {isLoggedIn ? (
+                <>
+                  <input 
+                      name="comment"
+                      type="text"
+                      placeholder='add a comment' 
+                      value={commentData.comment}
+                      onChange={handleInputChange }/>
+                  <button onClick={handleSubmit}>Submit</button>
+                </>
+              ) : (
+                <p><a href='/login'>Login</a> to post a comment</p>
+              )}
+              
             <div>
                 {postData.comments?.map(item => {
                     return (

@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import Auth from '../utils/auth';
 import "../css/main.scss";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -11,22 +11,13 @@ import image2 from "../images/Boy-asking-question.png";
 export default function Main() {
   // const search = <FontAwesomeIcon icon={faSearch} />;
 
-  const [searchInput, setSearchInput] = useState("");
-  const [postList] = useState([]);
-  const [setFilteredPosts] = useState([]);
+  const isLoggedIn = Auth.loggedIn(); 
 
-  const handleInputChange = async (e) => {
-    console.log(e.target.value);
-    setSearchInput(e.target.value);
-
-    searchInput.length === 0 && setFilteredPosts(...postList);
-
-    const filtered = postList.filter((post) => {
-      return post.title.toLowerCase().includes(searchInput.toLowerCase());
-    });
-
-    setFilteredPosts(filtered);
-  };
+  // if(isLoggedIn) {
+  //   console.log('yes')
+  // } else {
+  //   console.log('no')
+  // }
 
   return (
     <div className="Main">
@@ -40,12 +31,23 @@ export default function Main() {
             I WANT TO LEARN . . .
           </h1>
           <button className="button">
-            <Link
-              className="has-text-black has-text-weight-semibold"
-              to="/signup"
-            >
-              BECOME A MEMBER!
-            </Link>
+
+            {isLoggedIn ? (
+              <Link
+                className="has-text-black has-text-weight-semibold"
+                to="/community"
+              >
+                GO TO COMMUNITY
+              </Link>
+              ) : (
+              <Link
+                className="has-text-black has-text-weight-semibold"
+                to="/signup"
+              >
+                BECOME A MEMBER
+              </Link>
+              )
+            }
           </button>
           {/* SEARCH BAR */}
           {/* <p className="control has-icons-right">
