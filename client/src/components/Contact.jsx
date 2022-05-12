@@ -1,13 +1,18 @@
-import React, {useState} from 'react'
+import React, {useState, useRef} from 'react'
 import { Link } from "react-router-dom";
-import validator from 'validator'
+import { Button, Notification } from 'react-bulma-components';
+import emailjs from '@emailjs/browser'
+
 
 export default function Contact() {
+    const form = useRef()
 
     const [userFormData, setUserFormData] = useState({   name: '',
     email: '',
     message: ''});
-    const [emailError, setEmailError] = useState('')
+    
+  const [showAlert, setShowAlert] = useState(false);
+
    
     
     const handleInputChange = (event) => {
@@ -16,35 +21,35 @@ export default function Contact() {
         
     };
 
-    const validateEmail = (e) => {
-        let email = e.target.value
-        
-        if (validator.isEmail(email)) {
-            setEmailError('Valid Email :)')
-        } else {
-            setEmailError('Enter valid Email!')
-        }
-    }
     
-    const handleFormSubmit = async (event) => {
-      event.preventDefault();
-  
-      setUserFormData({
-        email: '',
-        name: '',
-        message:''
+    const sendEmail = (e) => {
+        e.preventDefault();
+    
+        emailjs.sendForm('service_kurt5ih', 'template_i3ydvdq', form.current, 'MY4m_wVQW7v3cUs7e')
+          .then(() => {
+              window.location.reload(false)
+              setShowAlert(true)
         
-      });
+          }, () => {
+            // setShowAlert(true)
+          });
+      };
       
-    };
+ 
   
     return (
     <div className='login_form'>
   
         <h1>Ask us a question!</h1>
     
-        <form onSubmit={handleFormSubmit}>
-       
+        <form ref={form}onSubmit={sendEmail}>
+        {showAlert && (
+          // Bulma component
+          <Notification color="success" >
+            Message sent!
+            <Button remove onClick={() => setShowAlert(false)}>x</Button>
+          </Notification>
+        )}
             <div className="form-row">
                   
                     <input
@@ -60,16 +65,13 @@ export default function Contact() {
 
                     <input
                     name="email"
-                    type="text"
+                    type="email"
                     placeholder="Email"
-                    onChange={(e) => { handleInputChange(e); validateEmail(e)}}
+                    onChange={handleInputChange}
                     value={userFormData.email}
                     required
                     />
-                    <span style={{
-          fontWeight: 'bold',
-          color: 'aqua',
-        }}>{emailError}</span>
+                    
                     </div>
                 
                      <textarea 
