@@ -1,10 +1,10 @@
 import { useState, useEffect, useRef } from 'react'
-import Navbar from '../components/Navbar'
 import Auth from '../utils/auth';
 import "bulma/css/bulma.min.css";
 import { getUserById } from '../utils/API'
 import "../css/style.css";
 import PostList from '../components/PostList'
+import Header from '../components/Header';
 
 
 export default function Profile() {
@@ -55,7 +55,7 @@ export default function Profile() {
   }
   return (
     <>
-      <div><Navbar/></div>
+      <div><Header/></div>
 
       {/* USER DETAILS HERE */}
       <h2 className="title has-text-centered">My Profile</h2>
