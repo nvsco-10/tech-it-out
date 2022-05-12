@@ -3,6 +3,10 @@
     "Helvetica Neue", sans-serif;
 }
 
+// .logo {
+
+// }
+
 header {
   margin-top: 1rem;
 
@@ -15,7 +19,7 @@ header {
     // background-color: bisque;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 5rem;
+  grid-template-rows: 10rem;
   gap: 0px 0px;
   grid-template-areas: "logo nav-links end";
 
@@ -24,7 +28,16 @@ header {
     // background-color: rgb(238, 116, 116);
     .navbar-item {
       margin-left: 3rem;
+      padding: 0%;
       width: 100%;
+      background-color: red;
+      img {
+        background-color: #004aad;
+        margin: 0%;
+        margin-right: 5rem;
+        width: 1080px;
+        height: 173px;
+      }
     }
   }
 
