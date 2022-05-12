@@ -36,6 +36,16 @@ export const loginUser = (userData) => {
     body: JSON.stringify(userData),
   });
 };
+
+export const UpdateUserById = (data,id) => {
+  return fetch(`/api/users/${id}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  });
+}
   
 // get all resources
 export const getResources = () => {

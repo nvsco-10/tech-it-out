@@ -3,8 +3,8 @@ const {
   createUser,
   getSingleUser,
   deleteUser,
-  deletePost,
   login,
+  updateUser,
 } = require('../../controllers/user-controller');
 
 // import middleware
@@ -17,6 +17,7 @@ router.route('/login').post(login);
 
 router.route('/:id')
   .get(getSingleUser)
+  .put(updateUser)
   .delete(deleteUser);
 
 // router.route('/posts/:postId').delete(authMiddleware, deletePost);
