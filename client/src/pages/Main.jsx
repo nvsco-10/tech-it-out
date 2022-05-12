@@ -33,7 +33,7 @@ export default function Main() {
           <button className="button">
             {isLoggedIn ? (
               <Link
-                className="has-text-black has-text-weight-semibold"
+                className="community has-text-weight-semibold"
                 to="/community"
               >
                 GO TO COMMUNITY

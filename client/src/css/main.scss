@@ -16,12 +16,18 @@
   }
 }
 
-.searchbar {
-  color: black;
-  // background-color: rgb(255, 255, 255);
-  border: none;
-  border-radius: 2rem;
-  width: 50rem;
+.main-search {
+  .button {
+    background-color: #e73c7e;
+    border: none;
+    .community {
+      color: #fff;
+    }
+  }
+
+  .button:hover {
+    background-color: #004aad;
+  }
 }
 
 .main-half {
