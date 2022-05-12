@@ -58,15 +58,39 @@ export default function Main() {
             </a>
           </div>
           <div className="mt-5 columns is-inline-block">
-            <img className="pr-6 pb-4" src={image1} alt="avatar images" />
-            {/* <p>Meet other developers blah blah blah blah blah blah</p> */}
-            <img className="pr-6 pb-4" src={image2} alt="boy asking question" />
-            {/* <p>Get help when you're stuck blah blah blah blah</p> */}
-            <img className="pr-6 pb-4" src={image1} alt="placeholder" />
-            {/* <p>Meet other developers blah blah blah blah blah blah</p> */}
+            <div className="item">
+              <img className="pr-6 pb-4" src={image1} alt="avatar images" />
+              <span className="caption ">
+                Meet other developers blah blah blah blah blah blah
+              </span>
+            </div>
+
+            <div className="item">
+              <img
+                className="pr-6 pb-4"
+                src={image2}
+                alt="boy asking question"
+              />
+              <span className="caption ">
+                Get help when you're stuck blah blah blah blah
+              </span>
+            </div>
+
+            <div className="item">
+              <img className="pr-6 pb-4" src={image1} alt="placeholder" />
+              <span className="caption ">
+                Meet other developers blah blah blah blah blah blah
+              </span>
+            </div>
           </div>
         </section>
       </div>
+
+
+
+
+
+      
       <div>
         <Footer></Footer>
       </div>
