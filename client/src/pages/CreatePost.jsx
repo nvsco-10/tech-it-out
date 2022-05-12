@@ -45,8 +45,10 @@ const CreatePost = () => {
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
+
+        value !== '' && setShowAlert(false)
         setPostData({ ...postData, [name]: value });
-    
+
       }
     
     const handleSubmit = async e => {
@@ -87,6 +89,7 @@ const CreatePost = () => {
                 <option value="mentorship">Mentorship</option>
                 <option value="buddy">Buddy</option>
             </select>
+            {/* Show alert if no category is selected upon submitting */}
             {showAlert && <p>Please select a category!</p>}
         </div>  
         <div>
