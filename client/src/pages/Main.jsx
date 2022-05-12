@@ -1,5 +1,5 @@
 import React from "react";
-import Auth from '../utils/auth';
+import Auth from "../utils/auth";
 import "../css/main.scss";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -11,7 +11,7 @@ import image2 from "../images/Boy-asking-question.png";
 export default function Main() {
   // const search = <FontAwesomeIcon icon={faSearch} />;
 
-  const isLoggedIn = Auth.loggedIn(); 
+  const isLoggedIn = Auth.loggedIn();
 
   // if(isLoggedIn) {
   //   console.log('yes')
@@ -26,12 +26,11 @@ export default function Main() {
       </div>
 
       <div>
-        <section className="main-search has-text-centered mt-5">
+        <section className="main-search has-text-centered">
           <h1 className="title is-center has-text-white has-text-weight-bold">
             I WANT TO LEARN . . .
           </h1>
           <button className="button">
-
             {isLoggedIn ? (
               <Link
                 className="has-text-black has-text-weight-semibold"
@@ -39,29 +38,15 @@ export default function Main() {
               >
                 GO TO COMMUNITY
               </Link>
-              ) : (
+            ) : (
               <Link
                 className="has-text-black has-text-weight-semibold"
                 to="/signup"
               >
                 BECOME A MEMBER
               </Link>
-              )
-            }
+            )}
           </button>
-          {/* SEARCH BAR */}
-          {/* <p className="control has-icons-right">
-            <input
-              className="searchbar input has-text-centered"
-              type="text"
-              value={searchInput}
-              placeholder="search"
-              onChange={handleInputChange}
-            />{" "}
-            <span className="icon is-small is-right">
-              <i className="fa-solid fa-magnifying-glass"></i>
-            </span>
-          </p> */}
         </section>
 
         <section className="main-half has-text-centered">
