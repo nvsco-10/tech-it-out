@@ -4,6 +4,7 @@
   "private": true,
   "proxy": "http://localhost:3001",
   "dependencies": {
+    "@emailjs/browser": "^3.6.2",
     "@fontsource/roboto": "^4.5.5",
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",

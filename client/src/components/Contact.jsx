@@ -1,52 +1,87 @@
-import React, {useState} from 'react'
+import React, {useState, useRef} from 'react'
 import { Link } from "react-router-dom";
-import validator from 'validator'
-
-
+import { Button, Notification } from 'react-bulma-components';
+import emailjs from '@emailjs/browser'
+// import validator from 'validator'
 
 export default function Contact() {
+    const form = useRef()
+
+    const [emailError, setEmailError] = useState('')
 
     const [userFormData, setUserFormData] = useState({   name: '',
     email: '',
     message: ''});
-    const [emailError, setEmailError] = useState('')
+    
+  const [showAlert, setShowAlert] = useState(false);
+
    
     
     const handleInputChange = (event) => {
         const { name, value } = event.target;
         setUserFormData({ ...userFormData, [name]: value });
-        
+        let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+        if (event.isEmail(re)) {
+                    setEmailError('Valid Email :)')
+                } else {
+                    setEmailError('Enter valid Email!')
+                }
+
     };
 
-    const validateEmail = (e) => {
-        let email = e.target.value
+    // const validateEmail = (e) => {
+    //     let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
         
-        if (validator.isEmail(email)) {
-            setEmailError('Valid Email :)')
-        } else {
-            setEmailError('Enter valid Email!')
-        }
-    }
+    //     if (e.isEmail(re)) {
+    //         setEmailError('Valid Email :)')
+    //     } else {
+    //         setEmailError('Enter valid Email!')
+    //     }
+    // }
     
-    const handleFormSubmit = async (event) => {
-      event.preventDefault();
+    // const handleFormSubmit = async (event) => {
+    //   event.preventDefault();
   
-      setUserFormData({
-        email: '',
-        name: '',
-        message:''
+    //   setUserFormData({
+    //     email: '',
+    //     name: '',
+    //     message:''
         
-      });
+    //   });
+
+
+
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+    
+        emailjs.sendForm('service_kurt5ih', 'template_i3ydvdq', form.current, 'MY4m_wVQW7v3cUs7e')
+          .then(() => {
+              window.location.reload(false)
+              setShowAlert(true)
+        
+          }, () => {
+            setShowAlert(true)
+          });
+      };
       
-    };
+ 
   
     return (
     <div className='login_form'>
   
         <h1>Ask us a question!</h1>
     
-        <form onSubmit={handleFormSubmit}>
-       
+        <form ref={form}onSubmit={sendEmail}>
+        {showAlert && (
+          // Bulma component
+          <Notification color="success" >
+            Message sent!
+            <Button remove onClick={() => setShowAlert(false)}>x</Button>
+          </Notification>
+        )}
             <div className="form-row">
                   
                     <input
@@ -62,15 +97,16 @@ export default function Contact() {
 
                     <input
                     name="email"
-                    type="text"
+                    type="email"
                     placeholder="Email"
-                    onChange={(e) => { handleInputChange(e); validateEmail(e)}}
+                    // onChange={(e) => {validateEmail(e);handleInputChange(e)}}
+                    onChange={handleInputChange}
                     value={userFormData.email}
                     required
                     />
-                    <span style={{
+                     <span style={{
           fontWeight: 'bold',
-          color: 'aqua',
+          color: 'red',
         }}>{emailError}</span>
                     </div>
                 
