@@ -11,7 +11,7 @@ import CreatePost from './pages/CreatePost';
 import EditPost from './pages/EditPost';
 import Contact from './components/Contact';
 import About from './pages/About';
-import PrivacyPolicy from './pages/PrivacyPolicy';
+// import PrivacyPolicy from './pages/PrivacyPolicy';
 import Profile from './pages/Profile';
 
 export default function App() {
@@ -31,7 +31,7 @@ export default function App() {
           <Route path="/community/posts/edit/:id" element={<EditPost />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
-          <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+          {/* <Route path="/privacypolicy" element={<PrivacyPolicy />} /> */}
           <Route path="/profile" element={<Profile />} />
         </Routes>
       </Router>
