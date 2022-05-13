@@ -6,12 +6,10 @@ import { Button, Notification } from "react-bulma-components";
 
 import "../css/login.scss";
 
-
 import { loginUser } from "../utils/API";
 import Auth from "../utils/auth";
 
 export default function Login() {
-  
   const eye = <FontAwesomeIcon icon={faEye} />;
 
   const [userFormData, setUserFormData] = useState({
@@ -56,9 +54,7 @@ export default function Login() {
   };
 
   return (
-    <>
-      {/* <Header></Header> */}
-
+    <div className="Login">
       <div className="login_form">
         <h1>Welcome Back!!!</h1>
         <form onSubmit={handleFormSubmit}>
@@ -109,10 +105,10 @@ export default function Login() {
         <br />
         <div>
           <span>
-            <Link to={'/'}>Back to Homepage</Link>
+            <Link to={"/"}>Back to Homepage</Link>
           </span>
         </div>
       </div>
-    </>
+    </div>
   );
 }
