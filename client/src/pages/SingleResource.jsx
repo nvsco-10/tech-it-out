@@ -83,7 +83,8 @@ const SingleResource = () => {
   
           <div className='resource-image'>
               <img src="https://via.placeholder.com/250" />
-              <p>{resourceData.name}</p>
+              <h1
+              className='title'>{resourceData.name}</h1>
               <p>{resourceData.type}</p>
               <p>{resourceData.level}</p>
               <p>{resourceData.description}</p>

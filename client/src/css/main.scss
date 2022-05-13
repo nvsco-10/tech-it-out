@@ -100,13 +100,10 @@
 .Resources {
   background: none !important;
   .resource-body {
-    .card-container {
-      // margin: 0 -5rem;
-      .columns {
-        margin: 0 -8rem;
-        display: flex;
-        flex-wrap: wrap;
-      }
+    .columns {
+      margin: 0 -8rem;
+      display: flex;
+      flex-wrap: wrap;
     }
   }
 }
@@ -115,5 +112,9 @@
   .resource-image {
     display: flex;
     justify-content: center;
+    background-color:  lightgrey;
+    h1 {
+      text-transform: uppercase;
+    }
   }
 }
