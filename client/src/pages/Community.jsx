@@ -6,11 +6,14 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { getPosts } from '../utils/API'
 import PostList from "../components/PostList";
+import Auth from '../utils/auth';
 
 export default function Main() {
   const [ searchInput, setSearchInput ] = useState('');
   const [ postList, setPostList ] = useState([]);
   const [ filteredPosts, setFilteredPosts ] = useState([]);
+
+  const isLoggedIn = Auth.loggedIn() 
 
   const getAllPosts = async() => {
     const query = await getPosts();
@@ -67,9 +70,14 @@ export default function Main() {
         </div>
 
         <div className="section2 has-text-centered">
-          <Link to={'/community/newpost'}>
-            <button className="button is-warning">CREATE A POST</button>
-          </Link>
+          {isLoggedIn ? (
+            <Link to={'/community/newpost'}>
+              <button className="button is-warning">CREATE A POST</button>
+            </Link>) :
+            (
+              <p><a href="/login">Login</a> to create a post.</p>
+            )
+          }
           <div className="">
             <button className="button m-4 is-info" onClick={filterByCategory}>SHOW OFF</button>
             <button className="button m-4 is-danger" onClick={filterByCategory}>HELP ME</button>

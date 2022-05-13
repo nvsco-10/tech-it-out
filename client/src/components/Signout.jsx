@@ -8,7 +8,7 @@ export default function Signout() {
     window.location.href = "/";
   };
   return (
-    <div className="end">
+    <div id="end" className="end">
       <button
         onClick={logout}
         className="button has-text-white"

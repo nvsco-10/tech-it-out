@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import "../css/header.scss";
 import logo from "../images/tech-it-out-black-big.png";
 import Auth from "../utils/auth";
+// import login from "../components/Login"
+import { Link } from "react-router-dom";
 import "@fontsource/roboto";
 import { useLocation } from 'react-router-dom'
 import Signout from "./Signout";
@@ -40,29 +42,31 @@ export default function Header() {
     <div>
       <header>
         <nav className="navbar" role="navigation">
-          {/* <div className="navbar-brand">
-            <a className="navbar-item" href="/about"> */}
-              <img className="logo" src={logo} alt="tech it out" />
-            {/* </a>
-          </div> */}
+          {/* <div className="navbar-brand"> */}
+          {/* <a className="navbar-item" href="/about"> */}
+          <Link to="/about">
+            <img className="logo" src={logo} alt="tech it out" />
+          </Link>
+          {/* </a> */}
+          {/* </div> */}
 
           <div className="navbar-start">
             <nav className="navbar-menu">
               <a
                 href="/resources"
-                className="navbar-item resources has-text-black has-text-weight-semibold"
+                className="navbar-item resources has-text-white has-text-weight-semibold"
               >
                 RESOURCES
               </a>
               <a
                 href="/community"
-                className="navbar-item community has-text-black has-text-weight-semibold"
+                className="navbar-item community has-text-white has-text-weight-semibold"
               >
                 COMMUNITY
               </a>
               <a
                 href="/"
-                className="navbar-item home has-text-black has-text-weight-semibold"
+                className="navbar-item home has-text-white has-text-weight-semibold"
               >
                 HOME
               </a>
@@ -70,7 +74,7 @@ export default function Header() {
                 <div>
                   <a
                     href="/profile"
-                    className="navbar-item profile has-text-black has-text-weight-semibold"
+                    className="navbar-item profile has-text-white has-text-weight-semibold"
                   >
                     PROFILE
                   </a>
@@ -78,17 +82,16 @@ export default function Header() {
               )}
 
               {/* Make this look better pls, change the wording */}
-              {isLoggedIn && <p>Logged in as {username}</p>}
+              {isLoggedIn && (
+                <p className="welcome">Welcome back {username}!</p>
+              )}
 
               {isLoggedIn ? (
                 <Signout />
               ) : (
-                <div className="end">
-                  <button className="button is-info">
-                    <a href="/login" className="has-text-white">
-                      LOGIN
-                    </a>
-                  </button>
+                <div id="end" className="end">
+                  <Link className="button"
+                  to="/login">LOGIN</Link>
                 </div>
               )}
             </nav>
