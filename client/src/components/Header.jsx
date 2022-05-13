@@ -2,16 +2,11 @@ import React, { useState, useEffect } from "react";
 import "../css/header.scss";
 import logo from "../images/tech-it-out-black-big.png";
 import Auth from "../utils/auth";
-// import login from "../components/Login"
 import { Link } from "react-router-dom";
 import "@fontsource/roboto";
-import { useLocation } from 'react-router-dom'
 import Signout from "./Signout";
 
 export default function Header() {
-
-  const location = useLocation();
-  console.log(location.pathname);
 
   const [username, setUsername] = useState("");
   const isLoggedIn = Auth.loggedIn();
