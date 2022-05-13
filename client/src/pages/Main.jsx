@@ -18,7 +18,7 @@ export default function Main() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    setTimeout(() => setLoading(false), 1500)
+    setTimeout(() => setLoading(false), 1350)
   }, [])
   return (
 
@@ -102,9 +102,8 @@ export default function Main() {
             <div className="spinner">
 
                 <SpinnerDotted
-                height="100"
-                width="100"
-                color='skyblue'
+               size="5%"
+                color='aqua'
                 />
             </div>
             )}
