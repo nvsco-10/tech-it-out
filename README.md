@@ -34,7 +34,7 @@ Tech-it-Out is a user-friendly app. Its sole purpose is to create an environment
 </p>
 
 ## Roles
-* Emily Vasquez - Lead Designer
+* Emily Vazquez - Lead Designer
 * Gustavo Tijerino - Front-End
 * Jalen McNeal - Front-End/Back-End Support
 * Neema Velasco - Server, Front-End Support
