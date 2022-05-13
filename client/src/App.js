@@ -1,4 +1,5 @@
 import React  from 'react'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Main from './pages/Main';
@@ -10,34 +11,29 @@ import CreatePost from './pages/CreatePost';
 import EditPost from './pages/EditPost';
 import Contact from './components/Contact';
 import About from './pages/About';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 import Profile from './pages/Profile';
-import './css/app.css'
-
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from "react-router-dom";
 
 export default function App() {
 
   return (
     <div>
       <Router>
-      <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/resources" element={<Resources />} />
-        <Route path="/resources/:id" element={<SingleResource />} />
-        <Route path="/community" element={<Community />} />
-        <Route path="/community/newpost" element={<CreatePost />} />
-        <Route path="/community/posts/:id" element={<SinglePost />} />
-        <Route path="/community/posts/edit/:id" element={<EditPost />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/profile" element={<Profile />} />
-    </Routes>
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/resources" element={<Resources />} />
+          <Route path="/resources/:id" element={<SingleResource />} />
+          <Route path="/community" element={<Community />} />
+          <Route path="/community/newpost" element={<CreatePost />} />
+          <Route path="/community/posts/:id" element={<SinglePost />} />
+          <Route path="/community/posts/edit/:id" element={<EditPost />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+          <Route path="/profile" element={<Profile />} />
+        </Routes>
       </Router>
     </div>
   )
