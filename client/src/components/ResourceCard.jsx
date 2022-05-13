@@ -21,7 +21,7 @@ const ResourceCard = ({id, name, description, type, level}) => {
                             </Link>
                         <div>
                             <a class="button is-danger mr-2">{type.toUpperCase()}</a>
-                            <a class="button is-warning mr-2">{level.toUpperCase()}</a>
+                            <a class="button is-success mr-2">{level.toUpperCase()}</a>
                         </div>
                         </div>
                     </div>
