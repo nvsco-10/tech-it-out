@@ -3,9 +3,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { Button, Notification } from "react-bulma-components";
-// import "../css/header.scss"
+
 import "../css/login.scss";
-// import LoginHeader from "./Login-header";
+
 
 import { loginUser } from "../utils/API";
 import Auth from "../utils/auth";
@@ -56,16 +56,8 @@ export default function Login() {
   };
 
   return (
-<<<<<<< HEAD
     <>
-      <Header></Header>
-    <div className="login_form">
-      <h1>Welcome Back!!!</h1>
-      <form onSubmit={handleFormSubmit}>
-=======
-    <div className="container">
-      {/* <LoginHeader></LoginHeader> */}
->>>>>>> 2fc954d816bf3bfed384fdc5e1deb48231a9bf51
+      {/* <Header></Header> */}
 
       <div className="login_form">
         <h1>Welcome Back!!!</h1>
@@ -114,8 +106,13 @@ export default function Login() {
             <Link to="/signup">Sign Up</Link>
           </span>
         </div>
+        <br />
+        <div>
+          <span>
+            <Link to={'/'}>Back to Homepage</Link>
+          </span>
+        </div>
       </div>
-    </div>
     </>
   );
 }
