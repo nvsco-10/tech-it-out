@@ -10,42 +10,42 @@
     "name": "css-tricks",
     "type": "misc",
     "level": "all",
-    "description": "everything you need to know about css - tips & tricks",
+    "description": "Everything you need to know about css - tips & tricks",
     "link": "https://css-tricks.com/almanac/"
   },
   {
     "name": "collect ui",
     "type": "misc",
     "level": "all",
-    "description": "design inspiration",
+    "description": "Unlimited design inspiration",
     "link": "https://collectui.com/"
   },
   {
     "name": "color hunt",
     "type": "tools",
     "level": "all",
-    "description": "color palletes for designers and artists",
+    "description": "Color palletes for designers and artists",
     "link": "https://colorhunt.co/"
   },
   {
     "name": "font awesome",
     "type": "tools",
     "level": "all",
-    "description": "free and paid icons",
+    "description": "Free and paid icons",
     "link": "https://fontawesome.com/"
   },
   {
-    "name": "condepen",
+    "name": "codepen",
     "type": "tools",
     "level": "all",
-    "description": "online code editor ",
+    "description": "Online code editor",
     "link": "https://codepen.io/"
   },
   {
     "name": "favicon generator",
     "type": "tools",
     "level": "all",
-    "description": "create your own favicon",
+    "description": "Create your own favicon",
     "link": "https://www.favicon.cc/"
   },
   {
@@ -66,14 +66,14 @@
     "name": "css button generator",
     "type": "tools",
     "level": "all",
-    "description": "css button generator",
+    "description": "CSS button generator - just copy and paste",
     "link": "https://css3buttongenerator.com/"
   },
   {
     "name": "flaticon - vector icons and stickers",
     "type": "tools",
     "level": "all",
-    "description": "free icons",
+    "description": "Free to use icons for your website or app",
     "link": "https://www.flaticon.com/"
   },
   {
@@ -87,60 +87,60 @@
     "name": "daily ui design challenge",
     "type": "projects",
     "level": "all",
-    "description": "sign-up for daily ui design challenges",
+    "description": "Sign-up for daily ui design challenges",
     "link": "https://www.dailyui.co/"
   },
   {
     "name": "canva",
     "type": "tools",
     "level": "all",
-    "description": "free graphic design platform to create mock ups, logos, images, etc.",
+    "description": "Free graphic design platform to create mock ups, logos, images, etc.",
     "link": "https://www.canva.com/"
   },
   {
     "name": "adobe color",
     "type": "tools",
     "level": "all",
-    "description": "find beautiful color combinations for your designing ",
+    "description": "Find beautiful color combinations for your designing",
     "link": "https://color.adobe.com/create/color-wheel"
   },
   {
     "name": "karel ide",
     "type": "games",
     "level": "beginner",
-    "description": "simple game or playground to practice writing simple javascript commands",
+    "description": "Simple game or playground to practice writing simple javascript commands",
     "link": "http://stanford.edu/~cpiech/karel/ide.html"
   },
   {
-    "name": "flex froggy",
+    "name": "flexbox froggy",
     "type": "games",
     "level": "intermediate",
-    "description": "a game where you help Froggy and friends by writing CSS code",
+    "description": "A game where you help Froggy and friends by writing CSS code",
     "link": "https://flexboxfroggy.com/"
   },
   {
     "name": "practice javascript",
     "type": "games",
     "level": "beginner",
-    "description": "practice javascript with this fun game",
+    "description": "Practice javascript with this fun game",
     "link": "https://practicejavascript.com/"
   },
   {
     "name": "coding game",
     "type": "games",
     "level": "all",
-    "description": "coding games and programming challenges to code better",
+    "description": "Coding games and programming challenges to code better",
     "link": "https://www.codingame.com/start"
   },
   {
     "name": "css diner ",
     "type": "games",
     "level": "beginner",
-    "description": "test your css selectors skills",
+    "description": "Test your css selectors skills",
     "link": "https://flukeout.github.io/"
   },
   {
-    "name": "flex defense",
+    "name": "flexbox defense",
     "type": "games",
     "level": "intermediate",
     "description": "Your job is to stop the incoming enemies from getting past your defenses. Unlike other tower defense games, you must position your towers using CSS!",
@@ -150,7 +150,7 @@
     "name": "css grid garden",
     "type": "games",
     "level": "intermediate",
-    "description": "learn and practice css grid properties",
+    "description": "Learn and practice css grid properties",
     "link": "https://cssgridgarden.com/"
   },
   {
@@ -171,28 +171,28 @@
     "name": "Elevator Saga",
     "type": "games",
     "level": "all",
-    "description": "the elevator programming game",
+    "description": "The elevator programming game",
     "link": "http://play.elevatorsaga.com/"
   },
   {
     "name": "Hipster Ipsum",
     "type": "tools",
     "level": "all",
-    "description": "dummy text generator",
+    "description": "Dummy text generator with a flair of hipster",
     "link": "https://hipsum.co/"
   },
   {
-    "name": "readme",
+    "name": "readme.so",
     "type": "tools",
     "level": "all",
-    "description": "readme generator",
+    "description": "Easy to use readme generator",
     "link": "https://readme.so/"
   },
   {
     "name": "React Icons",
     "type": "tools",
     "level": "all",
-    "description": "free react icons",
+    "description": "Free react icons",
     "link": "https://react-icons.github.io/react-icons/"
   },
   {
@@ -217,99 +217,146 @@
     "link": "https://javascript30.com/"
   },
   {
-    "name": "npm",
+    "name": "Bulma",
     "type": "tools",
     "level": "intermediate",
     "description": "Bulma is a CSS library to help you style your HTML code",
     "link": "https://bulma.io/"
   },
   {
-    "name": "placeholder image",
+    "name": "Placeholder image",
     "type": "tools",
     "level": "all",
-    "description": "placeholder image site where you can edit size, color and text",
+    "description": "Placeholder images with custom sizes.",
     "link": "http://placehold.jp/en.html"
-  },
-  {
-    "name": "bumla",
-    "type": "tools",
-    "level": "intermediate",
-    "description": "Bulma is a CSS library to help you style your HTML code",
-    "link": "https://bulma.io/"
   },
   {
     "name": "ELI5 code language",
     "type": "misc",
     "level": "beginner",
-    "description": "article that makes coding language looks easy ",
-    "link": "https://damirkotoric.medium.com/the-web-developers-lexicon-1d9e0d7468b5"
-  },
-  {
-    "name": "html colors",
-    "type": "misc",
-    "level": "beginner",
-    "description": "article that makes coding language easy",
+    "description": "Makes coding language look easy.",
     "link": "https://damirkotoric.medium.com/the-web-developers-lexicon-1d9e0d7468b5"
   },
   {
     "name": "amime.js",
     "type": "tools",
     "level": "intermidiate",
-    "description": "a cool animantion api",
+    "description": "A cool animation API",
     "link": "https://animejs.com/"
   },
   {
     "name": "regex101",
     "type": "tools",
     "level": "all",
-    "description": "an interactive regular expression console that lets you debug in real-time",
+    "description": "An interactive regular expression console that lets you debug in real-time",
     "link": "https://regex101.com/"
   },
   {
     "name": "Data and Apis",
     "type": "project",
     "level": "intermediate",
-    "description": "working with data and apis in Javascript",
+    "description": "Working with data and apis in Javascript",
     "link": "https://www.youtube.com/playlist?list=PLRqwX-V7Uu6YxDKpFzf_2D84p0cyk4T7X"
   },
   {
     "name": "programming in text",
     "type": "tools",
     "level": "intermediate",
-    "description": "multiple video training about coding in javascript",
+    "description": "Multiple video training about coding in javascript",
     "link": "https://thecodingtrain.com/learning/programming-with-text/"
   },
   {
-    "name": "data and apis",
-    "type": "tools",
-    "level": "intermediate",
-    "description": "working with data and apis in Javascript",
-    "link": "https://www.youtube.com/playlist?list=PLRqwX-V7Uu6YxDKpFzf_2D84p0cyk4T7X"
-
-  },
-  {
-    "name": "programming in text",
-    "type": "tools",
-    "level": "intermediate",
-    "description": "mulitple video trainings about coding in javascript",
-    "link": "https://thecodingtrain.com/learning/programming-with-text/" 
-  },
-  {
-    "name": "vscode",
+    "name": "vscode basic tools",
     "type": "tools",
     "level": "beginner",
-    "description": "video that will walk you through visual code basic tools",
+    "description": "Video that will walk you through visual code basic tools",
     "link": "https://www.youtube.com/watch?v=DKxS3IkduWQ"
   },
   {
     "name": "Javascript promises",
     "type": "tools",
     "level": "beginner",
-    "description": "detailed video of how to implement javascript promises",
+    "description": "Detailed video of how to implement javascript promises",
     "link": "https://www.youtube.com/watch?v=DHvZLI7Db8E"
+  },
+  {
+    "name": "Scratch",
+    "type": "games",
+    "level": "all",
+    "description": "Block based programming language where you can learn about events, conditionals, variables, and more by building your own games and animations.",
+    "link": "https://scratch.mit.edu/"
+  },
+  {
+    "name": "Tynker",
+    "type": "games",
+    "level": "all",
+    "description": "Build projects and play games using HTML, CSS, JavaScript, Python, and Java. ",
+    "link": "https://www.tynker.com/"
+  },
+  {
+    "name": "Angular interactive box-model",
+    "type": "tools",
+    "level": "beginner",
+    "description": "A useful app to help you visualize the box-model.",
+    "link": "https://codepen.io/carolineartz/full/ogVXZj"
+  },
+  {
+    "name": "Animated CSS Background Generator",
+    "type": "tools",
+    "level": "beginner",
+    "description": "Use this tool to create stunning backgrounds for your website.",
+    "link": "https://codepen.io/carolineartz/full/ogVXZj"
+  },
+  {
+    "name": "21 Easy JavaScript Projects For Beginners (Code Included!)",
+    "type": "projects",
+    "level": "beginner",
+    "description": "Looking to get some practice with JavaScript or to build your portfolio to impress hiring managers?",
+    "link": "https://skillcrush.com/blog/projects-you-can-do-with-javascript/#list"
+  },
+  {
+    "name": "10 React Projects to Build (With Source Code)",
+    "type": "projects",
+    "level": "intermediate",
+    "description": "Practice your React skills with these React projects - from beginner to advanced level React",
+    "link": "https://www.interviewbit.com/blog/react-projects/"
+  },
+  {
+    "name": "VSCode Shortcuts and “Hacks” every Programmer should know",
+    "type": "misc",
+    "level": "all",
+    "description": "VSCode shortcuts to increase your productivity",
+    "link": "https://towardsdatascience.com/vscode-shortcuts-and-hacks-every-programmer-should-know-8d544bf6ab85"
+  },
+  {
+    "name": "GIT CHEAT SHEET",
+    "type": "misc",
+    "level": "all",
+    "description": "Most important and commonly used Git commands",
+    "link": "https://education.github.com/git-cheat-sheet-education.pdf"
+  },
+  {
+    "name": "Projects by Kevin Powell",
+    "type": "projects",
+    "level": "beginner",
+    "description": "Master design and responsiveness with Kevin Powell.",
+    "link": "https://www.kevinpowell.co/courses/"
+  },
+  {
+    "name": "Computer Science 101 - Free course by Stanford Online",
+    "type": "misc",
+    "level": "beginner",
+    "description": "Hosted on edX. Introduction to Computer Science for a zero-prior-experience audience. Play with little phrases of code to understand what computers are all about.",
+    "link": "https://www.edx.org/course/computer-science-101"
+  },
+  {
+    "name": "JavaScript Introduction - Free course by W3C",
+    "type": "misc",
+    "level": "beginner",
+    "description": "Hosted on edX. Learn JavaScript, a Web development programming language, to add interactivity to your Web pages, and become an expert Web developer.",
+    "link": "https://www.edx.org/course/javascript-introduction"
   }
  
-
 ]
 
 
