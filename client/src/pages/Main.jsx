@@ -1,7 +1,9 @@
 import React from "react";
-import Auth from '../utils/auth';
-import "../css/main.scss";
+import Auth from "../utils/auth";
+import "../css/home.scss";
+import logo1 from "../images/tech-it-out-fullwhite.png"
 import Header from "../components/Header";
+import Team from "../components/Team"
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 import "@fontsource/roboto";
@@ -11,7 +13,7 @@ import image2 from "../images/Boy-asking-question.png";
 export default function Main() {
   // const search = <FontAwesomeIcon icon={faSearch} />;
 
-  const isLoggedIn = Auth.loggedIn(); 
+  const isLoggedIn = Auth.loggedIn();
 
   // if(isLoggedIn) {
   //   console.log('yes')
@@ -26,62 +28,71 @@ export default function Main() {
       </div>
 
       <div>
-        <section className="main-search has-text-centered mt-5">
+        <section className="main-search has-text-centered">
+          <img className="logo" src={logo1} alt="tech it out logo"></img>
           <h1 className="title is-center has-text-white has-text-weight-bold">
             I WANT TO LEARN . . .
           </h1>
           <button className="button">
-
             {isLoggedIn ? (
               <Link
-                className="has-text-black has-text-weight-semibold"
+                className="community has-text-weight-semibold"
                 to="/community"
               >
                 GO TO COMMUNITY
               </Link>
-              ) : (
+            ) : (
               <Link
-                className="has-text-black has-text-weight-semibold"
+                className="has-text-white has-text-weight-semibold"
                 to="/signup"
               >
                 BECOME A MEMBER
               </Link>
-              )
-            }
+            )}
           </button>
-          {/* SEARCH BAR */}
-          {/* <p className="control has-icons-right">
-            <input
-              className="searchbar input has-text-centered"
-              type="text"
-              value={searchInput}
-              placeholder="search"
-              onChange={handleInputChange}
-            />{" "}
-            <span className="icon is-small is-right">
-              <i className="fa-solid fa-magnifying-glass"></i>
-            </span>
-          </p> */}
         </section>
 
         <section className="main-half has-text-centered">
-          <h1 className="title">JOIN THE COMMUNITY</h1>
+          <h1 className="title has-text-white">JOIN THE COMMUNITY</h1>
           <br />
           <div className="hold">
-            <a href="/about" className="about-us has-text-weight-semibold">
+            <a href="/about" className="about-us has-text-weight-semibold has-text-white">
               LEARN MORE ABOUT US!
             </a>
           </div>
           <div className="mt-5 columns is-inline-block">
-            <img className="pr-6 pb-4" src={image1} alt="avatar images" />
-            {/* <p>Meet other developers blah blah blah blah blah blah</p> */}
-            <img className="pr-6 pb-4" src={image2} alt="boy asking question" />
-            {/* <p>Get help when you're stuck blah blah blah blah</p> */}
-            <img className="pr-6 pb-4" src={image1} alt="placeholder" />
-            {/* <p>Meet other developers blah blah blah blah blah blah</p> */}
+            <div className="item">
+              <img className="pr-6 pb-4" src={image1} alt="avatar images" />
+              <span className="caption ">
+                Meet other developers blah blah blah blah blah blah
+              </span>
+            </div>
+
+            <div className="item">
+              <img
+                className="pr-6 pb-4"
+                src={image2}
+                alt="boy asking question"
+              />
+              <span className="caption ">
+                Get help when you're stuck blah blah blah blah
+              </span>
+            </div>
+
+            <div className="item">
+              <img className="pr-6 pb-4" src={image1} alt="placeholder" />
+              <span className="caption ">
+                Meet other developers blah blah blah blah blah blah
+              </span>
+            </div>
           </div>
         </section>
       </div>
+
+      <div className="Team">
+        <Team></Team>
+      </div>
+
       <div>
         <Footer></Footer>
       </div>
