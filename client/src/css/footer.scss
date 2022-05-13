@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:regular,bold,italic&subset=latin,latin-ext');
+
+.footer {
+  background-color: #004aad;
+  color: white;
+  padding-bottom: 2.5%;
+  margin-top: 10%;
+
+  .content p {
+    font-style: italic;
+    font-family: Montserrat;
+    
+    .suggest-link {
+      font-family: Montserrat;
+    }
+
+    .suggest-link:hover {
+      text-decoration: underline;
+      color: #8adbf8 !important;
+    }
+  }
+  .navbar-menu {
+    justify-content: center;
+    text-decoration: none;
+    transform: none;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.15rem;
+
+    .navbar-item {
+      color: #fff;
+      margin-bottom: 0.75rem;
+      padding-left: 5rem;
+      padding-right: 5rem;
+      //   font-style: none;
+    }
+
+    .navbar-item:hover {
+      background-color: rgba(4, 45, 99, 0.5);
+      // color: #e73c7e !important;
+      border-radius: 1rem;
+    }
+  }
+}

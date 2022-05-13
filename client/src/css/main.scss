@@ -1,0 +1,128 @@
+* {
+  font-family: "Roboto", Oxygen, Ubuntu, Cantarell, "Open Sans",
+    "Helvetica Neue", sans-serif;
+}
+
+.Main {
+  // background: -webkit-linear-gradient(left, #004aad, #e73c7e);
+  // background-image: url("../images/maximalfocus-unsplash.jpg");
+  // background-position: 0rem -30rem;
+  // background-size: 100%;
+  // ---------
+  background: linear-gradient(-45deg, #262d92, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  .main-search {
+    margin-top: -3rem;
+    padding-top: 16rem;
+    padding-bottom: 16rem;
+    background-image: url("../images/nejc-unsplash.jpg");
+    background-position: 0rem -30rem;
+    background-size: 100%;
+    .title {
+      letter-spacing: 0.35rem;
+    }
+    .button {
+      background-color: #004aad;
+      border: none;
+      .community {
+        color: #fff;
+      }
+    }
+
+    .button:hover {
+      background-color: #e73c7e;
+    }
+  }
+
+  .main-half {
+    // background: -webkit-linear-gradient(left, #004aad, #e73c7e);
+    margin-top: 4.5rem;
+    padding: 4rem;
+    // margin-bottom: 3rem;
+    letter-spacing: 0.2rem;
+
+    .button {
+      background-color: #004aad;
+      font-size: 1.15rem;
+      letter-spacing: 0.05rem;
+      width: 12%;
+      padding: 1rem;
+      border-radius: 0.75rem;
+    }
+    .item {
+      vertical-align: top;
+      display: inline-block;
+      text-align: center;
+      width: 25rem;
+      margin: 1rem 2rem;
+      // img {
+      //   width: 25rem;
+      // }
+      .caption {
+        display: block;
+        color: #fff;
+      }
+    }
+  }
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.25);
+  border: none;
+  border-radius: 2rem;
+  // color: black;
+  margin-top: 0.625rem;
+  width: 18.75rem;
+  height: 3.25rem;
+  font-size: 1.375rem;
+  margin-bottom: 1rem;
+  max-width: 35rem;
+  // padding: 0 10%;
+}
+
+.Resources {
+  background: none !important;
+  .resource-body {
+    .columns {
+      margin: 0 -8rem;
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+.SingleResource {
+  .resource-image {
+    display: flex;
+    justify-content: center;
+    background-color:  lightgrey;
+    h1 {
+      text-transform: uppercase;
+    }
+  }
+}
+
+
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+     min-height: 100vh;
+}
