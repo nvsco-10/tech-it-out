@@ -13,7 +13,7 @@ export default function Footer() {
               href="suggestions@learnwebdev.com"
               className="suggest-link has-text-white"
             >
-              suggestions@learnwebdev.com
+              suggestions@techitout.com
             </a>
           </p>
           <div className="navbar-menu has-text-centered">
@@ -23,7 +23,7 @@ export default function Footer() {
             <a href="/about" className="navbar-item has-text-white">
               ABOUT US
             </a>
-            <a className="navbar-item">PRIVACY POLICY</a>
+            <a href="/privacypolicy" className="navbar-item">PRIVACY POLICY</a>
           </div>
           <p>copyright 2022</p>
         </div>
