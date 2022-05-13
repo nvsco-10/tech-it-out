@@ -5,11 +5,15 @@
 
 header {
   margin-bottom: 1rem;
-
-  div {
-    // background-color: rgb(255, 102, 102);
-  }
 }
+
+
+@mixin background {
+  background: linear-gradient(-45deg, #262d92, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
 
 .navbar {
   // background-color: #cdcfd1;
@@ -99,7 +103,7 @@ header {
     }
 
     .navbar-menu a:hover {
-      background-color: #000;
+      background-color: rgba(0, 0, 0, 0.5);
       border-radius: 2rem;
       // padding: 1rem;
       // opacity: 50%;
@@ -109,8 +113,8 @@ header {
     .welcome {
       display: grid;
       grid-area: welcome;
-      background-color: #fff;
-      color: #e73c7e;
+      background-color: rgba(255, 255, 255, 0.5);
+      color: #000;
       width: 15rem;
       justify-content: center;
       height: 2.5rem;

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../css/header.scss";
 import logo from "../images/tech-it-out-black-big.png";
 import Auth from "../utils/auth";
+// import login from "../components/Login"
 import { Link } from "react-router-dom";
 import "@fontsource/roboto";
 import Signout from "./Signout";
@@ -83,12 +84,9 @@ export default function Header() {
               {isLoggedIn ? (
                 <Signout />
               ) : (
-                <div className="end">
-                  <button className="button">
-                    <a href="/login" className="has-text-black">
-                      LOGIN
-                    </a>
-                  </button>
+                <div id="end" className="end">
+                  <Link className="button"
+                  to="/login">LOGIN</Link>
                 </div>
               )}
             </nav>

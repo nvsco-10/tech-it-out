@@ -1,7 +1,9 @@
 import React from "react";
 import Auth from "../utils/auth";
 import "../css/main.scss";
+import logo1 from "../images/tech-it-out-fullwhite.png"
 import Header from "../components/Header";
+import Team from "../components/Team"
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 import "@fontsource/roboto";
@@ -27,6 +29,7 @@ export default function Main() {
 
       <div>
         <section className="main-search has-text-centered">
+          <img className="logo" src={logo1} alt="tech it out logo"></img>
           <h1 className="title is-center has-text-white has-text-weight-bold">
             I WANT TO LEARN . . .
           </h1>
@@ -40,7 +43,7 @@ export default function Main() {
               </Link>
             ) : (
               <Link
-                className="has-text-black has-text-weight-semibold"
+                className="has-text-white has-text-weight-semibold"
                 to="/signup"
               >
                 BECOME A MEMBER
@@ -50,10 +53,10 @@ export default function Main() {
         </section>
 
         <section className="main-half has-text-centered">
-          <h1 className="title">JOIN THE COMMUNITY</h1>
+          <h1 className="title has-text-white">JOIN THE COMMUNITY</h1>
           <br />
           <div className="hold">
-            <a href="/about" className="about-us has-text-weight-semibold">
+            <a href="/about" className="about-us has-text-weight-semibold has-text-white">
               LEARN MORE ABOUT US!
             </a>
           </div>
@@ -86,11 +89,10 @@ export default function Main() {
         </section>
       </div>
 
+      <div className="Team">
+        <Team></Team>
+      </div>
 
-
-
-
-      
       <div>
         <Footer></Footer>
       </div>
