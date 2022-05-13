@@ -6,6 +6,7 @@ import Auth from '../utils/auth';
 // import "../css/main.scss
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import image from "../images/laptop-colorful-stock-photo.jpg"
 
 const SingleResource = () => {
     const { id } = useParams();
@@ -82,7 +83,7 @@ const SingleResource = () => {
         <Header></Header>
   
           <div className='resource-image'>
-              <img src="https://via.placeholder.com/250" />
+              <img src={image} />
               <h1
               className='title'>{resourceData.name}</h1>
               <p>{resourceData.type}</p>

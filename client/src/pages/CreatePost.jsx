@@ -75,7 +75,7 @@ const CreatePost = () => {
     }
 
   return (
-    <div>
+    <div className='Login'>
         <div>
             <label>Category</label>
             <select
