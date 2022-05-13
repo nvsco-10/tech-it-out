@@ -1,14 +1,20 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import Auth from '../utils/auth';
 import "bulma/css/bulma.min.css";
 import { getUserById, UpdateUserById } from '../utils/API'
-// import "../css/style.css";
 import PostList from '../components/PostList'
 import Header from '../components/Header';
 
 
 export default function Profile() {
-  const [userData, setUserData] = useState({});
+  const [userData, setUserData] = useState({
+    username: '',
+    email: '',
+    isAdmin: false,
+    linkedin: '',
+    github: ''
+  });
+
   const [posts, setPosts] = useState([])
   const [disabled, setDisabled] = useState(true);
   const [ showAlert, setShowAlert ] = useState(false)
@@ -16,7 +22,7 @@ export default function Profile() {
   const getUserPosts = async (id) => {
     const data = await getUserById(id);
     const result = await data.json();
-    console.log(result)
+   
     setUserData(result)
     setPosts(result.posts)
   }
@@ -67,9 +73,6 @@ export default function Profile() {
 
   }
   
-  function handleGameClick() {
-    setDisabled(!disabled);
-  }
   return (
     <>
       <div><Header/></div>
@@ -95,23 +98,14 @@ export default function Profile() {
               <div className="content has-text-justified">
                   <h3>How To Reach Me</h3>
 
-          <div></div>
-               <input  
-      type="text" value={userData} onChange={e => setUserData(e.target.value)} 
-      hidden={disabled}/>
-      <button hidden={disabled} onClick={handleGameClick}>Submit</button>
-      <br />
-
-      <button hidden={!disabled} onClick={handleGameClick}>Add Contact Info</button>
-
                   <div className='list-item'>
-                      <a href="mailto:gary@gmail.com"> 
+                      <a href={`mailto:${userData.email}`}> 
                         <img src="https://img.icons8.com/ios-filled/48/apple-mail.png" alt="mail-logo"/>
                       </a>
                   </div>
 
                   <div>
-                      <a href="https://github.com/garytalmes" target="_blank" rel="noopener noreferrer"><img src="https://img.icons8.com/material-outlined/48/github.png" alt="github-logo"/>
+                      <a href={`https://github.com/${userData.github}`} target="_blank" rel="noopener noreferrer"><img src="https://img.icons8.com/material-outlined/48/github.png" alt="github-logo"/>
                       </a>
                       <input
                         type="text"
@@ -123,7 +117,7 @@ export default function Profile() {
                   </div>
 
                   <div>
-                      <a href="http://www.linkedin.com/" target="_blank" rel="noopener noreferrer"><img src="https://img.icons8.com/ios-glyphs/48/linkedin-circled--v1.png" alt="linkedin-logo"/> </a>
+                      <a href={`http://www.linkedin.com/${userData.linkedin}`} target="_blank" rel="noopener noreferrer"><img src="https://img.icons8.com/ios-glyphs/48/linkedin-circled--v1.png" alt="linkedin-logo"/> </a>
                       <input
                         type="text"
                         name="linkedin"
