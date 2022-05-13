@@ -15,12 +15,6 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import Profile from './pages/Profile';
 
 
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from "react-router-dom";
-
 export default function App() {
 
   return (
