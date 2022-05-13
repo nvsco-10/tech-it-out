@@ -6,7 +6,6 @@ import { Button, Notification } from "react-bulma-components";
 import { createUser } from "../utils/API";
 import Auth from "../utils/auth";
 
-
 export default function SignUp() {
   const eye = <FontAwesomeIcon icon={faEye} />;
 
@@ -17,8 +16,6 @@ export default function SignUp() {
   });
   const [passwordShown, setPasswordShown] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
-
-  
 
   const togglePasswordVisiblity = () => {
     setPasswordShown(passwordShown ? false : true);
@@ -55,86 +52,86 @@ export default function SignUp() {
   };
 
   return (
-
     <>
-  <div className="Login">
-<div className='login_form'>
+      <div className="Login">
+        <div className="login_form">
+          <h1>Sign Up For Free!</h1>
 
-     <h1>Sign Up For Free!</h1>
+          <form onSubmit={handleFormSubmit}>
+            {showAlert && (
+              // Bulma component
+              <Notification color="danger">
+                Sign Up failed!
+                <Button remove onClick={() => setShowAlert(false)}>
+                  x
+                </Button>
+              </Notification>
+            )}
 
-    <form onSubmit={handleFormSubmit}>
-
-        {showAlert && (
-          // Bulma component
-          <Notification color="danger" >
-            Sign Up failed!
-            <Button remove onClick={() => setShowAlert(false)}>x</Button>
-          </Notification>
-        )}
-
-      <input
-        name="username"
-        type="text"
-        placeholder="Username"
-        onChange={handleInputChange}
-        value={userFormData.username}
-        required
-        />
-
-      <input
-        name="email"
-        type="text"
-        placeholder="Email"
-        onChange={handleInputChange}
-        value={userFormData.email}
-        required
-        />
-      
-      <div className="pass-wrapper">
-        <input
-          placeholder="Password"
-          name="password"
-          type={passwordShown ? "text" : "password"}
-          onChange={handleInputChange}
-          value={userFormData.password}
-          required
-
-          />
-
-          <input
-            name="email"
-            type="text"
-            placeholder="Email"
-            onChange={handleInputChange}
-            value={userFormData.email}
-            required
-          />
-
-          <div className="pass-wrapper">
             <input
-              placeholder="Password"
-              name="password"
-              type={passwordShown ? "text" : "password"}
+              name="username"
+              type="text"
+              placeholder="Username"
               onChange={handleInputChange}
-              value={userFormData.password}
+              value={userFormData.username}
               required
             />
-            <i onClick={togglePasswordVisiblity}>{eye}</i>
-          </div>
 
-          <button
-            type="submit"
-            disabled={
-              !(
-                userFormData.username &&
-                userFormData.email &&
-                userFormData.password
-              )
-            }
-          >
-            Submit
-          </button>
-        </form>
+            <input
+              name="email"
+              type="text"
+              placeholder="Email"
+              onChange={handleInputChange}
+              value={userFormData.email}
+              required
+            />
+
+            <div className="pass-wrapper">
+              <input
+                placeholder="Password"
+                name="password"
+                type={passwordShown ? "text" : "password"}
+                onChange={handleInputChange}
+                value={userFormData.password}
+                required
+              />
+            </div>
+
+            <input
+              name="email"
+              type="text"
+              placeholder="Email"
+              onChange={handleInputChange}
+              value={userFormData.email}
+              required
+            />
+
+            <div className="pass-wrapper">
+              <input
+                placeholder="Password"
+                name="password"
+                type={passwordShown ? "text" : "password"}
+                onChange={handleInputChange}
+                value={userFormData.password}
+                required
+              />
+              <i onClick={togglePasswordVisiblity}>{eye}</i>
+            </div>
+
+            <button
+              type="submit"
+              disabled={
+                !(
+                  userFormData.username &&
+                  userFormData.email &&
+                  userFormData.password
+                )
+              }
+            >
+              Submit
+            </button>
+          </form>
+        </div>
 
         <div className="span-border">
           <span className="span-link">
@@ -142,11 +139,6 @@ export default function SignUp() {
           </span>
         </div>
       </div>
-    </div>
-
-
-  </div>
-          </>
-  )
-
+    </>
+  );
 }
