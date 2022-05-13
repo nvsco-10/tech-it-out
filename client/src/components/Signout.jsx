@@ -7,6 +7,7 @@ export default function Signout() {
     localStorage.clear();
     window.location.href = "/";
   };
+  
   return (
     <div id="end" className="end">
       <button

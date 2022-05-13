@@ -72,7 +72,6 @@ export default function Resources() {
           <button onClick={filterByType} class="button m-4 is-success">MISC</button>
         </div>
 
-        {/* hardcoded article cards */}
         <div className="columns mt-5 is-8 is-variable">
           <div className="container has-text-centered">
             <div className="columns is-mobile is-centered">
