@@ -89,7 +89,7 @@ export default function Team() {
             </div>
           </div>
           <h3>Emily Vazquez</h3>
-          <span>"Mean to Gus" Lady</span>
+          <span>Mean to Gus Lady</span>
           <p>
             "Deeply interested in the integration of Arts and Technology and art in coding. Although I may be young I look forward to paving my own way in the world and continuing to learn and grow. My passion for art and fascination with web development and coding keep me driven and striving for more knowledge."
           </p>

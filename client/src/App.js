@@ -13,8 +13,6 @@ import Contact from './components/Contact';
 import About from './pages/About';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import Profile from './pages/Profile';
-import './css/app.css'
-
 
 export default function App() {
 
