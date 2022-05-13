@@ -1,10 +1,9 @@
 import React from "react";
-// import "bulma/css/bulma.min.css";
 import "../css/post.scss";
+// import "bulma/css/bulma.min.css";
 // Temporarily hardcoded Posts
 export default function Post() {
   return (
-   
     <div className="container">
       <div className="column">
         <div className="card is-horizontal">

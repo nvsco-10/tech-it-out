@@ -16,6 +16,7 @@
 
     .suggest-link:hover {
       text-decoration: underline;
+      color: #8adbf8 !important;
     }
   }
   .navbar-menu {
@@ -35,7 +36,9 @@
     }
 
     .navbar-item:hover {
-      background-color: #013983;
+      background-color: rgba(4, 45, 99, 0.5);
+      // color: #e73c7e !important;
+      border-radius: 1rem;
     }
   }
 }
