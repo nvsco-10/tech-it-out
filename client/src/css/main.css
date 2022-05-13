@@ -1,0 +1,41 @@
+* {
+  font-family: "Roboto", Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.main-search {
+  padding-top: 7.5rem;
+  padding-bottom: 7.5rem;
+  background-image: url("../images/blue-bg-01.png");
+  background-position: 0rem -15rem;
+  background-size: 100%;
+}
+
+.main-search .title {
+  letter-spacing: 0.35rem;
+}
+
+.searchbar {
+  color: black;
+  border: none;
+  border-radius: 2rem;
+  width: 50rem;
+}
+
+.main-half {
+  margin-top: 4.5rem;
+  letter-spacing: 0.2rem;
+}
+
+.main-half .button {
+  background-color: #004aad;
+  font-size: 1.15rem;
+  letter-spacing: 0.05rem;
+  width: 12%;
+  padding: 1rem;
+  border-radius: 0.75rem;
+}
+
+.main-half img {
+  width: 25rem;
+}
+/*# sourceMappingURL=main.css.map */

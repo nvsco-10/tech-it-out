@@ -3,12 +3,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { Button, Notification } from 'react-bulma-components';
+import Header from './Header';
+
 
 
 import { loginUser } from '../utils/API'
+
+
 import Auth from '../utils/auth';
 
 export default function Login() {
+  
   const eye = <FontAwesomeIcon icon={faEye} />;
 
   const [userFormData, setUserFormData] = useState({ username: '', password: '' });
@@ -52,7 +57,8 @@ export default function Login() {
   };
 
   return (
-    
+    <>
+      <Header></Header>
     <div className="login_form">
       <h1>Welcome Back!!!</h1>
       <form onSubmit={handleFormSubmit}>
@@ -100,6 +106,7 @@ export default function Login() {
       </div>
       
     </div>
+    </>
   );
   
 };
