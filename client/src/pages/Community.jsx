@@ -52,7 +52,7 @@ export default function Main() {
   }
 
   return (
-    <div className="Main">
+    <div className="Community">
       <div>
         <Header></Header>
       </div>
@@ -62,6 +62,7 @@ export default function Main() {
           <h1 className="title has-text-centered">EXPLORE THE COMMUNITY</h1>
           {/* SEARCH BAR */}
           <input
+          className="search"
             type="text"
             value={searchInput}
             placeholder="search"
