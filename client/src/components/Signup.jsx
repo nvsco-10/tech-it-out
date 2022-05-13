@@ -1,15 +1,19 @@
-import React, {useState} from 'react'
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
-import { Button, Notification } from 'react-bulma-components';
-import { createUser } from '../utils/API';
-import Auth from '../utils/auth';
+import { Button, Notification } from "react-bulma-components";
+import { createUser } from "../utils/API";
+import Auth from "../utils/auth";
 
 export default function SignUp() {
   const eye = <FontAwesomeIcon icon={faEye} />;
 
-  const [userFormData, setUserFormData] = useState({ username: '', email: '', password: '' });
+  const [userFormData, setUserFormData] = useState({
+    username: "",
+    email: "",
+    password: "",
+  });
   const [passwordShown, setPasswordShown] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
 
@@ -24,88 +28,95 @@ export default function SignUp() {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    
+
     try {
       const response = await createUser(userFormData);
 
       if (!response.ok) {
-        throw new Error('something went wrong!');
+        throw new Error("something went wrong!");
       }
 
       const { token, user } = await response.json();
       console.log(user);
       Auth.login(token);
-
     } catch (err) {
       console.error(err);
-      setShowAlert(true)
+      setShowAlert(true);
     }
 
     setUserFormData({
-      username: '',
-      email: '',
-      password: '',
+      username: "",
+      email: "",
+      password: "",
     });
-    
   };
 
   return (
-    <div className='login_form'>
+    <div className="Login">
+      <div className="login_form">
+        <h1>Sign Up For Free!</h1>
 
-     <h1>Sign Up For Free!</h1>
+        <form onSubmit={handleFormSubmit}>
+          {showAlert && (
+            // Bulma component
+            <Notification color="danger">
+              Sign Up failed!
+              <Button remove onClick={() => setShowAlert(false)}>
+                x
+              </Button>
+            </Notification>
+          )}
 
-    <form onSubmit={handleFormSubmit}>
-
-        {showAlert && (
-          // Bulma component
-          <Notification color="danger" >
-            Sign Up failed!
-            <Button remove onClick={() => setShowAlert(false)}>x</Button>
-          </Notification>
-        )}
-
-      <input
-        name="username"
-        type="text"
-        placeholder="Username"
-        onChange={handleInputChange}
-        value={userFormData.username}
-        required
-        />
-
-      <input
-        name="email"
-        type="text"
-        placeholder="Email"
-        onChange={handleInputChange}
-        value={userFormData.email}
-        required
-        />
-      
-      <div className="pass-wrapper">
-        <input
-          placeholder="Password"
-          name="password"
-          type={passwordShown ? "text" : "password"}
-          onChange={handleInputChange}
-          value={userFormData.password}
-          required
+          <input
+            name="username"
+            type="text"
+            placeholder="Username"
+            onChange={handleInputChange}
+            value={userFormData.username}
+            required
           />
-        <i onClick={togglePasswordVisiblity}>{eye}</i>
+
+          <input
+            name="email"
+            type="text"
+            placeholder="Email"
+            onChange={handleInputChange}
+            value={userFormData.email}
+            required
+          />
+
+          <div className="pass-wrapper">
+            <input
+              placeholder="Password"
+              name="password"
+              type={passwordShown ? "text" : "password"}
+              onChange={handleInputChange}
+              value={userFormData.password}
+              required
+            />
+            <i onClick={togglePasswordVisiblity}>{eye}</i>
+          </div>
+
+          <button
+            type="submit"
+            disabled={
+              !(
+                userFormData.username &&
+                userFormData.email &&
+                userFormData.password
+              )
+            }
+          >
+            Submit
+          </button>
+        </form>
+
+        <div className="span-border">
+          <span className="span-link">
+            <Link to="/login">Back To Login</Link>
+          </span>
+        </div>
       </div>
-
-      <button 
-          type="submit"
-          disabled={!(userFormData.username && userFormData.email && userFormData.password)}>
-          Submit
-      </button>
-
-    </form>
-
-    <div className='span-border'>
-      <span className='span-link'><Link to="/login">Back To Login</Link></span>
     </div>
-
-  </div>
-  )
+  );
 }
