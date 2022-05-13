@@ -24,64 +24,95 @@
       background-position: 0% 50%;
     }
   }
+  .main-search {
+    margin-top: -3rem;
+    padding-top: 16rem;
+    padding-bottom: 16rem;
+    background-image: url("../images/nejc-unsplash.jpg");
+    background-position: 0rem -30rem;
+    background-size: 100%;
+    .title {
+      letter-spacing: 0.35rem;
+    }
+    .button {
+      background-color: #004aad;
+      border: none;
+      .community {
+        color: #fff;
+      }
+    }
 
-}
-
-.main-search {
-  //   background-color: red;
-  margin-top: -1rem;
-  padding-top: 16rem;
-  padding-bottom: 16rem;
-  background-image: url("../images/nejc-unsplash.jpg");
-  background-position: 0rem -30rem;
-  background-size: 100%;
-  .title {
-    letter-spacing: 0.35rem;
-  }
-}
-
-.main-search {
-  
-  .button {
-    background-color: #004aad;
-    border: none;
-    .community {
-      color: #fff;
+    .button:hover {
+      background-color: #e73c7e;
     }
   }
 
-  .button:hover {
-    background-color: #e73c7e;
+  .main-half {
+    // background: -webkit-linear-gradient(left, #004aad, #e73c7e);
+    margin-top: 4.5rem;
+    padding: 4rem;
+    // margin-bottom: 3rem;
+    letter-spacing: 0.2rem;
+
+    .button {
+      background-color: #004aad;
+      font-size: 1.15rem;
+      letter-spacing: 0.05rem;
+      width: 12%;
+      padding: 1rem;
+      border-radius: 0.75rem;
+    }
+    .item {
+      vertical-align: top;
+      display: inline-block;
+      text-align: center;
+      width: 25rem;
+      margin: 1rem 2rem;
+      // img {
+      //   width: 25rem;
+      // }
+      .caption {
+        display: block;
+        color: #fff;
+      }
+    }
   }
 }
 
-.main-half {
-  // background: -webkit-linear-gradient(left, #004aad, #e73c7e);
-  margin-top: 4.5rem;
-  padding: 4rem;
-  // margin-bottom: 3rem;
-  letter-spacing: 0.2rem;
+.search {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.25);
+  border: none;
+  border-radius: 2rem;
+  // color: black;
+  margin-top: 0.625rem;
+  width: 18.75rem;
+  height: 3.25rem;
+  font-size: 1.375rem;
+  margin-bottom: 1rem;
+  max-width: 35rem;
+  // padding: 0 10%;
+}
 
-  .button {
-    background-color: #004aad;
-    font-size: 1.15rem;
-    letter-spacing: 0.05rem;
-    width: 12%;
-    padding: 1rem;
-    border-radius: 0.75rem;
-  }
-  .item {
-    vertical-align: top;
-    display: inline-block;
-    text-align: center;
-    width: 25rem;
-    margin: 1rem 2rem;
-    // img {
-    //   width: 25rem;
-    // }
-    .caption {
-      display: block;
-      color: #fff;
+.Resources {
+  .resource-body {
+    .card-container {
+      // margin: 0 -5rem;
+      .columns {
+        margin: 0 -8rem;
+        display: flex;
+        flex-wrap: wrap;
+      }
     }
+  }
+}
+
+.SingleResource {
+  .resource-image {
+    display: flex;
+    justify-content: center;
   }
 }

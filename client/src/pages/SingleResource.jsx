@@ -3,11 +3,13 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom';
 import { getResourceById, createComment } from '../utils/API';
 import Auth from '../utils/auth';
+// import "../css/main.scss
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const SingleResource = () => {
     const { id } = useParams();
     const [ resourceData, setResourceData ] = useState({})
-    // const [userData, setUserData] = useState({});
     const [ commentData, setCommentData ] = useState({
         comment: '',
         username: ''
@@ -75,9 +77,11 @@ const SingleResource = () => {
     }
     // TEST LAYOUT BELOW - CHANGE FUGLY STYLING 
     return (
-      <div>
+      <div className='SingleResource'>
+
+        <Header></Header>
   
-          <div>
+          <div className='resource-image'>
               <img src="https://via.placeholder.com/250" />
               <p>{resourceData.name}</p>
               <p>{resourceData.type}</p>
@@ -119,6 +123,8 @@ const SingleResource = () => {
                   }
               </div>
           </div>
+
+          <Footer></Footer>
       </div>
     )
 }
