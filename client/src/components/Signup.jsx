@@ -6,12 +6,15 @@ import { Button, Notification } from 'react-bulma-components';
 import { createUser } from '../utils/API';
 import Auth from '../utils/auth';
 
+
 export default function SignUp() {
   const eye = <FontAwesomeIcon icon={faEye} />;
 
   const [userFormData, setUserFormData] = useState({ username: '', email: '', password: '' });
   const [passwordShown, setPasswordShown] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
+
+  
 
   const togglePasswordVisiblity = () => {
     setPasswordShown(passwordShown ? false : true);
@@ -50,7 +53,9 @@ export default function SignUp() {
   };
 
   return (
-    <div className='login_form'>
+    <>
+
+<div className='login_form'>
 
      <h1>Sign Up For Free!</h1>
 
@@ -107,5 +112,6 @@ export default function SignUp() {
     </div>
 
   </div>
+          </>
   )
 }

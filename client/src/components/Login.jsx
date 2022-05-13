@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState} from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { Button, Notification } from "react-bulma-components";
+
 
 import "../css/login.scss";
 
@@ -18,6 +19,7 @@ export default function Login() {
   });
   const [passwordShown, setPasswordShown] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
+
 
   const togglePasswordVisiblity = () => {
     setPasswordShown(passwordShown ? false : true);
@@ -54,61 +56,67 @@ export default function Login() {
   };
 
   return (
-    <div className="Login">
-      <div className="login_form">
-        <h1>Welcome Back!!!</h1>
-        <form onSubmit={handleFormSubmit}>
-          {showAlert && (
-            // Bulma component
-            <Notification color="danger">
-              Login failed!
-              <Button remove onClick={() => setShowAlert(false)}>
-                x
-              </Button>
-            </Notification>
-          )}
+    <>
+  
+    
+       <div className="Login">
 
-          <input
-            name="username"
-            type="text"
-            placeholder="Username"
-            onChange={handleInputChange}
-            value={userFormData.username}
-            required
-          />
+       <div className="login_form">
+       <h1>Welcome Back!!!</h1>
+       <form onSubmit={handleFormSubmit}>
+         {showAlert && (
+           // Bulma component
+           <Notification color="danger">
+             Login failed!
+             <Button remove onClick={() => setShowAlert(false)}>
+               x
+             </Button>
+           </Notification>
+         )}
 
-          <div className="pass-wrapper">
-            <input
-              placeholder="Password"
-              name="password"
-              type={passwordShown ? "text" : "password"}
-              onChange={handleInputChange}
-              value={userFormData.password}
-              required
-            />
-            <i onClick={togglePasswordVisiblity}>{eye}</i>
-          </div>
+         <input
+           name="username"
+           type="text"
+           placeholder="Username"
+           onChange={handleInputChange}
+           value={userFormData.username}
+           required
+         />
 
-          <button
-            type="submit"
-            disabled={!(userFormData.username && userFormData.password)}
-          >
-            Submit
-          </button>
-        </form>
+         <div className="pass-wrapper">
+           <input
+             placeholder="Password"
+             name="password"
+             type={passwordShown ? "text" : "password"}
+             onChange={handleInputChange}
+             value={userFormData.password}
+             required
+           />
+           <i onClick={togglePasswordVisiblity}>{eye}</i>
+         </div>
 
-        <div className="span-border">
-          <span className="span-link">
-            <Link to="/signup">Sign Up</Link>
-          </span>
+         <button
+           type="submit"
+           disabled={!(userFormData.username && userFormData.password)}
+         >
+           Submit
+         </button>
+       </form>
+
+       <div className="span-border">
+         <span className="span-link">
+           <Link to="/signup">Sign Up</Link>
+         </span>
+       </div>
+       <br />
+       <div>
+         <span>
+           <Link to={'/'}>Back to Homepage</Link>
+         </span>
+       </div>
         </div>
-        <br />
-        <div>
-          <span>
-            <Link to={"/"}>Back to Homepage</Link>
-          </span>
-        </div>
-      </div>
-    </div>
-  );
+     </div>
+      
+    </>
+  )
 }

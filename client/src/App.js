@@ -14,6 +14,7 @@ import About from './pages/About';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import Profile from './pages/Profile';
 
+
 export default function App() {
 
   return (
