@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { Button, Notification } from "react-bulma-components";
+import { SpinnerDotted } from 'spinners-react';
 
 import "../css/login.scss";
 
@@ -20,6 +21,12 @@ export default function Login() {
   });
   const [passwordShown, setPasswordShown] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
+
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    setTimeout(() => setLoading(false), 2000)
+  }, [])
 
   const togglePasswordVisiblity = () => {
     setPasswordShown(passwordShown ? false : true);
@@ -57,9 +64,10 @@ export default function Login() {
 
   return (
     <>
-      {/* <Header></Header> */}
+  
+  {loading === false ?
 
-      <div className="login_form">
+      (<div className="login_form">
         <h1>Welcome Back!!!</h1>
         <form onSubmit={handleFormSubmit}>
           {showAlert && (
@@ -112,7 +120,16 @@ export default function Login() {
             <Link to={'/'}>Back to Homepage</Link>
           </span>
         </div>
+      </div>) : (
+       <div className="spinner">
+
+            <SpinnerDotted
+            height="100"
+            width="100"
+            color='skyblue'
+            />
       </div>
+      )}
     </>
   );
 }

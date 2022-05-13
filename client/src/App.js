@@ -11,7 +11,7 @@ import EditPost from './pages/EditPost';
 import Contact from './components/Contact';
 import About from './pages/About';
 import Profile from './pages/Profile';
-import './css/app.css'
+
 
 import {
   BrowserRouter as Router,

@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import "@fontsource/roboto";
 import image1 from "../images/people-transparent.png";
 import image2 from "../images/Boy-asking-question.png";
+import { SpinnerDotted } from 'spinners-react';
 
 export default function Main() {
   // const search = <FontAwesomeIcon icon={faSearch} />;
