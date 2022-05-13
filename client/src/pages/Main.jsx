@@ -1,6 +1,6 @@
 import React from "react";
 import Auth from "../utils/auth";
-import "../css/main.scss";
+import "../css/home.scss";
 import logo1 from "../images/tech-it-out-fullwhite.png"
 import Header from "../components/Header";
 import Team from "../components/Team"
