@@ -26,12 +26,9 @@ export default function Team() {
             </div>
           </div>
           <h3>Neema Velasco</h3>
-          <span>CEO</span>
+          <span>Gary's Assistant</span>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione
-            perspiciatis, error deleniti quaerat beatae doloribus incidunt
-            excepturi. Fugit deleniti accusantium neque hic quidem voluptatibus
-            cumque.
+            "I wish I was as smart as Gus"
           </p>
         </div>
         <div className="team_member">
@@ -49,13 +46,10 @@ export default function Team() {
               </div>
             </div>
           </div>
-          <h3>gustavo tijerino</h3>
-          <span>Accountant</span>
+          <h3>Gustavo Tijerino</h3>
+          <span>Senior Janitor</span>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione
-            perspiciatis, error deleniti quaerat beatae doloribus incidunt
-            excepturi. Fugit deleniti accusantium neque hic quidem voluptatibus
-            cumque.
+            "I like turtles.. And Emily's bio is a lie."
           </p>
         </div>
         <div className="team_member">
@@ -73,13 +67,10 @@ export default function Team() {
               </div>
             </div>
           </div>
-          <h3>jalen mcneal</h3>
-          <span>Product Manager</span>
+          <h3>Jalen McNeal</h3>
+          <span>Magic Man</span>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione
-            perspiciatis, error deleniti quaerat beatae doloribus incidunt
-            excepturi. Fugit deleniti accusantium neque hic quidem voluptatibus
-            cumque.
+            "I like cereal with water."
           </p>
         </div>
         <div className="team_member">
@@ -97,13 +88,10 @@ export default function Team() {
               </div>
             </div>
           </div>
-          <h3>emily vazquez</h3>
-          <span>product analyst</span>
+          <h3>Emily Vazquez</h3>
+          <span>Mean to Gus Lady</span>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione
-            perspiciatis, error deleniti quaerat beatae doloribus incidunt
-            excepturi. Fugit deleniti accusantium neque hic quidem voluptatibus
-            cumque.
+            "Deeply interested in the integration of Arts and Technology and art in coding. Although I may be young I look forward to paving my own way in the world and continuing to learn and grow. My passion for art and fascination with web development and coding keep me driven and striving for more knowledge."
           </p>
         </div>
       </div>

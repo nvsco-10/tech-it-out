@@ -11,15 +11,8 @@ import image1 from "../images/people-transparent.png";
 import image2 from "../images/Boy-asking-question.png";
 
 export default function Main() {
-  // const search = <FontAwesomeIcon icon={faSearch} />;
 
   const isLoggedIn = Auth.loggedIn();
-
-  // if(isLoggedIn) {
-  //   console.log('yes')
-  // } else {
-  //   console.log('no')
-  // }
 
   return (
     <div className="Main">
@@ -64,7 +57,7 @@ export default function Main() {
             <div className="item">
               <img className="pr-6 pb-4" src={image1} alt="avatar images" />
               <span className="caption ">
-                Meet other developers blah blah blah blah blah blah
+                Meet and interact with other developers. Start building your network early on.
               </span>
             </div>
 
@@ -75,14 +68,14 @@ export default function Main() {
                 alt="boy asking question"
               />
               <span className="caption ">
-                Get help when you're stuck blah blah blah blah
+                Stuck? Feeling Lost? Unmotivated? Reach out to the community and be part of a great support system.
               </span>
             </div>
 
             <div className="item">
               <img className="pr-6 pb-4" src={image1} alt="placeholder" />
               <span className="caption ">
-                Meet other developers blah blah blah blah blah blah
+                Find mentors or programming buddies. Learning how to code isn't easy and it doesn't have to be a lonesome journey.
               </span>
             </div>
           </div>

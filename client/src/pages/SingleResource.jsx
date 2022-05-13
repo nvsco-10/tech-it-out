@@ -10,7 +10,6 @@ import Footer from "../components/Footer";
 const SingleResource = () => {
     const { id } = useParams();
     const [ resourceData, setResourceData ] = useState({})
-    // const [userData, setUserData] = useState({});
     const [ commentData, setCommentData ] = useState({
         comment: '',
         username: ''

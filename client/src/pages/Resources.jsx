@@ -79,18 +79,14 @@ export default function Resources() {
           </button>
         </div>
 
-        {/* hardcoded article cards */}
-        <div className="card-container">
-          <div className="columns mt-5 is-8 is-variable">
-            <div className="container has-text-centered">
-              <div className="columns cards is-mobile is-centered">
-                {/* CARDS GO HERE */}
-                {!filteredResources.length ? (
-                  <p>No results found..</p>
-                ) : (
-                  <ResourceList resources={filteredResources} />
-                )}
-              </div>
+        <div className="columns mt-5 is-8 is-variable">
+          <div className="container has-text-centered">
+            <div className="columns is-mobile is-centered">
+              {/* CARDS GO HERE */}
+              {!filteredResources.length ? 
+                <p>No results found..</p> : 
+                <ResourceList resources={filteredResources} />
+              }
             </div>
           </div>
         </div>

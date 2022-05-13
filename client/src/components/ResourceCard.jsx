@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 
-const ResourceCard = ({id, name, description, type, level, link}) => {
+const ResourceCard = ({id, name, description, type, level}) => {
   return (
         <div class="column is-4-tablet is-3-desktop">
             <div class="card">
