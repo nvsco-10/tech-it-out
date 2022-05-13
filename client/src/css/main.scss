@@ -93,6 +93,7 @@
 }
 
 .Resources {
+  background: none !important;
   .resource-body {
     .columns {
       margin: 0 -8rem;
@@ -124,3 +125,9 @@
   }
 }
 
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+     min-height: 100vh;
+}
