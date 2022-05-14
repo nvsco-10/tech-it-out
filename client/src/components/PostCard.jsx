@@ -18,14 +18,14 @@ const PostCard = ({id, title, content, username, category, createdAt, commentCou
     }
   
     return (
-    <div className="card mb-6">
-        <header className="card-header card-header-title has-background-grey-lighter">
+    <div className="community-cards card mb-6">
+        <header className="header">
             <div className="column">
                 <Link to={`/community/posts/${id}`}>
                     <p className=" has-text-primary-light">
                         <a
                         href=""
-                        className="has-text-black is-capitalized is-pulled-left"
+                        className="post-title has-text-black is-capitalized is-pulled-left"
                         >
                         {title}
                         </a>
@@ -33,8 +33,8 @@ const PostCard = ({id, title, content, username, category, createdAt, commentCou
                 </Link>
             </div>
 
-            <div className="column">
-                <span className="">{category}</span>
+            <div className="column post-up">
+                <span className="category">{category}</span>
                 {/* if modify is true, show edit and delete buttons. Shows up only on the profile page */}
                 {modify && (
                     <>
@@ -42,6 +42,7 @@ const PostCard = ({id, title, content, username, category, createdAt, commentCou
                         <button onClick={handleSubmit}>delete</button>
                     </>
                 )}
+                <p className=" is-pulled-right">date posted: {createdAt}</p>
             </div>
         </header>
 
@@ -51,7 +52,7 @@ const PostCard = ({id, title, content, username, category, createdAt, commentCou
                 {content.substring(0,400)}
                 ...
             </div>
-            <div className="is-pulled-right">
+            <div className="">
                 <b>{username}</b>
                 <p>date posted: {createdAt}</p>
                     

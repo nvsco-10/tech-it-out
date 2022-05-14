@@ -82,6 +82,7 @@
   background-color: rgba(0, 0, 0, 0.25);
   border: none;
   border-radius: 2rem;
+  outline: none;
   // color: black;
   margin-top: 0.625rem;
   width: 18.75rem;
@@ -286,14 +287,64 @@
 
   .section {
     margin-top: -3rem;
-    // padding-top: 16rem;
-    // padding-bottom: 16rem;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
     background-image: url("../images/nejc-unsplash.jpg");
     background-position: auto;
     background-size: 100%;
+    // margin-bottom: 1.5rem;
 
     h1 {
       color: #fff;
+    }
+
+    input {
+      background-color: rgba(255, 255, 255, .75);
+    }
+  }
+
+  .section2 {
+    padding: 3rem 5rem;
+    // background-color: #23d5ab;
+    .button {
+      border-radius: .5rem;
+      margin-bottom: .5rem;
+      font-weight: 500;
+    }
+
+    .comm-tag {
+      .button {
+        height: 2rem;
+      }
+    }
+
+    .community-cards {
+      background-color: rgb(226, 226, 226);
+      border-radius: .75rem;
+      padding: 2rem;
+
+      .header {
+        // background-color: rgba(146, 146, 172, 0.5);
+        border-radius: .75rem;
+        font-style: italic;
+        display: flex;
+        justify-content: space-between;
+
+        .post-title {
+          font-size: 2rem;
+        }
+        
+        .post-title:hover {
+          // font-size: 2rem;
+          // text-decoration: underline;
+          color: #e73c7e !important;
+        }
+
+        .post-up {
+          padding-top: 1.5rem;
+          padding-right: 2rem;
+        }
+      }
     }
   }
 }
