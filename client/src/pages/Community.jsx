@@ -57,7 +57,7 @@ export default function Main() {
         <Header></Header>
       </div>
 
-      <div className="container">
+      <div>
         <div className="section">
           <h1 className="title has-text-centered">EXPLORE THE COMMUNITY</h1>
           {/* SEARCH BAR */}

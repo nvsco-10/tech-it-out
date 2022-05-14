@@ -275,8 +275,25 @@
     }
 
     .comment {
-      padding: 1rem 1rem 1rem .5rem;
+      padding: 1rem 1rem 1rem 0.5rem;
       font-size: 1.25rem;
+    }
+  }
+}
+
+.Community {
+  // background-color: #004aad;
+
+  .section {
+    margin-top: -3rem;
+    // padding-top: 16rem;
+    // padding-bottom: 16rem;
+    background-image: url("../images/nejc-unsplash.jpg");
+    background-position: auto;
+    background-size: 100%;
+
+    h1 {
+      color: #fff;
     }
   }
 }
