@@ -355,7 +355,71 @@
     "level": "beginner",
     "description": "Hosted on edX. Learn JavaScript, a Web development programming language, to add interactivity to your Web pages, and become an expert Web developer.",
     "link": "https://www.edx.org/course/javascript-introduction"
+  },
+  {
+    "name": "Free React Project by CRIO - Resume Builder Web Application",
+    "type": "projects",
+    "level": "beginner",
+    "description": "You will develop a web application that will auto-generate a nice and properly formatted Resume from the information filled up in a form.",
+    "link": "https://www.crio.do/projects/react-resume-builder/"
+  },
+  {
+    "name": "Free React Project by CRIO - Amazon Clone",
+    "type": "projects",
+    "level": "advanced",
+    "description": "You will be building an e-commerce application using React, which is inspired by Amazon.",
+    "link": "https://www.crio.do/projects/react-amazon-clone/"
+  },
+  {
+    "name": "Free React Project by CRIO - Online Code Editor",
+    "type": "projects",
+    "level": "intermediate",
+    "description": "Create an online code-editor for HTML, CSS, JS code snippets using only HTML, CSS and React. The code editor’s functionality will be similar to that of codpen.io",
+    "link": "https://www.crio.do/projects/react-code-editor/"
+  },
+  {
+    "name": "Free React Project by CRIO - Online Code Editor",
+    "type": "projects",
+    "level": "intermediate",
+    "description": "Create an online code-editor for HTML, CSS, JS code snippets using only HTML, CSS and React. The code editor’s functionality will be similar to that of codpen.io",
+    "link": "https://www.crio.do/projects/react-code-editor/"
+  },
+  {
+    "name": "Free React Project by CRIO - Rat in a Maze",
+    "type": "projects",
+    "level": "beginner",
+    "description": "Create a simple web application using React that implements a novel way to visualize the famous Rat in a Maze Problem which can be solved using backtracking.",
+    "link": "https://www.crio.do/projects/react-rat-in-a-maze/"
+  },
+  {
+    "name": "Free React Project by CRIO - Markdown Editor",
+    "type": "projects",
+    "level": "beginner",
+    "description": "You will be building your own markdown editor, which you can actively use for designing well crafted markdown documents.",
+    "link": "https://www.crio.do/projects/react-markdown-editor/"
+  },
+  {
+    "name": "Free React Project by CRIO - Slack Clone",
+    "type": "projects",
+    "level": "advanced",
+    "description": "You will be building a real-time web chat app (basic Slack clone) using React-Redux and deploying that app using Firebase.",
+    "link": "https://www.crio.do/projects/react-slack-clone/"
+  },
+  {
+    "name": "Free Javascript Project by CRIO - Authentication in Node.js",
+    "type": "projects",
+    "level": "beginner",
+    "description": "An end to end application which demonstrates how we can implement authentication in an application using Node.js and JSON Web Tokens and some good practices.",
+    "link": "https://www.crio.do/projects/javascript-authentication-nodejs/"
+  },
+  {
+    "name": "JavaScript Cheat Sheet by Dave Child",
+    "type": "misc",
+    "level": "beginner",
+    "description": "Simple JavaScript cheat sheet.",
+    "link": "https://cheatography.com/davechild/cheat-sheets/javascript/pdf_bw/"
   }
+
  
 ]
 
