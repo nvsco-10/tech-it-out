@@ -16,7 +16,6 @@ export default function Profile() {
   });
 
   const [posts, setPosts] = useState([])
-  const [disabled, setDisabled] = useState(true);
   const [ showAlert, setShowAlert ] = useState(false)
 
   const getUserPosts = async (id) => {

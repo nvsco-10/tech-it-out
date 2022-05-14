@@ -81,21 +81,23 @@ const SingleResource = () => {
         <img src={image} />
 
         <div className="singleresource-body">
-          <h1 className="title">{resourceData.name}</h1>
-          <div className="filter">
-            <p className="button is-danger mr-2">{resourceData.type}</p>
-            <p className="button is-success ml-2">{resourceData.level}</p>
-          </div>
-          <div className="description-body">
-            <p className="resource-description">{resourceData.description}</p>
-            <a
-              href={resourceData.link}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {" "}
-              Link: {resourceData.link}
-            </a>
+          <div>
+            <h1 className="title">{resourceData.name}</h1>
+            <div className="filter">
+              <p className="button is-danger mr-2">{resourceData.type}</p>
+              <p className="button is-success ml-2">{resourceData.level}</p>
+            </div>
+            <div className="description-body">
+              <p className="resource-description">{resourceData.description}</p>
+              <a
+                href={resourceData.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {" "}
+                Link: {resourceData.link}
+              </a>
+            </div>
           </div>
         </div>
       </div>
