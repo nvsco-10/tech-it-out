@@ -78,7 +78,7 @@ export default function Profile() {
       <div><Header/></div>
 
       {/* USER DETAILS HERE */}
-      <div class="container">
+      <div className="container">
 
       <h2 className="title has-text-centered">My Profile</h2>
         <div className="card mb-6">

@@ -65,16 +65,16 @@ export default function Resources() {
         />
         <div className="has-text-centered">
           <p>FILTER:</p>
-          <button onClick={filterByType} class="button m-4 is-info">
+          <button onClick={filterByType} className="button m-4 is-info">
             PROJECTS
           </button>
-          <button onClick={filterByType} class="button m-4 is-warning">
+          <button onClick={filterByType} className="button m-4 is-warning">
             GAMES
           </button>
-          <button onClick={filterByType} class="button m-4 is-danger">
+          <button onClick={filterByType} className="button m-4 is-danger">
             TOOLS
           </button>
-          <button onClick={filterByType} class="button m-4 is-success">
+          <button onClick={filterByType} className="button m-4 is-success">
             MISC
           </button>
         </div>

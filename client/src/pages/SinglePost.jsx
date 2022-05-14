@@ -74,7 +74,7 @@ const SinglePost = () => {
     <div className="SingleResource">
       <Header></Header>
       <div className="resource-container">
-        <p>{postData.title}</p>
+        <p className="title">{postData.title}</p>
         <p>category: {postData.category}</p>
         <p>posted by: {postData.username}</p>
         {/* Wrap in markdown component to render text markdown */}
@@ -103,7 +103,9 @@ const SinglePost = () => {
                   onChange={handleInputChange}
                 />
                 <div className="button-holder">
-                  <button className="button" onClick={handleSubmit}>Submit</button>
+                  <button className="button" onClick={handleSubmit}>
+                    Submit
+                  </button>
                 </div>
               </div>
             </>
@@ -113,20 +115,22 @@ const SinglePost = () => {
             </p>
           )}
         </div>
+      </div>
 
-        <div>
-          {postData.comments?.map((item) => {
-            return (
-              // key property must be added to parent
-              // insert comment component below
-              <div key={item.commentId}>
-                <p>{item.comment}</p>
-                <p>{item.username}</p>
-                <p>{item.createdAt}</p>
+      <div className="comment-holder">
+        {postData.comments?.map((item) => {
+          return (
+            // key property must be added to parent
+            // insert comment component below
+            <div key={item.commentId}>
+              <div className="comment-info">
+                <p className="username">{item.username}</p>
+                <p className="time">{item.createdAt}</p>
               </div>
-            );
-          })}
-        </div>
+                <p className="comment">{item.comment}</p>
+            </div>
+          );
+        })}
       </div>
       <Footer></Footer>
     </div>

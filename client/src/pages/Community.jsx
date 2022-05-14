@@ -76,7 +76,7 @@ export default function Main() {
             </Link>
           ) : (
             <p>
-              <a href="/login">Login</a> to create a post.
+              <Link to={"/login"}>Login</Link> to create a post.
             </p>
           )}
           <div className="comm-tag mt-2 mb-5">

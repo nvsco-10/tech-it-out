@@ -21,8 +21,8 @@ const ResourceCard = ({ id, name, description, type, level }) => {
                 <p className="title is-5 mb-2">{name.toUpperCase()}</p>
               </Link>
               <div>
-                <a className="button is-danger mr-2">{type.toUpperCase()}</a>
-                <a className="button is-success mr-2">{level.toUpperCase()}</a>
+                <button className="button is-danger mr-2">{type.toUpperCase()}</button>
+                <button className="button is-success mr-2">{level.toUpperCase()}</button>
               </div>
             </div>
           </div>
