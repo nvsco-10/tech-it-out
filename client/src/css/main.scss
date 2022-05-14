@@ -82,6 +82,7 @@
   background-color: rgba(0, 0, 0, 0.25);
   border: none;
   border-radius: 2rem;
+  outline: none;
   // color: black;
   margin-top: 0.625rem;
   width: 18.75rem;
@@ -93,7 +94,6 @@
 }
 
 .Resources {
-  background: none !important;
   .resource-body {
     .columns {
       margin: 0 -8rem;
@@ -101,26 +101,250 @@
       flex-wrap: wrap;
     }
   }
+  .resource-card {
+    .title:hover {
+      color: #e73c7e;
+    }
+  }
 }
 
 .SingleResource {
-  .resource-image {
+  .resource-container {
     display: flex;
-    margin: 0 5rem;
+    margin: 1rem 5rem;
     // justify-content: center;
-    background-color: lightgrey;
-    width: 100rem;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    background-color: rgb(233, 233, 233);
+    // width: 100rem;
+    background: linear-gradient(-45deg, #262d92, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
 
     img {
-      // display: flex;
-      // justify-content: start;
       padding: 1rem;
-      width: 20rem;
+      width: 50rem;
+      border-radius: 1.5rem;
     }
+
+    .singleresource-body {
+      display: block;
+      padding: 1rem;
+      margin: 1rem;
+      background-color: rgba(255, 255, 255, 0.65);
+      border-radius: 0.5rem;
+      width: 58rem;
+      h1 {
+        // background-color: #004aad;
+        text-transform: uppercase;
+        font-size: 3.25rem;
+        margin-top: 1rem;
+        text-align: center;
+        // font-weight: bold;
+        display: flex;
+        justify-content: center;
+        margin-bottom: -0.25rem;
+      }
+      .filter {
+        display: flex;
+        justify-content: center;
+        margin: 1.5rem 0.5rem;
+        .button {
+          // display: inline-block;
+          text-transform: uppercase;
+          font-size: 1.25rem;
+          padding: 1rem;
+          height: 1.75rem;
+          width: 10rem;
+        }
+      }
+      .description-body {
+        .resource-description {
+          // background-color: #23a6d5;
+          height: 20rem;
+          font-size: 1.5rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          padding: 1rem;
+        }
+        // .resource-description:first-letter {
+        //   text-transform: capitalize !important;
+        // }
+
+        a {
+          display: flex;
+          justify-content: center;
+        }
+        a:hover {
+          color: #e73c7e;
+        }
+      }
+    }
+  }
+
+  .line {
+    margin: 5rem 2rem;
+    border-radius: 1rem;
+    // border: 0.25rem solid;
+    height: 0.45rem;
+    background: linear-gradient(to left, #262d92, #e73c7e, #23a6d5, #23d5ab);
+  }
+
+  .resource-comments {
+    display: flex;
+    justify-content: center;
+    margin-top: -1rem;
     h1 {
-      // display: flex;
-      // justify-content: center;
       text-transform: uppercase;
+      display: flex;
+      justify-content: center;
+      letter-spacing: 0.1rem;
+    }
+
+    .hold-comments {
+      display: block;
+
+      .login-to {
+        display: flex;
+        justify-content: center;
+      }
+      .login-to a:hover {
+        color: #e73c7e;
+      }
+      .add-comment {
+        input {
+          border: none;
+          padding: 1rem;
+          background-color: rgb(236, 236, 236);
+          border-radius: 0.5rem;
+          // text-align:start;
+          margin: 0.5rem;
+          font-size: 1rem;
+          width: 50rem;
+          outline: none;
+          height: 10rem;
+        }
+
+        .button-holder {
+          display: flex;
+          justify-content: center;
+
+          .button {
+            width: 50rem;
+            border: none;
+            background-color: #23a6d5;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+
+  .comment-holder {
+    margin: 2rem 15rem;
+    padding: 1rem;
+
+    .comment-info {
+      // background-color: #262d92;
+      display: flex;
+      justify-content: space-between;
+      font-style: italic;
+      color: #e73c7e;
+      font-size: 1.2rem;
+      // .username {
+      //   display: flex;
+      //   justify-content: flex-start;
+      // }
+      // .time {
+      //   display: flex;
+      //   justify-content: flex-end;
+      // }
+    }
+
+    .comment {
+      padding: 1rem 1rem 1rem 0.5rem;
+      font-size: 1.25rem;
+    }
+  }
+}
+
+.Community {
+  // background-color: #004aad;
+
+  .section {
+    margin-top: -3rem;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    background-image: url("../images/nejc-unsplash.jpg");
+    background-position: auto;
+    background-size: 100%;
+    // margin-bottom: 1.5rem;
+
+    h1 {
+      color: #fff;
+    }
+
+    input {
+      background-color: rgba(255, 255, 255, 0.75);
+    }
+  }
+
+  .section2 {
+    padding: 3rem 5rem;
+    // background-color: #23d5ab;
+    .button {
+      border-radius: 0.5rem;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    .comm-tag {
+      .button {
+        height: 2rem;
+      }
+    }
+
+    .community-cards {
+      background-color: rgb(226, 226, 226);
+      border-radius: 0.75rem;
+      padding: 2rem;
+
+      .header {
+        // background-color: rgba(146, 146, 172, 0.5);
+        border-radius: 0.75rem;
+        font-style: italic;
+        display: flex;
+        justify-content: space-between;
+
+        .post-title {
+          font-size: 2rem;
+        }
+
+        .post-title:hover {
+          // font-size: 2rem;
+          // text-decoration: underline;
+          color: #e73c7e !important;
+        }
+
+        .post-up {
+          padding-top: 1.5rem;
+          padding-right: 2rem;
+        }
+      }
     }
   }
 }
@@ -129,5 +353,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-     min-height: 100vh;
+  min-height: 100vh;
+  @extend .Main;
+}
+
+.questionBox {
+  display: flex;
+  flex-flow: column wrap;
+  div {
+    font-weight: bolder;
+    margin: 50px;
+    h2 {
+      text-transform: uppercase;
+      font-size: larger;
+      text-decoration: underline;
+    }
+  }
 }

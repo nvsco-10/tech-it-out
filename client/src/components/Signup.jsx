@@ -76,27 +76,7 @@ export default function SignUp() {
               value={userFormData.username}
               required
             />
-
-            <input
-              name="email"
-              type="text"
-              placeholder="Email"
-              onChange={handleInputChange}
-              value={userFormData.email}
-              required
-            />
-
-            <div className="pass-wrapper">
-              <input
-                placeholder="Password"
-                name="password"
-                type={passwordShown ? "text" : "password"}
-                onChange={handleInputChange}
-                value={userFormData.password}
-                required
-              />
-            </div>
-
+            
             <input
               name="email"
               type="text"
@@ -131,13 +111,13 @@ export default function SignUp() {
               Submit
             </button>
           </form>
-        </div>
-
         <div className="span-border">
           <span className="span-link">
             <Link to="/login">Back To Login</Link>
           </span>
         </div>
+        </div>
+
       </div>
     </>
   );

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Button, Notification } from 'react-bulma-components';
 import emailjs from '@emailjs/browser'
 
+import "../css/login.scss";
 
 export default function Contact() {
     const form = useRef()
@@ -38,7 +39,8 @@ export default function Contact() {
  
   
     return (
-    <div className='login_form'>
+      <div className="Login">
+        <div className='login_form'>
   
         <h1>Ask us a question!</h1>
     
@@ -92,7 +94,7 @@ export default function Contact() {
                 <span className='span-link'><Link to="/">Back To Home</Link></span>
             </div>
     </div>
-    
+  </div>
   )
 }
 
