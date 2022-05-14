@@ -81,9 +81,9 @@ const SingleResource = () => {
       <div className='SingleResource'>
 
         <Header></Header>
-  
+
           <div className='resource-image'>
-              <img src={image} />
+              <img src={image} alt="placeholder" />
               <h1
               className='title'>{resourceData.name}</h1>
               <p>{resourceData.type}</p>
