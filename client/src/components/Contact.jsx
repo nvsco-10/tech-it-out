@@ -12,17 +12,14 @@ export default function Contact() {
     email: '',
     message: ''});
     
-  const [showAlert, setShowAlert] = useState(false);
+    const [showAlert, setShowAlert] = useState(false);
 
-   
-    
     const handleInputChange = (event) => {
         const { name, value } = event.target;
         setUserFormData({ ...userFormData, [name]: value });
         
     };
 
-    
     const sendEmail = (e) => {
         e.preventDefault();
     
@@ -36,13 +33,11 @@ export default function Contact() {
           });
       };
       
- 
-  
     return (
       <div className="Login">
         <div className='login_form'>
   
-        <h1>Ask us a question!</h1>
+        <h1 className="py-2">Ask us a question!</h1>
     
         <form ref={form}onSubmit={sendEmail}>
         {showAlert && (
@@ -90,9 +85,11 @@ export default function Contact() {
                 </button>
                     
         </form>
-            <div className='span-border'>
-                <span className='span-link'><Link to="/">Back To Home</Link></span>
-            </div>
+            <Link to="/">
+              <div className='span-border'>
+                  <span className='span-link'>Back To Home</span>
+              </div>
+            </Link>
     </div>
   </div>
   )

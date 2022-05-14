@@ -111,7 +111,7 @@ const SinglePost = () => {
             </>
           ) : (
             <p className="login-to">
-              <a href="/login">Login</a> to post a comment
+              <a className="mr-2" href="/login">Login</a> to post a comment
             </p>
           )}
         </div>

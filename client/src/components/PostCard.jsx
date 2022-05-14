@@ -38,14 +38,7 @@ const PostCard = ({
         </div>
 
         <div className="column post-up">
-          <span className="category">{category}</span>
-          {/* if modify is true, show edit and delete buttons. Shows up only on the profile page */}
-          {modify && (
-            <>
-              <button onClick={handleSubmit}>edit</button>
-              <button onClick={handleSubmit}>delete</button>
-            </>
-          )}
+          <span className="category">category: {category}</span>
           <p className=" is-pulled-right">date posted: {createdAt}</p>
         </div>
       </header>
@@ -57,11 +50,16 @@ const PostCard = ({
           ...
         </div>
         <div className="">
-          <b>{username}</b>
-          <p>date posted: {createdAt}</p>
-
+          <b className="is-block">{username}</b>
           <Link to={`/community/posts/${id}`}>comments: {commentCount}</Link>
         </div>
+        {/* if modify is true, show edit and delete buttons. Shows up only on the profile page */}
+        {modify && (
+            <div className="mt-4">
+              <button className="button is-warning mr-4" onClick={handleSubmit}>edit</button>
+              <button className="button is-danger" onClick={handleSubmit}>delete</button>
+            </div>
+          )}
       </div>
     </div>
   );
