@@ -14,6 +14,7 @@ export default function SignUp() {
     email: "",
     password: "",
   });
+
   const [passwordShown, setPasswordShown] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
 
@@ -88,7 +89,7 @@ export default function SignUp() {
 
             <div className="pass-wrapper">
               <input
-                placeholder="Password"
+                placeholder="Password (min: 6 characters)"
                 name="password"
                 type={passwordShown ? "text" : "password"}
                 onChange={handleInputChange}

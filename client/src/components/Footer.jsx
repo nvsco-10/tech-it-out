@@ -10,7 +10,7 @@ export default function Footer() {
           <p>
             Suggest a resource -{" "}
             <a
-              href="suggestions@learnwebdev.com"
+              href="/"
               className="suggest-link has-text-white"
             >
               suggestions@techitout.com

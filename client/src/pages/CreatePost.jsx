@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import Auth from '../utils/auth';
 import { useNavigate } from "react-router-dom";
 import { createPost } from '../utils/API';
+import Header from "../components/Header";
 
 const CreatePost = () => {
     const navigate = useNavigate();
@@ -75,45 +76,54 @@ const CreatePost = () => {
     }
 
   return (
-    <div className='Login'>
-        <div>
-            <label>Category</label>
-            <select
-                name="category"
-                value={postData.category}
-                onChange={handleInputChange} 
-            >
-                <option value=''>Select</option>
-                <option value="show off">Show Off</option>
-                <option value="help me">Help Me</option>
-                <option value="mentorship">Mentorship</option>
-                <option value="buddy">Buddy</option>
-            </select>
-            {/* Show alert if no category is selected upon submitting */}
-            {showAlert && <p>Please select a category!</p>}
-        </div>  
-        <div>
-            <label>Title</label>
-            <input
-                type="text"
-                name="title"
-                value={postData.title}
-                placeholder="title"
-                onChange={handleInputChange} 
-            />
-        </div>  
-        <div>
-            <label>Content</label>
-            <input
-                type="text"
-                name="content"
-                value={postData.content}
-                placeholder="content"
-                onChange={handleInputChange} 
-            />
+    <>
+        <Header />
+        {/* <div className='Login'> */}
+        <div className='container mt-0 mb-6'>
+            <h2 className="title">Create A New Post</h2>
+            <div className="mb-4">
+                <label className="mb-2">Category</label>
+                <select
+                    className="is-block p-2"
+                    name="category"
+                    value={postData.category}
+                    onChange={handleInputChange} 
+                >
+                    <option value=''>Select</option>
+                    <option value="show off">Show Off</option>
+                    <option value="help me">Help Me</option>
+                    <option value="mentorship">Mentorship</option>
+                    <option value="buddy">Buddy</option>
+                </select>
+                {/* Show alert if no category is selected upon submitting */}
+                {showAlert && <p>Please select a category!</p>}
+            </div>  
+            <div className="mb-4">
+                <label className="mb-2">Title</label>
+                <input
+                    className="input is-normal is-block p-2"
+                    type="text"
+                    name="title"
+                    value={postData.title}
+                    placeholder="title"
+                    onChange={handleInputChange} 
+                />
+            </div>  
+            <div className="mb-4">
+                <label className="mb-2">Content</label>
+                <textarea
+                    className="textarea is-block p-2"
+                    name="content"
+                    value={postData.content}
+                    placeholder="markdown supported"
+                    onChange={handleInputChange} 
+                    cols="150"
+                    rows="15"
+                />
+            </div>
+            <button className="button is-info" onClick={handleSubmit}>Submit</button> 
         </div>
-        <button onClick={handleSubmit}>Submit</button> 
-    </div>
+    </>
   )
 }
 
