@@ -80,7 +80,8 @@ const SinglePost = () => {
             <p className="category">category: {postData.category}</p>
             <p className="posted">posted by: {postData.username}</p>
             {/* Wrap in markdown component to render text markdown */}
-            <ReactMarkdown className="content">{postData.content}</ReactMarkdown>
+            {/* Text has to be left-aligned to properly render code blocks */}
+            <ReactMarkdown className="content has-text-left">{postData.content}</ReactMarkdown>
             <a target="_blank" rel="noopener noreferrer">
               {postData.link}
             </a>

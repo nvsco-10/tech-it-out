@@ -49,26 +49,23 @@ const PostCard = ({
           {content.substring(0, 400)}
           ...
         </div>
-<<<<<<< HEAD
-        <div className="">
-          <b className="is-block">{username}</b>
-          <Link to={`/community/posts/${id}`}>comments: {commentCount}</Link>
-=======
-        <div className="post-bottom">
-          <b>{username}</b>
-          <p>date posted: {createdAt}</p>
 
-          <Link className="to-comments" to={`/community/posts/${id}`}>comments: {commentCount}</Link>
->>>>>>> develop
-        </div>
-        {/* if modify is true, show edit and delete buttons. Shows up only on the profile page */}
-        {modify && (
+        <div>
+          <div className="post-bottom">
+            <b>{username}</b>
+
+            <Link className="to-comments is-block" to={`/community/posts/${id}`}>comments: {commentCount}</Link>
+          </div>
+          {/* if modify is true, show edit and delete buttons. Shows up only on the profile page */}
+          {modify && (
             <div className="mt-4">
               <button className="button is-warning mr-4" onClick={handleSubmit}>edit</button>
               <button className="button is-danger" onClick={handleSubmit}>delete</button>
             </div>
           )}
+        </div>
       </div>
+
     </div>
   );
 };
