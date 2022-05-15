@@ -16,7 +16,7 @@ export default function Footer() {
               suggestions@techitout.com
             </a>
           </p>
-          <div className="navbar-menu has-text-centered">
+          <div className="navbar-menu is-active has-text-centered">
             <a href="/contact" className="navbar-item has-text-white">
               CONTACT
             </a>

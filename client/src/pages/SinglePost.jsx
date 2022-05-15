@@ -71,17 +71,21 @@ const SinglePost = () => {
   };
   // TEST LAYOUT BELOW - CHANGE FUGLY STYLING
   return (
-    <div className="SingleResource">
+    <div className="SingleCommunity">
       <Header></Header>
       <div className="resource-container">
-        <p className="title">{postData.title}</p>
-        <p>category: {postData.category}</p>
-        <p>posted by: {postData.username}</p>
-        {/* Wrap in markdown component to render text markdown */}
-        <ReactMarkdown>{postData.content}</ReactMarkdown>
-        <a target="_blank" rel="noopener noreferrer">
-          {postData.link}
-        </a>
+        <div className="singleresource-body">
+          <p className="title is-1 is-capitalized">{postData.title}</p>
+          <div className="community-body">
+            <p className="category">category: {postData.category}</p>
+            <p className="posted">posted by: {postData.username}</p>
+            {/* Wrap in markdown component to render text markdown */}
+            <ReactMarkdown className="content">{postData.content}</ReactMarkdown>
+            <a target="_blank" rel="noopener noreferrer">
+              {postData.link}
+            </a>
+          </div>
+        </div>
       </div>
 
       <hr className="line" />
@@ -127,7 +131,7 @@ const SinglePost = () => {
                 <p className="username">{item.username}</p>
                 <p className="time">{item.createdAt}</p>
               </div>
-                <p className="comment">{item.comment}</p>
+              <p className="comment">{item.comment}</p>
             </div>
           );
         })}

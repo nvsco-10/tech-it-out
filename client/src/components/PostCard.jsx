@@ -30,10 +30,10 @@ const PostCard = ({
       <header className="header">
         <div className="column">
           <Link
-            className="post-title has-text-black is-capitalized is-pulled-left"
+            className="post-title is-capitalized is-pulled-left"
             to={`/community/posts/${id}`}
           >
-            <p className=" has-text-primary-light">{title}</p>
+            <p className="">{title}</p>
           </Link>
         </div>
 
@@ -44,14 +44,22 @@ const PostCard = ({
       </header>
 
       <div className="card-content">
-        <div className="content has-text-justified">
+        <div className="content has-text-justified pl-5">
           {/* limit post overview to 400 characters */}
           {content.substring(0, 400)}
           ...
         </div>
+<<<<<<< HEAD
         <div className="">
           <b className="is-block">{username}</b>
           <Link to={`/community/posts/${id}`}>comments: {commentCount}</Link>
+=======
+        <div className="post-bottom">
+          <b>{username}</b>
+          <p>date posted: {createdAt}</p>
+
+          <Link className="to-comments" to={`/community/posts/${id}`}>comments: {commentCount}</Link>
+>>>>>>> develop
         </div>
         {/* if modify is true, show edit and delete buttons. Shows up only on the profile page */}
         {modify && (
