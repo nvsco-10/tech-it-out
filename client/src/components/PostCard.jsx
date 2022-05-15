@@ -37,14 +37,14 @@ const PostCard = ({
           </Link>
         </div>
 
-        <div className="column post-up">
-          <span className="category">category: {category}</span>
-          <p className=" is-pulled-right">date posted: {createdAt}</p>
+        <div className="column post-details">
+          <span className="category post-up">category: {category}</span>
+          <p className="date post-up">date posted: {createdAt}</p>
         </div>
       </header>
 
       <div className="card-content">
-        <div className="content has-text-justified pl-5">
+        <div className="content has-text-justified ">
           {/* limit post overview to 400 characters */}
           {content.substring(0, 400)}
           ...

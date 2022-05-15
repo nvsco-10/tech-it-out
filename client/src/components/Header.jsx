@@ -95,7 +95,7 @@ export default function Header() {
         <div className="navbar-end">
           {isLoggedIn && (
             <div className="navbar-item">
-              <p className="welcome">Welcome back {username}!</p>
+              <p className="welcome">Welcome back, {username}!</p>
             </div>
           )}
           

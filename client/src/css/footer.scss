@@ -43,4 +43,10 @@
       border-radius: 1rem;
     }
   }
+
+  @media (max-width: 580px) {
+    a {
+      font-size: 1rem;
+    }
+  }
 }

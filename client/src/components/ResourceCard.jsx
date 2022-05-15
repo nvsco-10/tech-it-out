@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const ResourceCard = ({ id, name, description, type, level }) => {
   return (
-    <div className="resource-card column is-4-tablet is-3-desktop">
+    <div className="resource-card">
       <div className="card">
         <div className="card-image has-text-centered">
           <figure className="image is-2by1">
