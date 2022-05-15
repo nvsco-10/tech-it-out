@@ -7,7 +7,6 @@ import "@fontsource/roboto";
 import Signout from "./Signout";
 
 export default function Header() {
-
   const [username, setUsername] = useState("");
   const isLoggedIn = Auth.loggedIn();
 
@@ -36,17 +35,13 @@ export default function Header() {
   return (
     <div>
       <header>
-        <nav className="navbar" role="navigation">
-          {/* <div className="navbar-brand"> */}
-          {/* <a className="navbar-item" href="/about"> */}
+        <nav className="navbar is-active" role="navigation">
           <Link to="/about">
             <img className="logo" src={logo} alt="tech it out" />
           </Link>
-          {/* </a> */}
-          {/* </div> */}
 
-          <div className="navbar-start">
-            <nav className="navbar-menu">
+          <div className="navbar-menu is-active">
+            <div className="navbar-start">
               <a
                 href="/resources"
                 className="navbar-item resources has-text-white has-text-weight-semibold"
@@ -85,11 +80,12 @@ export default function Header() {
                 <Signout />
               ) : (
                 <div id="end" className="end">
-                  <Link className="button"
-                  to="/login">LOGIN</Link>
+                  <Link className="button" to="/login">
+                    LOGIN
+                  </Link>
                 </div>
               )}
-            </nav>
+            </div>
           </div>
         </nav>
       </header>
