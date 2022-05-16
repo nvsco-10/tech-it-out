@@ -22,11 +22,7 @@ Tech it Out is a beginner-friendly coding application that allows the user acces
 
 ## Installation
 
-1. open in the terminal
-2. Git clone 
-3. Cd into the new directory and in the server.js folder
-4. Download the required pakages npm i
-5. npm run build 
+No installation required to use this app.
 
 ## Objectives 
 ```
