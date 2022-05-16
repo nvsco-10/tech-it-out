@@ -26,10 +26,7 @@ export default function Contact() {
 
     emailjs
       .sendForm(
-        "service_kurt5ih",
-        "template_i3ydvdq",
-        form.current,
-        "MY4m_wVQW7v3cUs7e"
+        'YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_PUBLIC_KEY'
       )
       .then(
         () => {
