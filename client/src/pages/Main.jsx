@@ -18,7 +18,7 @@ export default function Main() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    setTimeout(() => setLoading(false), 1350)
+    setTimeout(() => setLoading(false), 1900)
   }, [])
   return (
 
@@ -64,7 +64,7 @@ export default function Main() {
                 </div>
                 <div className="mt-5 columns is-inline-block">
                   <div className="item">
-                    <img className="pr-6 pb-4" src={image1} alt="avatar images" />
+                    <img className="pb-4" src={image1} alt="avatar images" />
                     <span className="caption ">
                       Meet and interact with other developers. Start building your network early on.
                     </span>
@@ -72,7 +72,7 @@ export default function Main() {
 
                   <div className="item">
                     <img
-                      className="pr-6 pb-4"
+                      className="pb-4"
                       src={image2}
                       alt="boy asking question"
                     />
@@ -82,7 +82,7 @@ export default function Main() {
                   </div>
 
                   <div className="item">
-                    <img className="pr-6 pb-4" src={image1} alt="placeholder" />
+                    <img className="pb-4" src={image1} alt="placeholder" />
                     <span className="caption ">
                       Find mentors or programming buddies. Learning how to code isn't easy and it doesn't have to be a lonesome journey.
                     </span>
@@ -102,7 +102,7 @@ export default function Main() {
             <div className="spinner">
 
                 <SpinnerDotted
-               size="5%"
+               size="10%"
                 color='aqua'
                 />
             </div>

@@ -1,65 +1,73 @@
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { deletePost } from '../utils/API';
+import { deletePost } from "../utils/API";
 
-const PostCard = ({id, title, content, username, category, createdAt, commentCount, modify}) => {
-    const navigate = useNavigate();
+const PostCard = ({
+  id,
+  title,
+  content,
+  username,
+  category,
+  createdAt,
+  commentCount,
+  modify,
+}) => {
+  const navigate = useNavigate();
 
-    const handleSubmit = (e) => {
-        const type = e.target.textContent;
-        
-        if(type === "delete") {
-            deletePost(id);
-            window.location.reload(false);
-        }
+  const handleSubmit = (e) => {
+    const type = e.target.textContent;
 
-        type === "edit" && navigate(`/community/posts/edit/${id}`)
-
+    if (type === "delete") {
+      deletePost(id);
+      window.location.reload(false);
     }
-  
-    return (
-    <div className="card mb-6">
-        <header className="card-header card-header-title has-background-grey-lighter">
-            <div className="column">
-                <Link to={`/community/posts/${id}`}>
-                    <p className=" has-text-primary-light">
-                        <a
-                        href=""
-                        className="has-text-black is-capitalized is-pulled-left"
-                        >
-                        {title}
-                        </a>
-                    </p>
-                </Link>
-            </div>
 
-            <div className="column">
-                <span className="">{category}</span>
-                {/* if modify is true, show edit and delete buttons. Shows up only on the profile page */}
-                {modify && (
-                    <>
-                        <button onClick={handleSubmit}>edit</button>
-                        <button onClick={handleSubmit}>delete</button>
-                    </>
-                )}
-            </div>
-        </header>
+    type === "edit" && navigate(`/community/posts/edit/${id}`);
+  };
 
-        <div className="card-content">
-            <div className="content has-text-justified">
-                {/* limit post overview to 400 characters */}
-                {content.substring(0,400)}
-                ...
-            </div>
-            <div className="is-pulled-right">
-                <b>{username}</b>
-                <p>date posted: {createdAt}</p>
-                    
-                <Link to={`/community/posts/${id}`}>comments: {commentCount}</Link>
-            </div>
+  return (
+    <div className="community-cards card mb-6">
+      <header className="header">
+        <div className="column">
+          <Link
+            className="post-title is-capitalized is-pulled-left"
+            to={`/community/posts/${id}`}
+          >
+            <p className="">{title}</p>
+          </Link>
         </div>
-    </div>
-  )
-}
 
-export default PostCard
+        <div className="column post-details">
+          <span className="category post-up">category: {category}</span>
+          <p className="date post-up">date posted: {createdAt}</p>
+        </div>
+      </header>
+
+      <div className="card-content">
+        <div className="content has-text-justified ">
+          {/* limit post overview to 400 characters */}
+          {content.substring(0, 400)}
+          ...
+        </div>
+
+        <div>
+          <div className="post-bottom">
+            <b>{username}</b>
+
+            <Link className="to-comments is-block" to={`/community/posts/${id}`}>comments: {commentCount}</Link>
+          </div>
+          {/* if modify is true, show edit and delete buttons. Shows up only on the profile page */}
+          {modify && (
+            <div className="mt-4">
+              <button className="button is-warning mr-4" onClick={handleSubmit}>edit</button>
+              <button className="button is-danger" onClick={handleSubmit}>delete</button>
+            </div>
+          )}
+        </div>
+      </div>
+
+    </div>
+  );
+};
+
+export default PostCard;

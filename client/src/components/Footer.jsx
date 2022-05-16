@@ -10,13 +10,13 @@ export default function Footer() {
           <p>
             Suggest a resource -{" "}
             <a
-              href="suggestions@learnwebdev.com"
+              href="/"
               className="suggest-link has-text-white"
             >
               suggestions@techitout.com
             </a>
           </p>
-          <div className="navbar-menu has-text-centered">
+          <div className="navbar-menu is-active has-text-centered">
             <a href="/contact" className="navbar-item has-text-white">
               CONTACT
             </a>

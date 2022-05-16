@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:regular,bold,italic&subset=latin,latin-ext');
+@import url("https://fonts.googleapis.com/css?family=Montserrat:regular,bold,italic&subset=latin,latin-ext");
 
 .footer {
   background-color: #004aad;
@@ -9,7 +9,7 @@
   .content p {
     font-style: italic;
     font-family: Montserrat;
-    
+
     .suggest-link {
       font-family: Montserrat;
     }
@@ -26,19 +26,25 @@
     font-size: 1.5rem;
     font-weight: 600;
     letter-spacing: 0.15rem;
+    background-color: #004aad;
+    box-shadow: none;
 
     .navbar-item {
       color: #fff;
       margin-bottom: 0.75rem;
       padding-left: 5rem;
       padding-right: 5rem;
-      //   font-style: none;
     }
 
     .navbar-item:hover {
       background-color: rgba(4, 45, 99, 0.5);
-      // color: #e73c7e !important;
       border-radius: 1rem;
+    }
+  }
+
+  @media (max-width: 580px) {
+    a {
+      font-size: 1rem;
     }
   }
 }

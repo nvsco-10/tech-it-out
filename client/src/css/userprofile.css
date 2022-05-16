@@ -1,0 +1,43 @@
+.container {
+    width: 55rem;
+}
+
+.profile-img {
+    width: 128px;
+}
+
+.socials-container {
+    width: 400px;
+}
+
+.socials {
+    display: flex;
+    align-items: center;
+}
+
+.social-icons {
+    width: 3.7rem;
+}
+
+.btn {
+    background-color: #004aad;
+    color: #fff;
+    border: none;
+    font-size: 1.15rem;
+    letter-spacing: 0.05rem;
+    width: 30%;
+    padding: 0.4rem 1rem;
+    border-radius: 0.75rem;
+  }
+
+@media (max-width: 1040px) {
+    .container {
+        width: 90vw;
+    }
+}
+
+@media (max-width: 448px) {
+    .socials-container {
+        width: 350px;
+    }
+}

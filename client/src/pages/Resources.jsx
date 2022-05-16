@@ -65,31 +65,31 @@ export default function Resources() {
         />
         <div className="has-text-centered">
           <p>FILTER:</p>
-          <button onClick={filterByType} class="button m-4 is-info">
+          <button onClick={filterByType} className="button m-4 is-info">
             PROJECTS
           </button>
-          <button onClick={filterByType} class="button m-4 is-warning">
+          <button onClick={filterByType} className="button m-4 is-warning">
             GAMES
           </button>
-          <button onClick={filterByType} class="button m-4 is-danger">
+          <button onClick={filterByType} className="button m-4 is-danger">
             TOOLS
           </button>
-          <button onClick={filterByType} class="button m-4 is-success">
+          <button onClick={filterByType} className="button m-4 is-success">
             MISC
           </button>
         </div>
 
-        <div className="columns mt-5 is-8 is-variable">
-          <div className="container has-text-centered">
-            <div className="columns is-mobile is-centered">
+        {/* <div className="columns mt-5 is-8 is-variable"> */}
+        <div className="flex-container has-text-centered">
+            {/* <div className="columns"> */}
               {/* CARDS GO HERE */}
               {!filteredResources.length ? 
                 <p>No results found..</p> : 
                 <ResourceList resources={filteredResources} />
               }
-            </div>
+            {/* </div> */}
           </div>
-        </div>
+        {/* </div> */}
       </div>
       <div>
         <Footer></Footer>

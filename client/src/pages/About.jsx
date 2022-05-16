@@ -1,36 +1,47 @@
 import React from 'react'
 import Header from '../components/Header'
+import "../css/main.scss";
 
 export default function About() {
   return (
     <>
         <Header/>
-        <section>
+
+        <section className='questionBox container'>
+
+            <h1 className="title has-text-centered">About</h1>
+
             <div>
-                <sec>
-                    <h2>
-                        What is Tech About It?
-                    </h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, repellendus. Delectus asperiores autem a minus. Eos natus quisquam suscipit accusamus pariatur similique atque. Modi eos, eius iusto temporibus ullam tempora.</p>
-                    <h2>
-                        Why do we do this?
-                    </h2>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt, maiores. Expedita, eveniet? Tempora modi architecto at cupiditate a facilis, dicta porro ab ea quis beatae labore totam, aspernatur error veritatis!</p>
-                    <h2>
-                        Why is it free?
-                    </h2>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur eum ipsam magni impedit modi, assumenda asperiores ad. Vel in, impedit quae recusandae, placeat voluptatem facilis, magni alias delectus ipsa modi!</p>
-                    <h2>
-                        Who are the founders?
-                    </h2>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit nisi qui, odio, debitis veniam facilis tempora, libero ex quis porro incidunt nesciunt! Quia maxime explicabo fuga sunt ipsa veritatis doloribus.</p>
-                    <h2>
-                        Will you ever start a course?
-                    </h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur consectetur, est adipisci cum nobis, aut neque, mollitia pariatur dicta eum ipsam? Reprehenderit voluptate aliquam facere, repellendus iste blanditiis distinctio porro!</p>
-                </sec>
+                <h2>
+                    What is Tech About It?
+                </h2>
+                    <p>We're a nonprofit community that helps you learn to code by giving you resources to whatever you want to learn.</p>
+            </div>
+
+            <div>
+                <h2>
+                    Why do we do this?
+                </h2>
+                    <p>We have all been there. Endless googling and never find the right page, but now that trouble has come to an end. We did all the googling for you so you don't have to.</p>
+            </div>
+
+            <div>
+
+                <h2>
+                    Why is it free?
+                </h2>
+                    <p>Because... striving for knowledge should always be free.</p>
+            </div>
+
+            <div>
+                <h2>
+                    Will you ever start courses?
+                </h2>
+                    <p>Maybe in the near future, but for now we shall keep updating our site with the latest info and most googled searches for coding. </p>
+                
             </div>
         </section>
+
     </>
   )
 }
