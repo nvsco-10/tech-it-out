@@ -79,17 +79,17 @@ export default function Resources() {
           </button>
         </div>
 
-        <div className="columns mt-5 is-8 is-variable">
-          <div className="container has-text-centered">
-            <div className="columns is-mobile is-centered">
+        {/* <div className="columns mt-5 is-8 is-variable"> */}
+        <div className="flex-container has-text-centered">
+            {/* <div className="columns"> */}
               {/* CARDS GO HERE */}
               {!filteredResources.length ? 
                 <p>No results found..</p> : 
                 <ResourceList resources={filteredResources} />
               }
-            </div>
+            {/* </div> */}
           </div>
-        </div>
+        {/* </div> */}
       </div>
       <div>
         <Footer></Footer>

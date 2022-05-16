@@ -139,7 +139,7 @@ const SingleResource = () => {
           return (
             // key property must be added to parent
             // insert comment component below
-            <div key={item.commentId}>
+            <div className="comment-box" key={item.commentId}>
               <div className="comment-info">
                 <p className="username">{item.username}</p>
                 <p className="time">{item.createdAt}</p>

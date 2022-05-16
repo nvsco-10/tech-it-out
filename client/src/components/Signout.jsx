@@ -12,7 +12,7 @@ export default function Signout() {
     <div id="end" className="end">
       <button
         onClick={logout}
-        className="button has-text-white"
+        className="button is-info"
       >
         SIGN OUT
       </button>

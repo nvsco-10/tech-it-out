@@ -75,7 +75,7 @@ const SinglePost = () => {
       <Header></Header>
       <div className="resource-container">
         <div className="singleresource-body">
-          <p className="title is-1 is-capitalized">{postData.title}</p>
+          <p className="title is-3 is-capitalized">{postData.title}</p>
           <div className="community-body">
             <p className="category">category: {postData.category}</p>
             <p className="posted">posted by: {postData.username}</p>
@@ -127,7 +127,7 @@ const SinglePost = () => {
           return (
             // key property must be added to parent
             // insert comment component below
-            <div key={item.commentId}>
+            <div className="comment-box" key={item.commentId}>
               <div className="comment-info">
                 <p className="username">{item.username}</p>
                 <p className="time">{item.createdAt}</p>
