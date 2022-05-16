@@ -77,7 +77,7 @@ export default function SignUp() {
               value={userFormData.username}
               required
             />
-            
+
             <input
               name="email"
               type="text"
@@ -112,13 +112,12 @@ export default function SignUp() {
               Submit
             </button>
           </form>
-        <div className="span-border">
-          <span className="span-link">
-            <Link to="/login">Back To Login</Link>
-          </span>
+          <div className="span-border">
+            <span className="span-link">
+              <Link className="text" to="/login">Back To Login</Link>
+            </span>
+          </div>
         </div>
-        </div>
-
       </div>
     </>
   );
