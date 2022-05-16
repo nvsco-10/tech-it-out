@@ -43,7 +43,6 @@
   }
 
   .main-half {
-    // background: -webkit-linear-gradient(left, #004aad, #e73c7e);
     margin-top: 4.5rem;
     padding: 4rem;
     // margin-bottom: 3rem;
@@ -63,14 +62,11 @@
       text-align: center;
       width: 25rem;
       margin: 1rem 2rem;
-      // img {
-      //   width: 25rem;
-      // }
+
       .caption {
         display: block;
         color: #fff;
       }
-
     }
 
     @media (max-width: 580px) {
@@ -106,12 +102,6 @@
 
 .Resources {
   .resource-body {
-    // .columns {
-    //   margin: 0 -8rem;
-    //   display: flex;
-    //   flex-wrap: wrap;
-    // }
-  
     .flex-container {
       display: flex;
       justify-content: center;
@@ -124,18 +114,17 @@
       flex-basis: 20%;
       min-width: 400px;
     }
-    
+
     .title:hover {
       color: #e73c7e;
     }
-  }  
+  }
 
-    @media (max-width: 580px) {
-      .resource-card {
-        width: 100%;
-      }
+  @media (max-width: 580px) {
+    .resource-card {
+      width: 100%;
     }
-  
+  }
 }
 
 .SingleResource {
@@ -144,11 +133,9 @@
     justify-content: center;
     align-items: center;
     margin: 1rem 5rem;
-    // justify-content: center;
     border-radius: 0.5rem;
     padding: 0.5rem;
     background-color: rgb(233, 233, 233);
-    // width: 100rem;
     background: linear-gradient(-45deg, #262d92, #e73c7e, #23a6d5, #23d5ab);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
@@ -179,12 +166,10 @@
       border-radius: 0.5rem;
       max-width: 55rem;
       h1 {
-        // background-color: #004aad;
         text-transform: uppercase;
         font-size: 2rem;
         margin-top: 1rem;
         text-align: center;
-        // font-weight: bold;
         display: flex;
         justify-content: center;
         margin-bottom: -0.25rem;
@@ -194,7 +179,6 @@
         justify-content: center;
         margin: 1.5rem 0.5rem;
         .button {
-          // display: inline-block;
           text-transform: uppercase;
           font-size: 1.25rem;
           padding: 1rem;
@@ -204,7 +188,6 @@
       }
       .description-body {
         .resource-description {
-          // background-color: #23a6d5;
           min-height: 16rem;
           font-size: 1.3rem;
           display: flex;
@@ -213,9 +196,6 @@
           text-align: center;
           padding: 1rem;
         }
-        // .resource-description:first-letter {
-        //   text-transform: capitalize !important;
-        // }
 
         a {
           display: flex;
@@ -226,7 +206,6 @@
         }
       }
     }
-
   }
 
   @media (max-width: 1500px) {
@@ -234,21 +213,15 @@
       width: 70%;
       flex-direction: column;
       margin: 1rem auto;
-
     }
 
     .resource-container img {
-      height: 200px
-    
+      height: 200px;
     }
 
     .singleresource-body {
       padding: 1rem;
       margin: 1rem;
-
-      h1 {
-        // font-size: 2rem;
-      }
 
       .description-body {
         .resource-description {
@@ -264,11 +237,10 @@
       width: 100%;
     }
   }
-  
+
   .line {
     margin: 5rem 2rem;
     border-radius: 1rem;
-    // border: 0.25rem solid;
     height: 0.45rem;
     background: linear-gradient(to left, #262d92, #e73c7e, #23a6d5, #23d5ab);
   }
@@ -300,7 +272,6 @@
           padding: 1rem;
           background-color: rgb(236, 236, 236);
           border-radius: 0.5rem;
-          // text-align:start;
           margin: 0.5rem;
           font-size: 1rem;
           width: 50rem;
@@ -325,48 +296,39 @@
 
   @media (max-width: 890px) {
     .resource-comments {
-
       .hold-comments {
         .add-comment {
           input {
             width: 40rem;
           }
-  
-          .button-holder 
-            .button {
-              width: 40rem;
-            }
-          
+
+          .button-holder .button {
+            width: 40rem;
+          }
         }
       }
-      
     }
   }
 
   @media (max-width: 680px) {
     .resource-comments {
-
       .hold-comments {
         .add-comment {
           input {
             width: 24rem;
           }
-  
-          .button-holder 
-            .button {
-              width: 24rem;
-            }
-          
+
+          .button-holder .button {
+            width: 24rem;
+          }
         }
       }
-      
     }
   }
 
   .comment-holder {
     display: flex;
     flex-direction: column;
-    // align-items: center;
     justify-content: center;
     margin: 5rem 10rem 1rem 10rem;
     padding: 1rem;
@@ -379,20 +341,11 @@
     }
 
     .comment-info {
-      // background-color: #262d92;
       display: flex;
       justify-content: space-between;
       font-style: italic;
       color: #e73c7e;
       font-size: 1.2rem;
-      // .username {
-      //   display: flex;
-      //   justify-content: flex-start;
-      // }
-      // .time {
-      //   display: flex;
-      //   justify-content: flex-end;
-      // }
     }
 
     .comment {
@@ -401,10 +354,9 @@
       min-height: 5rem;
       border-bottom: solid 1px rgb(222, 220, 220);
     }
-
   }
 
-  @media (max-width: 980px ) {
+  @media (max-width: 980px) {
     .comment-holder {
       margin: 5rem 2rem 1rem 2rem;
     }
@@ -412,8 +364,6 @@
 }
 
 .Community {
-  // background-color: #004aad;
-
   .section {
     margin-top: -3rem;
     padding-top: 6rem;
@@ -421,7 +371,6 @@
     background-image: url("../images/nejc-unsplash.jpg");
     background-position: auto;
     background-size: 100%;
-    // margin-bottom: 1.5rem;
 
     h1 {
       color: #fff;
@@ -434,7 +383,6 @@
 
   .section2 {
     padding: 3rem 8rem;
-    // background-color: #23d5ab;
     .button {
       border-radius: 0.5rem;
       margin-bottom: 0.5rem;
@@ -448,12 +396,10 @@
     }
 
     .community-cards {
-      // background-color: rgba(2, 13, 73, 0.25);
       border-radius: 0.75rem;
       padding: 2rem;
 
       .header {
-        // background-color: rgba(0, 75, 173, 0.349);
         border-radius: 0.75rem;
         font-style: italic;
         display: flex;
@@ -470,8 +416,7 @@
 
         .post-up {
           color: #004aad;
-          // padding-top: 1.5rem;
-          // padding-right: 2rem;
+          ht: 2rem;
         }
 
         .post-details {
@@ -482,7 +427,6 @@
         .post-details .date {
           margin-left: 3rem;
         }
-
       }
       .card-content {
         font-size: 1.5rem;
@@ -502,13 +446,12 @@
 
     @media (max-width: 980px) {
       .community-cards {
-        
         padding: 1rem;
-  
+
         .header {
           flex-direction: column;
           align-items: flex-start;
-  
+
           .post-title {
             font-size: 1.5rem;
             margin-left: 0;
@@ -523,14 +466,12 @@
           .post-details .date {
             margin-left: 0;
           }
-  
         }
         .card-content {
           font-size: 1rem;
         }
       }
     }
-
   }
 
   @media (max-width: 980px) {
@@ -545,11 +486,9 @@
     display: flex;
     max-width: 1100px;
     margin: 1rem auto;
-    // justify-content: center;
     border-radius: 0.5rem;
     padding: 0.5rem;
     background-color: rgb(233, 233, 233);
-    // width: 100rem;
     background: linear-gradient(-45deg, #262d92, #e73c7e, #23a6d5, #23d5ab);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
@@ -584,29 +523,21 @@
       }
     }
 
-  @media (max-width: 980px) {
-
-    .singleresource-body {
-      
-      .community-body {
-
-        .content {
-          margin-top: .75rem;
-          font-size: 1rem;
+    @media (max-width: 980px) {
+      .singleresource-body {
+        .community-body {
+          .content {
+            margin-top: 0.75rem;
+            font-size: 1rem;
+          }
         }
       }
     }
   }
 
-    
-  }
-  
-  
-
   .line {
     margin: 5rem 2rem;
     border-radius: 1rem;
-    // border: 0.25rem solid;
     height: 0.45rem;
     background: linear-gradient(to left, #262d92, #e73c7e, #23a6d5, #23d5ab);
   }
@@ -663,41 +594,33 @@
 
   @media (max-width: 890px) {
     .resource-comments {
-
       .hold-comments {
         .add-comment {
           input {
             width: 40rem;
           }
-  
-          .button-holder 
-            .button {
-              width: 40rem;
-            }
-          
+
+          .button-holder .button {
+            width: 40rem;
+          }
         }
       }
-      
     }
   }
 
   @media (max-width: 680px) {
     .resource-comments {
-
       .hold-comments {
         .add-comment {
           input {
             width: 24rem;
           }
-  
-          .button-holder 
-            .button {
-              width: 24rem;
-            }
-          
+
+          .button-holder .button {
+            width: 24rem;
+          }
         }
       }
-      
     }
   }
 
@@ -715,20 +638,11 @@
     }
 
     .comment-info {
-      // background-color: #262d92;
       display: flex;
       justify-content: space-between;
       font-style: italic;
       color: #e73c7e;
       font-size: 1.2rem;
-      // .username {
-      //   display: flex;
-      //   justify-content: flex-start;
-      // }
-      // .time {
-      //   display: flex;
-      //   justify-content: flex-end;
-      // }
     }
 
     .comment {
@@ -739,12 +653,11 @@
     }
   }
 
-  @media (max-width: 980px ) {
+  @media (max-width: 980px) {
     .comment-holder {
       margin: 5rem 2rem 1rem 2rem;
     }
   }
-
 }
 
 .spinner {
