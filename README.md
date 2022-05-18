@@ -1,8 +1,8 @@
-# Tech-It-Out (Front-end,Back-End)
+# Tech-It-Out
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg) 
 
-##
-Tech it out is a REACT based application that  allows users to have access to multiple different resources to help them begin their coding adventure! Users will have the ability to create an account, explore the community, access many different resources, filter by tags and communicate with others!
+## Description
+Tech it out is a REACT based application that allows users to have access to multiple different resources to help them begin their coding adventure! Users will have the ability to create an account, explore the community, access many different resources, filter by tags and communicate with others!
 
 ## Table of Contents
 
@@ -15,9 +15,6 @@ Tech it out is a REACT based application that  allows users to have access to mu
 - [Questions](#questions)
 - [License](#license)
 
-## Synopsis
-
-Tech it Out is a beginner-friendly coding application that allows the user access to a multitude of resources to help them begin their coding adventure! With "Tech It Out!" the user will not only be able to view and learn using the provided resources and articles but will also be able to contribute themselves! With a social network aspect that allows users to create their own posts and reach out to other developers of all skill levels!
 
 
 ## Installation
@@ -25,19 +22,24 @@ Tech it Out is a beginner-friendly coding application that allows the user acces
 No installation required to use this app.
 
 ## Objectives 
-```
-Tech-it-Out is a user-friendly app. Its sole purpose is to create an environment that beginner developers can visit to utilize a collection of web-development resources.
-```
+
+Currently, the website is a prototype. The idea behind Tech It Out is for it to become a Reddit-meets-Stack Overflow social platform where programmers can interact with other programmers and engage in fun activities that make learning programming easier. We want it to be a one-stop-shop for beginners - where they can find helpful resources and start building their network.
+
+Ideas for expansion:
+- Bigger library of resources and a more robust user interface.
+- Mentorship program where users can volunteer to become mentors. Users can just browse through the platform and find a mentor.
+- Better community features:
+    - in-app messaging
+    - reward system for those who contribute the most
+    - contests
+    - weekly showcase of members' works
+
 
 ## Screenshots
 
 <p align="center">
     <img src="./assets/tech-it-out-screenshot.png" alt="screenshot of app"/>
     <img src="./assets/resources2.png" alt="screenshot of app"/>
-    <img src="./assets/resources3.png" alt="screenshot of app"/>
-    <img src="./assets/community.PNG" alt="screenshot of app"/>
-    <img src="./assets/community2.PNG" alt="screenshot of app"/>
-    <!-- <img src="./assets/resources2.png" alt="screenshot of app"/> -->
 </p>
 
 ## Roles
